@@ -156,6 +156,155 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jsDOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/10/jsDOM/">jsDOM</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/10/jsDOM/" class="archive-article-date">
+  	<time datetime="2017-12-10T09:12:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="js-盒子模型"><a href="#js-盒子模型" class="headerlink" title="js 盒子模型"></a>js 盒子模型</h1><h2 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h2><blockquote>
+<p>传统css盒子模型: width height padding border    </p>
+<p>盒子的宽度 = width+border-left+border-right + padding-right +padding-left</p>
+<p>css3的盒子模型:</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">box-sizing</span>: content-box;  <span class="comment">/* 传统的css盒模型 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* width 包含了padding 和 border */</span></span><br><span class="line"><span class="comment">/* 修改padding 和 border 盒子的大小不变,内容的大小改变 */</span></span><br></pre></td></tr></table></figure>
+<h2 id="js盒模型的属性"><a href="#js盒模型的属性" class="headerlink" title="js盒模型的属性"></a>js盒模型的属性</h2><blockquote>
+<p>提供一些属性和方法用来描述当前盒子的样式</p>
+</blockquote>
+<h4 id="clientWidth-和-clientHeight"><a href="#clientWidth-和-clientHeight" class="headerlink" title="clientWidth 和 clientHeight"></a>clientWidth 和 clientHeight</h4><blockquote>
+<p>当前盒子可视区域的宽度和高度</p>
+<p><strong>可视区域 : 内容的宽高+padding</strong></p>
+<p><strong>和内容是否溢出以及是否设置了overflow:hidden没有区别</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  获取当前页面一屏幕的宽度  (一般项目中Html和head的宽高是一致的)</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth</span><br></pre></td></tr></table></figure>
+<h5 id="将盒子在页面中居中"><a href="#将盒子在页面中居中" class="headerlink" title="将盒子在页面中居中"></a>将盒子在页面中居中</h5><ol>
+<li>使用css来实现</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="attribute">position </span>: absolute;</span><br><span class="line">  	<span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">  	<span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">  	<span class="attribute">margin-left</span>:-<span class="number">50px</span>;</span><br><span class="line">  	<span class="attribute">margin-right</span>:-<span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">position </span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin </span>: auto;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用<span class="selector-tag">css3</span>的<span class="selector-tag">flex</span>伸缩盒模型</span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>:flex;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">flex-flow</span>: row wrap;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用js解决</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  width:<span class="number">200</span>px;</span><br><span class="line">  height:<span class="number">200</span>px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="keyword">var</span> winW = <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line"><span class="keyword">var</span> winH = <span class="built_in">document</span>.documentElement.clientHeight || <span class="built_in">document</span>.body.clientHeight;</span><br><span class="line">box.style.top = (winW-box.clientHeight)/<span class="number">2</span>;</span><br><span class="line">box.style.left = (winW - box.clientWidth)/<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="clientTop-和-clientLeft"><a href="#clientTop-和-clientLeft" class="headerlink" title="clientTop 和 clientLeft"></a>clientTop 和 clientLeft</h4><blockquote>
+<p>只有Top和Left<br>clientTop: 盒子上边框的高度<br>clientLeft: 盒子左边框的宽度<br>获得border-width</p>
+<p>通过js获取的border-width的值是Number类型不带单位会自动四舍五入</p>
+<p>与通过css设置的小数的值不同</p>
+</blockquote>
+<h4 id="offsetWidth-和-offsetHeight"><a href="#offsetWidth-和-offsetHeight" class="headerlink" title="offsetWidth 和 offsetHeight"></a>offsetWidth 和 offsetHeight</h4><blockquote>
+<p>在clientWidth和clientHeight的基础上加上边框</p>
+<p>width+padding+border</p>
+<p>和内容溢出没有关系</p>
+</blockquote>
+<h4 id="scrollWidth-和-scrollHeight"><a href="#scrollWidth-和-scrollHeight" class="headerlink" title="scrollWidth 和 scrollHeight"></a>scrollWidth 和 scrollHeight</h4><ul>
+<li>主要用来获得当前页面的真实高度和宽度</li>
+</ul>
+<p><code>document.documentElement.scrollWidth || document.body.scrollWidth</code></p>
+<p><code>document.documentElement.scrollHeight || document.body.scrollHeight</code></p>
+<blockquote>
+<p>没有内容溢出的时候, 获得的结果和clientWidth和clientHeight获得的结果一样</p>
+<p>在有内容溢出的情况下</p>
+<p><strong>表示真实内容的高度和高度,包含溢出的内容,再加上padding-left或者padding-top(padding-bottom和padding-right已经被覆盖了)</strong>;</p>
+<p>当有内容溢出的情况下, 我们通过scrollWidth 或者scrollHeight获得的结果是一个约等于的值</p>
+<ol>
+<li>有内容溢出,每个浏览器对于行高或者文字的渲染不一样,返回结果也不一样</li>
+<li>是否设置overflow:hidden 对最后的结果也有影响</li>
+</ol>
+</blockquote>
+<h2 id="获取元素的所有样式值"><a href="#获取元素的所有样式值" class="headerlink" title="获取元素的所有样式值"></a>获取元素的所有样式值</h2><blockquote>
+<p>通过obj.style.attr 的方式只能获取到obj的行内的样式</p>
+<p>只要元素存在就可以获得其所有样式值,包括默认的样式</p>
+<p><code>window.getComputedStyle||currentStyle</code>  :  <strong>获取元素的所有样式</strong></p>
+<p>window.getComputedStyle(obj , [当前元素的伪类]).paddingLeft    </p>
+<p>obj.currentStyle (IE6~8)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  getCss 获取元素的属性值</span></span><br><span class="line"><span class="comment">*  @parameter  </span></span><br><span class="line"><span class="comment">*  curEle 操作的元素</span></span><br><span class="line"><span class="comment">*  attr  需要获取的属性值</span></span><br><span class="line"><span class="comment">*  @return 获取的属性值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle,attr</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">var</span> value = <span class="literal">null</span>;</span><br><span class="line">  	<span class="keyword">if</span>(<span class="string">'getComputedStyle'</span> <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</span><br><span class="line">    	value = <span class="built_in">window</span>.getComputedStyle(curEle,<span class="literal">null</span>)[attr];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      value = curEle.currentStyle[attr];</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="父级盒子参照物及盒子偏移量"><a href="#父级盒子参照物及盒子偏移量" class="headerlink" title="父级盒子参照物及盒子偏移量"></a>父级盒子参照物及盒子偏移量</h2><blockquote>
+<p><code>offsetParent</code>: 父级参照物(和父级元素没有直接关系)</p>
+<p>document.body.offsetParent = null</p>
+<p>默认情况下一个页面的父级参照物都是body</p>
+<p>当页面的元素脱离文档流则他里面的子元素的父级参照物会变成定位的元素</p>
+<p><code>offsetLeft   offsetTop</code></p>
+<p>当前元素的外边框 距离 父级参照物的内边框 的偏移量</p>
+</blockquote>
+<h2 id="当前浏览器信息的判断"><a href="#当前浏览器信息的判断" class="headerlink" title="当前浏览器信息的判断"></a>当前浏览器信息的判断</h2><blockquote>
+<p>/MSIE 8/i.test(navigator.useragent);</p>
+</blockquote>
+<h2 id="scrollLeft-和-scrollTop"><a href="#scrollLeft-和-scrollTop" class="headerlink" title="scrollLeft 和 scrollTop"></a>scrollLeft 和 scrollTop</h2><blockquote>
+<p>横向和竖向滚动条卷去的高度</p>
+<p><code>document.documentELement.scrollTop || document.body.scrollTop</code></p>
+<p>最小值 0;</p>
+<p>最大值 scrollHeight - clientHeight; =&gt; 整屏高度 - 窗口高度</p>
+<p><strong>前面的属性都是只读的,这个属性是可修改的</strong></p>
+<p>compatibility  =&gt;  兼容性    </p>
+</blockquote>
+<p>-webkit-linear-gradient  线性渐变</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/10/jsDOM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-js变量提升作用域和闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
