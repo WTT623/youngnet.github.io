@@ -156,6 +156,189 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ES6新增的一些方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/11/ES6新增的一些方法/">ES6新增的一些方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/11/ES6新增的一些方法/" class="archive-article-date">
+  	<time datetime="2017-12-11T06:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h4 id="新增的方法"><a href="#新增的方法" class="headerlink" title="新增的方法"></a>新增的方法</h4><ul>
+<li>Array(n)  =&gt; 只穿一个数字的时候会创建一个length = n 的空数组<ul>
+<li>Array.of()  =&gt;  只传一个参数也是创建对应参数的数组</li>
+</ul>
+</li>
+<li>Array.from()   =&gt; 参数为数组或者类数组,返回一个新的数组</li>
+<li>copyWithin(target,start,end)<ul>
+<li>target : 从该位置开始替换数据</li>
+<li>start : 选填的,默认值为0,从该位置开始读取数据</li>
+<li>end : 默认length,到该位置前</li>
+<li>原数组的长度不变</li>
+</ul>
+</li>
+<li>find   findIndex  //  遍历当前数组,一旦返回值为true就停止查找,返回当前项,或者返回当前项对应的索引  未找到为undefined</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ary.find(<span class="function">(<span class="params">item,index,ary</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="comment">//  遍历当前数组,一旦返回值为true就停止查找,返回当前项</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fill(value,start,end)    //  可以用来初始化数组<ul>
+<li>Array(7).fill(1)</li>
+<li>value : 填充的值</li>
+<li>start : 开始填充的值, 默认0</li>
+<li>end : 停止的位置,不包括这个索引默认为length</li>
+</ul>
+</li>
+<li>includes()  //判断数组中是否有这一项</li>
+</ul>
+<h4 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h4><blockquote>
+<p>空位不是undefined , 空位在检测的时候显示为false,是没有值的意思</p>
+<p><strong>在ES5中方法遍历时空位会自动跳过,ES6会将其当做undefined来处理</strong><br><code>map会将其显示出来显示为empty</code></p>
+</blockquote>
+<h4 id="for-of循环"><a href="#for-of循环" class="headerlink" title="for  of循环"></a>for  of循环</h4><blockquote>
+<p>for of  是for in的优化版,不存在数字属性名提前的问题</p>
+<p>会使用到Array.prototype里的方法<code>keys(),entries()</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> a <span class="keyword">of</span> ary)&#123;</span><br><span class="line">  <span class="built_in">console</span>(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key,value] <span class="keyword">of</span> ary.entries())&#123;</span><br><span class="line">  <span class="built_in">console</span>(key,value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><h4 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h4><blockquote>
+<p>可以给函数的形参设置默认值,如果没有实参传入或者传入为undefined时,则形参会使用默认值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x,y=<span class="number">10</span></span>)</span>&#123;<span class="keyword">return</span> x+y&#125;;</span><br><span class="line">&gt; fn(<span class="number">10</span>,<span class="number">5</span>);  =&gt;  <span class="number">15</span>  <span class="comment">//传了值则默认值不会起作用</span></span><br><span class="line">&gt; fn(<span class="number">10</span>);  =&gt; <span class="number">20</span>  <span class="comment">// y没有传,此时会使用默认值</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>传递的默认值为变量的时候会在函数的上部变量中进行查找</strong></p>
+</blockquote>
+<h4 id="function里面的length属性"><a href="#function里面的length属性" class="headerlink" title="function里面的length属性"></a>function里面的length属性</h4><blockquote>
+<p>在函数没有形参时,length长度表示实参的个数;    </p>
+<p>有默认值则为有默认值的位置</p>
+</blockquote>
+<h4 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符 …"></a>扩展运算符 …</h4><blockquote>
+<p>可以将数组转换为非数组,或者非数组转换为数组</p>
+<p>将类数组转换为数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&gt; <span class="built_in">console</span>.log(...ary) = <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>;  和apply(<span class="keyword">this</span>,ary);</span><br><span class="line">&gt; <span class="keyword">var</span> arr = [...arguments].sort();</span><br><span class="line">&gt; <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr);</span><br><span class="line">&gt; <span class="built_in">Math</span>.max(...arr);</span><br><span class="line">&gt;</span><br><span class="line">&gt; <span class="comment">// 拼接数组</span></span><br><span class="line">&gt; a1.concat(a2);</span><br><span class="line">&gt; [...a1,...a2];</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="函数name的值"><a href="#函数name的值" class="headerlink" title="函数name的值"></a>函数name的值</h4><blockquote>
+<p>我们普通情况下定义函数的name都等于函数名 或者接受函数地址的变量名,</p>
+<ol>
+<li>在绑定方法中  =&gt;  var fn1 = fn.bind(obj);  fn1.name =&gt; bound fn</li>
+<li>以new Function创建的函数的name属性 =&gt; anonymous</li>
+</ol>
+</blockquote>
+<h4 id="ES6箭头函数-gt"><a href="#ES6箭头函数-gt" class="headerlink" title="ES6箭头函数  ()=&gt;{}"></a>ES6箭头函数  ()=&gt;{}</h4><blockquote>
+<p>如果函数里只有<code>return  :   x=&gt;x;   (x) =&gt; {return x}</code></p>
+</blockquote>
+<ul>
+<li>箭头函数的this问题 <ul>
+<li>箭头函数内部没有this指向,函数中的this为上层作用域中的this</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);  <span class="comment">//  Window</span></span><br><span class="line">  (f)=&gt;&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>);&#125;;  <span class="comment">//  Window</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><blockquote>
+<p>如果对象的属性名为变量的话</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> a = <span class="string">'aa'</span>;</span><br><span class="line">&gt; <span class="keyword">let</span> obj = &#123;[a]:<span class="number">1</span> &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>Object.is(a,b)  =&gt; 判断两个值是否相等</li>
+<li>Object.assign(obj1,obj2)  =&gt; 将obj2的内容合并到obj1中,返回obj1</li>
+<li>Object.getOwnPropertyDescriptor()   =&gt;  显示属性的具体情况</li>
+<li>Object.keys();  返回值为数组  =&gt; 包括对象的所有的私有属性</li>
+<li>Object.getOwnPropertyNames()</li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><blockquote>
+<ol>
+<li>使用构造函数的方法创建一个实例</li>
+<li>参数是一个数组,第一项为键key,第二项为值value</li>
+<li>key可以是任意数据类型</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;  <span class="comment">//var map = new Map([[key,value],[key,value],[key,value]]);</span></span><br><span class="line">&gt;  <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'a'</span>,<span class="string">'a'</span>],[<span class="string">'b'</span>,<span class="number">4</span>]])</span><br><span class="line">&gt;  <span class="built_in">Map</span>&#123;</span><br><span class="line">&gt;  	size: <span class="number">3</span></span><br><span class="line">&gt;  	&lt;entries&gt;</span><br><span class="line">&gt;  		0: 1 → 2</span><br><span class="line">&gt;  		1: a → "a"</span><br><span class="line">&gt;  		2: b → 4</span><br><span class="line">&gt;  	__proto__: Object &#123; … &#125;</span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>get(key)  =&gt; 获取值</li>
+<li>set(key,value) =&gt; 设置值</li>
+<li>delete  =&gt;  删除这个值,返回true false</li>
+<li>has  =&gt;  判断是否存在</li>
+<li>clear  =&gt;  清空</li>
+<li>size 长度</li>
+<li>forEach()  =&gt; keys ,value,entries</li>
+</ul>
+</blockquote>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><blockquote>
+<p>使用构造函数的方式来创建</p>
+<p>将传进来的值为数组去重后得到一个set实例</p>
+</blockquote>
+<h4 id="数组使用set去重"><a href="#数组使用set去重" class="headerlink" title="数组使用set去重"></a>数组使用set去重</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">[...new <span class="built_in">Set</span>(arr)];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>add</li>
+<li>clear</li>
+<li>delete   返回  true或false</li>
+<li>entries</li>
+<li>forEach</li>
+<li>has</li>
+<li>keys</li>
+<li>size</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1=[],arr2=[];</span><br><span class="line"><span class="keyword">var</span> ary = [...new <span class="built_in">Set</span>([...arr1,...arr2]);]</span><br><span class="line"><span class="keyword">var</span> arr = arr1.fliter(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> arr2.includes(item);</span><br><span class="line">&#125;);</span><br><span class="line">ary.filter(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !arr.includes(item);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/11/ES6新增的一些方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsDOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
