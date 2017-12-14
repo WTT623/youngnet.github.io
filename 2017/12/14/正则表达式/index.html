@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>正则表达式 | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获 捕获成功返回一个数组 失败返回 null    正则的创建 正则的创建">
+  <meta name="description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式">
 <meta property="og:url" content="http://yoursite.com/2017/12/14/正则表达式/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获 捕获成功返回一个数组 失败返回 null    正则的创建 正则的创建">
+<meta property="og:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-14T03:42:09.746Z">
+<meta property="og:updated_time" content="2017-12-14T04:55:52.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
-<meta name="twitter:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获 捕获成功返回一个数组 失败返回 null    正则的创建 正则的创建">
+<meta name="twitter:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
   
   
     <link rel="icon" href="/title.ico">
@@ -185,8 +185,13 @@ var _hmt = _hmt || [];
 </blockquote>
 <ul>
 <li>reg.test(str)  =&gt;  匹配  =&gt; 返回true 或 false</li>
-<li>reg.exec(str)  =&gt; 捕获<ul>
-<li>捕获成功返回一个数组</li>
+<li>reg.exec(str)  =&gt; 捕获  <ul>
+<li>捕获成功返回一个数组<ul>
+<li>arr[0] =&gt; 捕获的内容</li>
+<li>arr[1] =&gt;  index捕获内容首字符的索引</li>
+<li>arr[2] =&gt;  input判断的字符串</li>
+</ul>
+</li>
 <li>失败返回 null</li>
 </ul>
 </li>
@@ -207,7 +212,7 @@ var _hmt = _hmt || [];
 <li>有特殊意义的元字符进入到[]中就变成本身的意义,除了^ -    “-“放到最后也表示本身的意义</li>
 </ol>
 </blockquote>
-<h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h4><table>
+<h4 id="正则元字符"><a href="#正则元字符" class="headerlink" title="正则元字符"></a>正则元字符</h4><table>
 <thead>
 <tr>
 <th style="text-align:left">\</th>
@@ -400,6 +405,17 @@ var _hmt = _hmt || [];
 </tr>
 </tbody>
 </table>
+<h4 id="正则修饰符-g-m-i"><a href="#正则修饰符-g-m-i" class="headerlink" title="正则修饰符(g\m\i)"></a>正则修饰符(g\m\i)</h4><blockquote>
+<p>正则的捕获具有懒惰性,找到第一个符合的结果就会停止捕获,这样我们就需要添加修饰符g(global)来消除正则捕获的懒惰性 </p>
+<p>但是要注意的是exec方法每次只会捕获一个结果,想要获得全部内容需要多次使用exec方法,直到返回结果为null ,所以应该使用循环来获取所有结果</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  arr = [];</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> val = reg.exec(str);</span><br><span class="line">  <span class="keyword">if</span>(val)&#123;</span><br><span class="line">    arr.push(val[<span class="number">0</span>]);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="字符串中的正则方法"><a href="#字符串中的正则方法" class="headerlink" title="字符串中的正则方法"></a>字符串中的正则方法</h4><ul>
+<li>str.match(reg)</li>
+</ul>
+<blockquote>
+<p>match方法是用来匹配字符串中符合条件的内容,在正则没有全局修饰符g的时候,和exec的结果一直,但是当加了g的时候match只获取捕获的结果,而index和input这些属性不会获取</p>
+</blockquote>
 
       
 
