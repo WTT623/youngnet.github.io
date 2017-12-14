@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-14T04:55:52.328Z">
+<meta property="og:updated_time" content="2017-12-14T09:57:26.284Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
@@ -200,7 +200,7 @@ var _hmt = _hmt || [];
 <p>正则的创建主要有两种方法</p>
 <ol>
 <li>字面量的方式 : <code>var reg = /\d+/</code>;</li>
-<li>构造函数形式 : <code>var reg = new RegExp(&#39;\\d+&#39;)</code></li>
+<li>构造函数形式 : <code>var reg = new RegExp(&#39;\\d+&#39;)</code>   =&gt; 遇到斜杠变成\ \ (字符串可以用来拼接变量)</li>
 </ol>
 </blockquote>
 <h3 id="正则的写法-元字符和修饰符"><a href="#正则的写法-元字符和修饰符" class="headerlink" title="正则的写法 , 元字符和修饰符"></a>正则的写法 , 元字符和修饰符</h3><blockquote>
@@ -410,12 +410,25 @@ var _hmt = _hmt || [];
 <p>但是要注意的是exec方法每次只会捕获一个结果,想要获得全部内容需要多次使用exec方法,直到返回结果为null ,所以应该使用循环来获取所有结果</p>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  arr = [];</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> val = reg.exec(str);</span><br><span class="line">  <span class="keyword">if</span>(val)&#123;</span><br><span class="line">    arr.push(val[<span class="number">0</span>]);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="正则捕获的贪婪性和懒惰性"><a href="#正则捕获的贪婪性和懒惰性" class="headerlink" title="正则捕获的贪婪性和懒惰性"></a>正则捕获的贪婪性和懒惰性</h4><blockquote>
+<p>贪婪性: 出现量词元字符,按照匹配的最大长度来捕获 =&gt; 在量词的后面加上?消除贪婪性按照最小长度进行捕获</p>
+<p>懒惰性: 正则捕获每次只捕获一个而且下次执行还是从头开始捕获</p>
+</blockquote>
+<h4 id="分组捕获"><a href="#分组捕获" class="headerlink" title="分组捕获"></a>分组捕获</h4><blockquote>
+<p>如果想将某个部分单独捕获出来,可以给这个部分加上(),如果不想捕获某个分组的内容在这个内容的括号里面的前面加上(?:   )</p>
+</blockquote>
 <h4 id="字符串中的正则方法"><a href="#字符串中的正则方法" class="headerlink" title="字符串中的正则方法"></a>字符串中的正则方法</h4><ul>
 <li>str.match(reg)</li>
 </ul>
 <blockquote>
-<p>match方法是用来匹配字符串中符合条件的内容,在正则没有全局修饰符g的时候,和exec的结果一直,但是当加了g的时候match只获取捕获的结果,而index和input这些属性不会获取</p>
+<p>match方法是用来匹配字符串中符合条件的内容,在正则没有全局修饰符g的时候,和exec的结果一直,但是当加了g的时候match只获取捕获的结果,而index和input这些属性不会获取,并且不会捕获分组的内容,只返回大正则的内容</p>
 </blockquote>
+<ul>
+<li>str.split(reg)  =&gt; 按照正则匹配的内容拆分成数组</li>
+<li>str.search(reg)  =&gt; 返回匹配内容的索引</li>
+<li>str.replace(reg,new);</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"0123456789"</span>; <span class="comment">//"0[零]1[壹]2[贰]3456789"</span></span><br><span class="line"><span class="keyword">var</span> ary = [<span class="string">"零"</span>, <span class="string">"壹"</span>, <span class="string">"贰"</span>, <span class="string">"叁"</span>, <span class="string">"肆"</span>, <span class="string">"伍"</span>, <span class="string">"陆"</span>, <span class="string">"柒"</span>, <span class="string">"捌"</span>, <span class="string">"玖"</span>];</span><br><span class="line"><span class="keyword">var</span> a = str.replace(<span class="regexp">/\d/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ary[<span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  箭头函数</span></span><br><span class="line"><span class="comment">// var a = str.repalce(/\d/g,(...arg)=&gt;&#123;</span></span><br><span class="line"><span class="comment">// 箭头函数没有arguments,可以使用省略赋值的方式,将传入的参数全都传进arg中,使用arg</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br></pre></td></tr></table></figure>
 
       
 
