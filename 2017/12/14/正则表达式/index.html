@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-14T09:57:26.284Z">
+<meta property="og:updated_time" content="2017-12-14T10:19:18.786Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="javascript 正则表达式 (regular expression) 正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的; 正则类本身有两个方法:   reg.test(str)  =&amp;gt;  匹配  =&amp;gt; 返回true 或 false reg.exec(str)  =&amp;gt; 捕获   捕获成功返回一个数组 arr[0] =&amp;gt; 捕获的内容 arr">
@@ -212,6 +212,39 @@ var _hmt = _hmt || [];
 <li>有特殊意义的元字符进入到[]中就变成本身的意义,除了^ -    “-“放到最后也表示本身的意义</li>
 </ol>
 </blockquote>
+<h4 id="正则的优先级"><a href="#正则的优先级" class="headerlink" title="正则的优先级"></a>正则的优先级</h4><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>转义符</td>
+</tr>
+<tr>
+<td>(), (?:), (?=), []</td>
+<td>圆括号和方括号</td>
+</tr>
+<tr>
+<td>*, +, ?, {n}, {n,}, {n,m}</td>
+<td>限定符    =&gt;  量词</td>
+</tr>
+<tr>
+<td>^, $, \任何元字符、任何字符</td>
+<td>定位点和序列（即：位置和顺序）</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>替换，”或”操作字符具有高于替换运算符的优先级，使得”m\</td>
+<td>food”匹配”m”或”food”。若要匹配”mood”或”food”，请使用括号创建子表达式，从而产生”(m\</td>
+<td>f)ood”。</td>
+</tr>
+</tbody>
+</table>
 <h4 id="正则元字符"><a href="#正则元字符" class="headerlink" title="正则元字符"></a>正则元字符</h4><table>
 <thead>
 <tr>
@@ -532,6 +565,15 @@ var _hmt = _hmt || [];
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/12/15/js中的同步编程和异步编程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js中的同步编程和异步编程
+        
+      </div>
+    </a>
   
   
     <a href="/2017/12/11/ES6新增的一些方法/" id="article-nav-older" class="article-nav-link-wrap">

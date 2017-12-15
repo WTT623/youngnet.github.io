@@ -156,6 +156,127 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js中的同步编程和异步编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/15/js中的同步编程和异步编程/">js中的同步编程和异步编程</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/15/js中的同步编程和异步编程/" class="archive-article-date">
+  	<time datetime="2017-12-15T09:39:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js中同步编程和异步编程"><a href="#js中同步编程和异步编程" class="headerlink" title="js中同步编程和异步编程"></a>js中同步编程和异步编程</h2><blockquote>
+<p>在解释js中的同步和异步之前,我们要先说明的是js是单线程的 意味着一次只能执行一项任务,任务没有完成的时候,下面的代码是无法处理的</p>
+</blockquote>
+<h4 id="同步异步的核心原理"><a href="#同步异步的核心原理" class="headerlink" title="同步异步的核心原理"></a>同步异步的核心原理</h4><ul>
+<li>js中有两个任务队列(存放任务列表的空间就是任务队列)<ul>
+<li>主任务队列 : 同步执行任务(从上到下依次执行)</li>
+<li>等待任务队列 : 异步执行任务</li>
+</ul>
+</li>
+</ul>
+<h4 id="同步编程-sync-synchronization"><a href="#同步编程-sync-synchronization" class="headerlink" title="同步编程  sync (synchronization)"></a>同步编程  sync (synchronization)</h4><blockquote>
+<p>同步编程中,每一项任务都是按照顺序来执行的,上一个任务没有完成的时候,下面的任务是无法执行的,和js的单线程理念是一致的;</p>
+</blockquote>
+<h4 id="异步编程-async"><a href="#异步编程-async" class="headerlink" title="异步编程 async"></a>异步编程 async</h4><blockquote>
+<p>js中的异步编程很少主要有以下几种</p>
+</blockquote>
+<ol>
+<li>定时器 <ul>
+<li>在定时器创建的时候不会影响后面代码的执行,创建与执行时分开的</li>
+</ul>
+</li>
+<li>事件绑定</li>
+<li>Ajax</li>
+</ol>
+<blockquote>
+<p>我们这里通过一个图来理解一下js中异步部分是如何执行的</p>
+</blockquote>
+<p><img src="../img/async.png" alt="步骤图"></p>
+<blockquote>
+<p>接着我们来通过一个定时器的问题来再理解一下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i--);</span><br><span class="line">  &#125;,<span class="number">5</span>-i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">=&gt;  <span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在这道题目中,我们也任务分为主任务和等待任务<br>for循环是同步的,所以直接在主任务队列中执行,而在循环中每次都会创建一个定时器,定时器是异步的,将其放入等待任务队列在,等待主任务队列中的for循环结束;</p>
+<p>当for循环结束时 i = 5 主任务队列中的任务全部结束,而此时从等待队列中获取任务到主任务列表中执行,而此时我们设定的定时器的等待时间是5-i;所以5个定时器绑定的等待时间是越来越短的,会从后面的定时器开始获取到主任务列表来执行  </p>
+<p>当然我们这里没有考虑主任务列表中每次定时器绑定之间的时间差 ,如果每次绑定之间的时间差比我们减去的i更大的或就是另外的结果了,例如下面的例子</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10000000</span>;j++)&#123;&#125;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;,<span class="number">5</span>-i);</span><br><span class="line">&#125;</span><br><span class="line">=&gt;  <span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10000000</span>;j++)&#123;&#125;</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() - time;</span><br><span class="line"><span class="number">32</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我在每次绑定定时器之前先做了一个相对比较消耗时间的循环,最下面的代码是我测试的每次这个循环执行的时间,这个时间是明显大于我们两个定时器进入等待列表后的计时差的,那么我们最后在等待列表中所看到的队列完成顺讯就会变化,所以从等待队列到主任务队列的顺序是绑定时的时间差与在等待列表内的计时时间的和;</p>
+</blockquote>
+<h4 id="如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题"><a href="#如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题" class="headerlink" title="如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题"></a>如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题</h4><blockquote>
+<p>在这其中我们可以只将一些必要的页面内容放到主任务列表,而后面的使用一个定时器来运行,让第一次加载时的任务量变少,从而使加载速度变快</p>
+</blockquote>
+<ul>
+<li>由定时器的异步特征可以来实现一些效果</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span>);</span><br><span class="line">=&gt; <span class="number">2</span>,<span class="number">1</span></span><br><span class="line"><span class="comment">//  默认将其放到最后执行</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/15/js中的同步编程和异步编程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -209,6 +330,39 @@ var _hmt = _hmt || [];
 <li>有特殊意义的元字符进入到[]中就变成本身的意义,除了^ -    “-“放到最后也表示本身的意义</li>
 </ol>
 </blockquote>
+<h4 id="正则的优先级"><a href="#正则的优先级" class="headerlink" title="正则的优先级"></a>正则的优先级</h4><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>转义符</td>
+</tr>
+<tr>
+<td>(), (?:), (?=), []</td>
+<td>圆括号和方括号</td>
+</tr>
+<tr>
+<td>*, +, ?, {n}, {n,}, {n,m}</td>
+<td>限定符    =&gt;  量词</td>
+</tr>
+<tr>
+<td>^, $, \任何元字符、任何字符</td>
+<td>定位点和序列（即：位置和顺序）</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>替换，”或”操作字符具有高于替换运算符的优先级，使得”m\</td>
+<td>food”匹配”m”或”food”。若要匹配”mood”或”food”，请使用括号创建子表达式，从而产生”(m\</td>
+<td>f)ood”。</td>
+</tr>
+</tbody>
+</table>
 <h4 id="正则元字符"><a href="#正则元字符" class="headerlink" title="正则元字符"></a>正则元字符</h4><table>
 <thead>
 <tr>
