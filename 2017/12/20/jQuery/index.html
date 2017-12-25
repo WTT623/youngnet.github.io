@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>jQuery | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Aja">
+  <meta name="description" content="jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery">
 <meta property="og:url" content="http://yoursite.com/2017/12/20/jQuery/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="jQuery jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Aja">
+<meta property="og:description" content="jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-24T08:29:08.934Z">
+<meta property="og:updated_time" content="2017-12-25T12:31:24.483Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery">
-<meta name="twitter:description" content="jQuery jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Aja">
+<meta name="twitter:description" content="jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（或JavaScript框架）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。">
   
   
     <link rel="icon" href="/title.ico">
@@ -179,7 +179,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h1><blockquote>
+        <blockquote>
 <p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（<em>或JavaScript框架</em>）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。  ——-   摘自百度百科</p>
 <p>是一个常用方法的类库</p>
 </blockquote>
@@ -215,39 +215,10 @@ var _hmt = _hmt || [];
 </blockquote>
 <ul>
 <li>判断jQuery对象是否存在 \$().length == 0;</li>
-<li>\$(‘#id’)  \  \$(‘.class’)  \  \$(‘tagName’) =&gt;  jQuery中的选择器和css中的样式选择器基本相同 <ul>
-<li>\$(‘#id  child’)    后代选择器</li>
-<li>\$(‘#id&gt;child’)    直接子代 </li>
-<li>\$(‘#id~bro’)       兄弟选择器</li>
-<li>\$(‘#id+bro’)        下一个同类的相邻元素</li>
+<li>\$(‘#id’)  \  \$(‘.class’)  \  \$(‘tagName’) =&gt;  jQuery中的选择器和css中的样式选择器基本相同 </li>
 </ul>
-</li>
-<li>伪类选择器<ul>
-<li>\$(‘#id:hover’)</li>
-<li>\$(‘#id:contains(xxx)’)    =&gt;   包含某内容</li>
-<li>\$(‘.class:first’)  =&gt;  第一个元素</li>
-<li>\$(‘.class:last’) </li>
-<li>\$(‘.class:eq(index)’)   =&gt; 索引为index的</li>
-<li>\$(‘.class:gt(index)’)    =&gt;  索引&gt;index 的</li>
-<li>\$(‘.class:lt(index)’)      =&gt;  索引&lt;index 的</li>
-<li>\$(‘.class:not()’) </li>
-<li>\$(‘.class:not(:lt())’) </li>
-<li>\$(‘#box:parent’)  =&gt;  :parent 非空元素</li>
-<li>\$(“#box:empty”)  =&gt;  空元素</li>
-<li>\$(‘#box:hidden’)  =&gt;  隐藏元素</li>
-<li>\$(‘#box:visible’)   =&gt;  可见元素</li>
-<li>\$(‘#box[id]’)   =&gt;  包含属性</li>
-<li>\$(‘#box[attr=vallue]’)   =&gt;  属性值为</li>
-<li>$(‘#box[class|=list]’)  =&gt;  以list后者list-作为前缀</li>
-<li>$(‘#box[class~=list]’)  =&gt;  必须含有list</li>
-<li>$(‘#box:nth-child()’)</li>
-<li>$(‘#box:only-child’)</li>
-<li>\$(‘#box:even’) </li>
-<li>\$(‘#box:odd’) </li>
-<li>$(‘#box:selected’)</li>
-</ul>
-</li>
-</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#id  child'</span>)    后代选择器</span><br><span class="line">$(<span class="string">'#id&gt;child'</span>)    直接子代 </span><br><span class="line">$(<span class="string">'#id~bro'</span>)       兄弟选择器</span><br><span class="line">$(<span class="string">'#id+bro'</span>)        下一个同类的相邻元素</span><br></pre></td></tr></table></figure>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#id:hover'</span>)</span><br><span class="line">$(<span class="string">'#id:contains(xxx)'</span>)    =&gt;   包含某内容</span><br><span class="line">$(<span class="string">'.class:first'</span>)  =&gt;  第一个元素</span><br><span class="line">$(<span class="string">'.class:last'</span>) </span><br><span class="line">$(<span class="string">'.class:eq(index)'</span>)   =&gt; 索引为index的</span><br><span class="line">$(<span class="string">'.class:gt(index)'</span>)    =&gt;  索引&gt;index 的</span><br><span class="line">$(<span class="string">'.class:lt(index)'</span>)      =&gt;  索引&lt;index 的</span><br><span class="line">$(<span class="string">'.class:not()'</span>) </span><br><span class="line">$(<span class="string">'.class:not(:lt())'</span>) </span><br><span class="line">$(<span class="string">'#box:parent'</span>)  =&gt;  :parent 非空元素</span><br><span class="line">$(<span class="string">"#box:empty"</span>)  =&gt;  空元素</span><br><span class="line">$(<span class="string">'#box:hidden'</span>)  =&gt;  隐藏元素</span><br><span class="line">$(<span class="string">'#box:visible'</span>)   =&gt;  可见元素</span><br><span class="line">$(<span class="string">'#box[id]'</span>)   =&gt;  包含属性</span><br><span class="line">$(<span class="string">'#box[attr=vallue]'</span>)   =&gt;  属性值为</span><br><span class="line">$(<span class="string">'#box[class|=list]'</span>)  =&gt;  以list后者list-作为前缀</span><br><span class="line">$(<span class="string">'#box[class~=list]'</span>)  =&gt;  必须含有list</span><br><span class="line">$(<span class="string">'#box:nth-child()'</span>)</span><br><span class="line">$(<span class="string">'#box:only-child'</span>)</span><br><span class="line">$(<span class="string">'#box:even'</span>) </span><br><span class="line">$(<span class="string">'#box:odd'</span>) </span><br><span class="line">$(<span class="string">'#box:selected'</span>)</span><br></pre></td></tr></table></figure>
 <h2 id="jQuery对象和原生对象的转换"><a href="#jQuery对象和原生对象的转换" class="headerlink" title="jQuery对象和原生对象的转换"></a>jQuery对象和原生对象的转换</h2><blockquote>
 <p>jQuery对象: 通过\$() 和jQuery() 创建的实例</p>
 <p>原生对象: 通过属性选择器获取的元素对象(nodetype===1 )</p>
@@ -276,6 +247,29 @@ var _hmt = _hmt || [];
 <p>原理利用了DOM2级事件绑定  :   DOMContentLoaded(DOM结构加载完成后执行)</p>
 <p>window.onload使用的是DOM零级事件绑定,一个页面只能执行一次(在执行会覆盖原来的代码)</p>
 </blockquote>
+<h2 id="jQuery的常用方法"><a href="#jQuery的常用方法" class="headerlink" title="jQuery的常用方法"></a>jQuery的常用方法</h2><ul>
+<li>jQuery是一个构造函数,在js中函数的身份是多重的有普通函数,构造函数和对象;</li>
+</ul>
+<blockquote>
+<p>jQuery.prototype中有很多方法,这些方法时让我们在创建jquery对象的时候使用的</p>
+<p>jQuery本身也是一个对象,自身有很多的方法 :  \$.ajax  /  isFunction  /  unique</p>
+</blockquote>
+<h4 id="jQuery原型上的方法"><a href="#jQuery原型上的方法" class="headerlink" title="jQuery原型上的方法"></a>jQuery原型上的方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).index() =&gt;  获取索引</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).data()  =&gt;  获取自定义属性或者设置  :  HTML结构上不会显示</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).removedata()  =&gt;  移除自定义属性</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).attr()  =&gt;  一般操作元素属性</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).prop()  =&gt;  一般用来操作表单元素的内置或者自定义属性</span><br><span class="line"><span class="number">6.</span> $(<span class="string">'#box'</span>).addClass  =&gt;  添加</span><br><span class="line"><span class="number">7.</span> $(<span class="string">'#box'</span>).removeClass  =&gt;  移除</span><br><span class="line"><span class="number">8.</span> $(<span class="string">'#box'</span>).toggleClass  =&gt;  切换开关</span><br><span class="line"><span class="number">9.</span> $(<span class="string">'#box'</span>).hasClass</span><br><span class="line"></span><br><span class="line"><span class="comment">//  设置属性内容</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).html()  =&gt;  获取或者设置内容  ==  innerHTML</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).text()  =&gt; 操作文本内容</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).val()  =&gt;  操作表单元素的value值</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).css()  =&gt;  设置获取样式,获取的结果没有去单位</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).offset() &#123;top,left&#125;  =&gt; 获取到body的偏移</span><br><span class="line"></span><br><span class="line"><span class="comment">//  盒子模型</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).position()  =&gt;  获取到父级参照物的偏移</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).scrollTop / <span class="function"><span class="params">scrollLeft</span>  =&gt;</span>  获取或者设置scrollTop/Left</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).height/<span class="function"><span class="params">width</span>  =&gt;</span>  获取设置宽高</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).innerHeight/<span class="function"><span class="params">innerWidth</span>  =&gt;</span>  clientHeight/clientWidth</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).outerHeight/<span class="function"><span class="params">outerWidth</span>  =&gt;</span>  offsetHeight/offsetWidth</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件绑定</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件处理</span></span><br><span class="line"><span class="number">1.</span> parent.append(child)</span><br><span class="line"><span class="number">2.</span> child.appendTo(parent)</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).empty() =&gt; 清空</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).remove() =&gt; 移除自身</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).clone(<span class="literal">true</span>/<span class="literal">false</span>)  =&gt; 深度或者浅度吃鸡</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery的自有属性"><a href="#jQuery的自有属性" class="headerlink" title="jQuery的自有属性"></a>jQuery的自有属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">var</span> a = $.noConflict();  =&gt;  防止$的冲突,进行多库共存,使用后只能用jQuery</span><br><span class="line"><span class="number">2.</span> <span class="keyword">var</span> a = $.noConflict(<span class="literal">true</span>);  =&gt;  深度转让,jQuery也不能使用,返回值是jQuery</span><br><span class="line"><span class="number">3.</span> $.ajax()</span><br><span class="line"><span class="number">4.</span> $.uniqueSort()  =&gt;  DOM集合去重</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery常用的筛选方法"><a href="#jQuery常用的筛选方法" class="headerlink" title="jQuery常用的筛选方法"></a>jQuery常用的筛选方法</h2><blockquote>
+<p>filter :  同级过滤</p>
+<p>children  :  子集过滤</p>
+<p>find  :  后代过滤</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $link = $(<span class="string">'a'</span>);  =&gt;  获取页面中的所有标签</span><br><span class="line">$link.filter(<span class="string">'.bg'</span>)  =&gt;  进行二次筛选</span><br><span class="line">$(<span class="string">'#box&gt;a'</span>)  ===  $(<span class="string">'#box'</span>).children(<span class="string">'a'</span>)  =&gt;  子代中的a</span><br><span class="line">$(<span class="string">'#box a'</span>)  ===  $(<span class="string">'#box'</span>).find(<span class="string">'a'</span>)  =&gt;  后代中的a</span><br><span class="line">$(<span class="string">'#box'</span>).prev(<span class="string">'a'</span>)  =&gt;  获取上一个哥哥节点 , 且标签名一致</span><br><span class="line">$(<span class="string">'#box'</span>).prevAll(<span class="string">'a'</span>)  =&gt;   所有哥哥节点</span><br><span class="line">$(<span class="string">'#box'</span>).next(<span class="string">'a'</span>)  =&gt; 弟弟元素</span><br><span class="line">$(<span class="string">'#box'</span>).nextAll(<span class="string">'a'</span>)  =&gt; 弟弟元素集合</span><br><span class="line">$(<span class="string">'#box'</span>).parent()</span><br><span class="line">$(<span class="string">'#box'</span>).parents()  =&gt;  祖先元素集合</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery中的遍历循环-gt-each"><a href="#jQuery中的遍历循环-gt-each" class="headerlink" title="jQuery中的遍历循环 =&gt; each"></a>jQuery中的遍历循环 =&gt; each</h2><blockquote>
+<p>jQuery中的each有两种:</p>
+<ol>
+<li>原型中的each : 遍历对象中的每一项</li>
+<li>jQuery中的each  :  用来遍历数组类数组对象等</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> jQuery原型中的each方法</span><br><span class="line">$(<span class="string">'a'</span>).addClass(<span class="string">'bg'</span>);  =&gt;  jQuery中的大部分的获取方法都会默认调用each方法来遍历元素集合</span><br><span class="line">$(<span class="string">'a'</span>).css(attr)  =&gt;  获取的时候只处理第一个</span><br><span class="line">$(<span class="string">'a'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index,item</span>)</span>&#123;  </span><br><span class="line">  方法中的<span class="keyword">this</span>是item  =&gt;  是原生对象</span><br><span class="line">  传递参数的顺序和数组内置的方法相反,先索引后元素</span><br><span class="line">&#125;)</span><br><span class="line"><span class="number">2.</span> jQuery对象中的each</span><br><span class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;&#125;)  =&gt;  <span class="keyword">this</span>还是item(<span class="keyword">this</span>不可能是基础类型的值)</span><br><span class="line">$.each()  =&gt;  再遍历对象的时候也会遍历原型链上的属性 obj.hasOwnProperty(key);</span><br></pre></td></tr></table></figure>
 
       
 
