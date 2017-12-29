@@ -6,20 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ES6新增 | Young&#39;s Blog</title>
+  <title>jquery animation | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js加载的几个方法 window.onload= function(){} &amp;lt;script src=&amp;quot;&amp;quot; async&amp;gt; &amp;lt;script src=&amp;quot;&amp;quot; defer&amp;gt;  BOM history  =&amp;gt;  (浏览器的浏览记录) go()   前进或后退具体的值 forward()   前进 back()   后退   location">
-<meta name="keywords" content="javascript">
+  <meta name="keywords" content="jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6新增">
-<meta property="og:url" content="http://yoursite.com/2017/12/09/ES6新增/index.html">
+<meta property="og:title" content="jquery animation">
+<meta property="og:url" content="http://yoursite.com/2017/12/28/jquery-animation/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="js加载的几个方法 window.onload= function(){} &amp;lt;script src=&amp;quot;&amp;quot; async&amp;gt; &amp;lt;script src=&amp;quot;&amp;quot; defer&amp;gt;  BOM history  =&amp;gt;  (浏览器的浏览记录) go()   前进或后退具体的值 forward()   前进 back()   后退   location">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-10T09:55:19.898Z">
+<meta property="og:updated_time" content="2017-12-28T05:00:36.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6新增">
-<meta name="twitter:description" content="js加载的几个方法 window.onload= function(){} &amp;lt;script src=&amp;quot;&amp;quot; async&amp;gt; &amp;lt;script src=&amp;quot;&amp;quot; defer&amp;gt;  BOM history  =&amp;gt;  (浏览器的浏览记录) go()   前进或后退具体的值 forward()   前进 back()   后退   location">
+<meta name="twitter:title" content="jquery animation">
   
   
     <link rel="icon" href="/title.ico">
@@ -159,125 +156,27 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ES6新增" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-jquery-animation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ES6新增
+      jquery animation
     </h1>
   
 
         
-        <a href="/2017/12/09/ES6新增/" class="archive-article-date">
-  	<time datetime="2017-12-09T10:43:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-09</time>
+        <a href="/2017/12/28/jquery-animation/" class="archive-article-date">
+  	<time datetime="2017-12-28T04:30:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="js加载的几个方法"><a href="#js加载的几个方法" class="headerlink" title="js加载的几个方法"></a>js加载的几个方法</h2><ol>
-<li>window.onload= function(){}</li>
-<li><code>&lt;script src=&quot;&quot; async&gt;</code></li>
-<li><code>&lt;script src=&quot;&quot; defer&gt;</code></li>
-</ol>
-<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><ul>
-<li>history  =&gt;  (浏览器的浏览记录)<ul>
-<li>go()   前进或后退具体的值</li>
-<li>forward()   前进</li>
-<li>back()   后退</li>
-</ul>
-</li>
-<li>location<ul>
-<li>hash</li>
-<li>host</li>
-<li>hostname</li>
-<li>href     decodeURIComponent</li>
-</ul>
-</li>
-</ul>
-<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><ul>
-<li>localeCompare  =&gt; 比较字符的顺序<ul>
-<li>‘a’.localeCompare(“b”)    前面返回-1 , 后面返回1</li>
-</ul>
-</li>
-<li>includes(‘a’,index)  =&gt;  判断字符串中是否有指定字符  返回值是true或者false  第二个参数是查找的起始位置</li>
-<li>repeat(index)   =&gt;  将字符串重复几次</li>
-<li>startsWith(‘xx’,index)  =&gt;  第二个参数表示开始查找的索引</li>
-<li>endsWith</li>
-<li>padStart(hopeLength, ‘str’)   =&gt;  第一个参数得到新字符串的长度,第二个参数从字符串中去除字符充填到新字符串的前面   <code>str.padStart(8,&#39;aaa&#39;)</code>   充填的长度是期望的长度  -  调用字符串的长度</li>
-<li>padEnd(hopeLength,’str’)</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(obj,attr);   <span class="comment">// 检测对象某个属性的具体参数</span></span><br></pre></td></tr></table></figure>
-<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><ul>
-<li>Array.of()</li>
-<li>Array.from()   =&gt;  可以传数组或者类数组  ,  返回值是一个数组  =&gt;  将类数组转数组或者复制数组</li>
-<li>Array.isArray()</li>
-<li>fill(‘str’,n,m)  =&gt; 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素。</li>
-</ul>
-<p><code>Array(7).fill(1)</code>    =&gt;   得到一个有7个1的数组</p>
-<p>数组的空位 =&gt;  ES6 是 处理为undefined  ES5之前是略过  包括迭代方法都是如此ES5的会直接跳过空位的</p>
-<ul>
-<li><p>find</p>
-</li>
-<li><p>copyWithin(target,start,end)   =&gt;  截取start-end 然后从target位置开始覆盖  , 数组的长度也是不变的</p>
-</li>
-<li><p>valueof()  当前的数组</p>
-</li>
-<li><p>find()   回调函数函数的return的值为true 则停止查找返回当前项  返回 undefined</p>
-<ul>
-<li><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find(<span class="function">(<span class="params">item,index,arr</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="comment">//  回调函数函数的return的值为true 则停止查找返回当前项</span></span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">typeof</span> item == <span class="string">'object'</span>;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>findIndex()  回调函数函数的return的值为true 则停止查找返回当前项对应的索引  或者-1</p>
-</li>
-<li><p>every((item,index,arr)=&gt;{})   里面的回调函数都返回true的 返回值就是true 否则false</p>
-</li>
-<li><p>some()   里面的回调函数只要有返回true的 返回值就是true  否则false</p>
-</li>
-<li><p>reduce((prev,cur,index,arr)=&gt;{},10)  =&gt;   prev上一个函数的返回值,cur当前项</p>
-<ul>
-<li>prev第一次默认为0 , 可以设置默认值 10   返回值 函数累计处理的结果</li>
-</ul>
-</li>
-<li><p>reduceRight((prev,cur,index,arr)=&gt;{},10)</p>
-</li>
-</ul>
-<h2 id="for-of"><a href="#for-of" class="headerlink" title="for of"></a>for of</h2><blockquote>
-<p>遍历的是数组和类数组中的值</p>
-<p>ary.entries()  =&gt; 将每一项的索引和值放到一个数组中  ary.keys() =&gt; 数组中的索引  ary.values() =&gt; 数组的值</p>
-<p>可以使用解构赋值</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> item <span class="keyword">of</span> arr.keys())&#123;</span><br><span class="line">  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="classList"><a href="#classList" class="headerlink" title="classList"></a>classList</h2><blockquote>
-<p>是一个数组</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElemenyById(<span class="string">'box'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(box.classList);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>add(classname,classname)</li>
-<li>remove(classname)</li>
-</ul>
-<h2 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;;</span><br><span class="line"><span class="keyword">let</span> &#123;a,b&#125; = obj; <span class="comment">// a=1,b=2</span></span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">a</span>:n,<span class="attr">b</span>:m&#125; = obj;  <span class="comment">// n=1,n=2</span></span><br></pre></td></tr></table></figure>
-<h4 id="对象数组的嵌套"><a href="#对象数组的嵌套" class="headerlink" title="对象数组的嵌套"></a>对象数组的嵌套</h4><ul>
-<li>如果对象里面嵌套对象外面对象的值为undefined则会报错</li>
-<li>如果后面的不是对象会将其转换为对象 Object()  基础数据类型会将其转化为对应类的实例</li>
-<li>null 和 undefined是无法转为对象的,所以会报错   </li>
-</ul>
-<h2 id="字符串的解构赋值及新方法"><a href="#字符串的解构赋值及新方法" class="headerlink" title="字符串的解构赋值及新方法"></a>字符串的解构赋值及新方法</h2><blockquote>
-<p>字符串的解构赋值是将字符串转为类似数组的对象进行赋值,一一对应,字符串中还有length这个属性,可以对其进行解构赋值</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> str = <span class="string">'12345'</span>;</span><br><span class="line"><span class="keyword">let</span> [x,y,z] = str <span class="comment">// x=1,y=2,z=3</span></span><br><span class="line"><span class="keyword">let</span> &#123;length&#125; = str <span class="comment">// length = 5;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>includes()  =&gt;  字符串中的方法不会修改原字符串的方法  判断原字符串中是否含有这个字符</li>
-<li>startsWith(‘’,2)  =&gt;  第二个参数开始查找的索引</li>
-<li>endsWith</li>
-<li>repeat()  将字符串重复几次,正数向下取整,负数/Infinity会报错    NaN 0次 其他类型现将其他类型转换为数字</li>
-</ul>
-
+        
       
 
       
@@ -311,7 +210,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
         		</li>
       		
 		</ul>
@@ -367,7 +266,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/09/ES6新增/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/28/jquery-animation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -381,15 +280,11 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/12/09/js变量提升作用域和闭包/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js变量提升作用域和闭包
-        
-      </div>
-    </a>
   
+    <a href="/2017/12/27/ES6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Babel</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 

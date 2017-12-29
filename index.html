@@ -156,6 +156,211 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jquery-animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/28/jquery-animation/">jquery animation</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/28/jquery-animation/" class="archive-article-date">
+  	<time datetime="2017-12-28T04:30:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/28/jquery-animation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/27/ES6/">Babel</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/27/ES6/" class="archive-article-date">
+  	<time datetime="2017-12-27T11:27:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="babel的安装使用"><a href="#babel的安装使用" class="headerlink" title="babel的安装使用"></a>babel的安装使用</h2><blockquote>
+<p>babel是用来将用ES6新的语法标准书写的代码转换为更为兼容的ES5的语法标准的代码</p>
+<p>babel需要在node环境下运行</p>
+</blockquote>
+<ul>
+<li>安装babel  <ul>
+<li><code>npm install --save-dev babel-cli babel-preset-env</code></li>
+</ul>
+</li>
+<li>在项目目录中添加 .babelrc文件</li>
+</ul>
+<ul>
+<li>翻译环境包<ul>
+<li><code>npm install babel-preset-latest   npm install babel-preset-stage-2</code></li>
+</ul>
+</li>
+<li>常用的babel命令<ul>
+<li><code>babel -h</code>  查看帮助</li>
+<li><code>babel -V</code> 查看版本</li>
+<li><code>babel --out-file  -o</code>  单个文件进行编译</li>
+<li><code>babel --out-dir  -d</code>  整个文件夹进行编译</li>
+<li><code>babel --watch  -w</code>  监听文件中代码的改变,改变后自动进行编译</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p> 注意使用babel进行编译的时候默认编译成严格模式</p>
+<p><strong>非严格模式有形参和arguments的映射机制,但是严格模式下arguments和形参的映射就不存在了</strong></p>
+<p>所以在使用ES6的时候尽量使用严格模式来进行编写</p>
+</blockquote>
+<h2 id="ES6块级作用域"><a href="#ES6块级作用域" class="headerlink" title="ES6块级作用域"></a>ES6块级作用域</h2><ul>
+<li>let</li>
+</ul>
+<blockquote>
+<p>会形成暂时性死区,没有变量提升,不能重复声明</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)  =&gt; ES6没有变量提升但是会提前找到<span class="keyword">let</span>的声明,所以会报错</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>()&#123;&#125;</span><br><span class="line"><span class="keyword">for</span>()&#123;&#125;  =&gt; 形成块级作用域 =&gt; 类似闭包</span><br><span class="line"><span class="keyword">try</span>&#123;&#125;<span class="keyword">catch</span>()&#123;&#125;  =&gt;  每个大括号都是块级作用域</span><br></pre></td></tr></table></figure>
+<ul>
+<li>const</li>
+</ul>
+<blockquote>
+<p>会形成暂时性死区,没有变量提升,不能重复声明  =&gt;  与let的区别在于创建的值无法修改</p>
+<p><strong>但是在js中引用类型的值代表的是空间地址,地址无法修改但是里面的内容可以被修改</strong></p>
+</blockquote>
+<h2 id="ES6中创建变量的几种方法"><a href="#ES6中创建变量的几种方法" class="headerlink" title="ES6中创建变量的几种方法"></a>ES6中创建变量的几种方法</h2><ol>
+<li><p><code>var</code>    (变量提升,重复声明)</p>
+</li>
+<li><p><code>function</code>   (变量提升,重复声明)</p>
+</li>
+<li><p><code>let</code>    ES6变量  (无变量提升,块级作用域)</p>
+</li>
+<li><p><code>const</code>   ES6常量 (不可重复声明)</p>
+</li>
+<li><p><code>class</code>  ES6创建类的方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>.x  =&gt; 私有方法</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.fn  =&gt;  公有方法</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  <span class="comment">//类自有的方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>import</code>  ES6模块导入的方式</p>
+</li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/27/ES6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -251,14 +456,14 @@ var _hmt = _hmt || [];
 <p>jQuery.prototype中有很多方法,这些方法时让我们在创建jquery对象的时候使用的</p>
 <p>jQuery本身也是一个对象,自身有很多的方法 :  \$.ajax  /  isFunction  /  unique</p>
 </blockquote>
-<h4 id="jQuery原型上的方法"><a href="#jQuery原型上的方法" class="headerlink" title="jQuery原型上的方法"></a>jQuery原型上的方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).index() =&gt;  获取索引</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).data()  =&gt;  获取自定义属性或者设置  :  HTML结构上不会显示</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).removedata()  =&gt;  移除自定义属性</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).attr()  =&gt;  一般操作元素属性</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).prop()  =&gt;  一般用来操作表单元素的内置或者自定义属性</span><br><span class="line"><span class="number">6.</span> $(<span class="string">'#box'</span>).addClass  =&gt;  添加</span><br><span class="line"><span class="number">7.</span> $(<span class="string">'#box'</span>).removeClass  =&gt;  移除</span><br><span class="line"><span class="number">8.</span> $(<span class="string">'#box'</span>).toggleClass  =&gt;  切换开关</span><br><span class="line"><span class="number">9.</span> $(<span class="string">'#box'</span>).hasClass</span><br><span class="line"></span><br><span class="line"><span class="comment">//  设置属性内容</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).html()  =&gt;  获取或者设置内容  ==  innerHTML</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).text()  =&gt; 操作文本内容</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).val()  =&gt;  操作表单元素的value值</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).css()  =&gt;  设置获取样式,获取的结果没有去单位</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).offset() &#123;top,left&#125;  =&gt; 获取到body的偏移</span><br><span class="line"></span><br><span class="line"><span class="comment">//  盒子模型</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).position()  =&gt;  获取到父级参照物的偏移</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).scrollTop / <span class="function"><span class="params">scrollLeft</span>  =&gt;</span>  获取或者设置scrollTop/Left</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).height/<span class="function"><span class="params">width</span>  =&gt;</span>  获取设置宽高</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).innerHeight/<span class="function"><span class="params">innerWidth</span>  =&gt;</span>  clientHeight/clientWidth</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).outerHeight/<span class="function"><span class="params">outerWidth</span>  =&gt;</span>  offsetHeight/offsetWidth</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件绑定</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件处理</span></span><br><span class="line"><span class="number">1.</span> parent.append(child)</span><br><span class="line"><span class="number">2.</span> child.appendTo(parent)</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).empty() =&gt; 清空</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).remove() =&gt; 移除自身</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).clone(<span class="literal">true</span>/<span class="literal">false</span>)  =&gt; 深度或者浅度吃鸡</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery原型上的方法"><a href="#jQuery原型上的方法" class="headerlink" title="jQuery原型上的方法"></a>jQuery原型上的方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).index() =&gt;  获取索引</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).data()  =&gt;  获取自定义属性或者设置  :  HTML结构上不会显示</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).removedata()  =&gt;  移除自定义属性</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).attr()  =&gt;  一般操作元素属性,显示在标签上</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).prop()  =&gt;  一般用来操作表单元素的内置或者自定义属性,类似于 . (内置才显示在HTML中)</span><br><span class="line"><span class="number">6.</span> $(<span class="string">'#box'</span>).addClass  =&gt;  添加</span><br><span class="line"><span class="number">7.</span> $(<span class="string">'#box'</span>).removeClass  =&gt;  移除</span><br><span class="line"><span class="number">8.</span> $(<span class="string">'#box'</span>).toggleClass  =&gt;  切换开关</span><br><span class="line"><span class="number">9.</span> $(<span class="string">'#box'</span>).hasClass</span><br><span class="line"></span><br><span class="line"><span class="comment">//  设置属性内容</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).html()  =&gt;  获取或者设置内容  ==  innerHTML</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).text()  =&gt; 操作文本内容</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).val()  =&gt;  操作表单元素的value值</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).css()  =&gt;  设置获取样式,获取的结果没有去单位</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).offset() &#123;top,left&#125;  =&gt; 获取到body的偏移</span><br><span class="line"></span><br><span class="line"><span class="comment">//  盒子模型</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).position()  =&gt;  获取到父级参照物的偏移</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).scrollTop / <span class="function"><span class="params">scrollLeft</span>  =&gt;</span>  获取或者设置scrollTop/Left</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).height/<span class="function"><span class="params">width</span>  =&gt;</span>  获取设置宽高</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).innerHeight/<span class="function"><span class="params">innerWidth</span>  =&gt;</span>  clientHeight/clientWidth  可以设置,设置时padding不变改变宽高</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).outerHeight/outerWidth(<span class="literal">true</span>)  =&gt;  offsetHeight/offsetWidth  不加<span class="literal">true</span>为offset , 加<span class="literal">true</span>包含margin</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件绑定</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件处理</span></span><br><span class="line"><span class="number">1.</span> parent.append(child)</span><br><span class="line"><span class="number">2.</span> child.appendTo(parent)</span><br><span class="line"><span class="number">3.</span> parent.prepend(child)</span><br><span class="line"><span class="number">4.</span> child.prependTo(parent)</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).empty() =&gt; 清空</span><br><span class="line"><span class="number">6.</span> $(<span class="string">'#box'</span>).remove() =&gt; 移除自身</span><br><span class="line"><span class="number">7.</span> $(<span class="string">'#box'</span>).clone(<span class="literal">true</span>/<span class="literal">false</span>)  =&gt; 深度或者浅度</span><br><span class="line"><span class="number">8.</span> $(<span class="string">'#box'</span>).insertBefore(<span class="string">"#box1"</span>)</span><br><span class="line"><span class="number">9.</span> $(<span class="string">'#box'</span>).insertAfter(<span class="string">"#box1"</span>)</span><br></pre></td></tr></table></figure>
 <h4 id="jQuery的自有属性"><a href="#jQuery的自有属性" class="headerlink" title="jQuery的自有属性"></a>jQuery的自有属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">var</span> a = $.noConflict();  =&gt;  防止$的冲突,进行多库共存,使用后只能用jQuery</span><br><span class="line"><span class="number">2.</span> <span class="keyword">var</span> a = $.noConflict(<span class="literal">true</span>);  =&gt;  深度转让,jQuery也不能使用,返回值是jQuery</span><br><span class="line"><span class="number">3.</span> $.ajax()</span><br><span class="line"><span class="number">4.</span> $.uniqueSort()  =&gt;  DOM集合去重</span><br></pre></td></tr></table></figure>
 <h2 id="jQuery常用的筛选方法"><a href="#jQuery常用的筛选方法" class="headerlink" title="jQuery常用的筛选方法"></a>jQuery常用的筛选方法</h2><blockquote>
 <p>filter :  同级过滤</p>
 <p>children  :  子集过滤</p>
 <p>find  :  后代过滤</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $link = $(<span class="string">'a'</span>);  =&gt;  获取页面中的所有标签</span><br><span class="line">$link.filter(<span class="string">'.bg'</span>)  =&gt;  进行二次筛选</span><br><span class="line">$(<span class="string">'#box&gt;a'</span>)  ===  $(<span class="string">'#box'</span>).children(<span class="string">'a'</span>)  =&gt;  子代中的a</span><br><span class="line">$(<span class="string">'#box a'</span>)  ===  $(<span class="string">'#box'</span>).find(<span class="string">'a'</span>)  =&gt;  后代中的a</span><br><span class="line">$(<span class="string">'#box'</span>).prev(<span class="string">'a'</span>)  =&gt;  获取上一个哥哥节点 , 且标签名一致</span><br><span class="line">$(<span class="string">'#box'</span>).prevAll(<span class="string">'a'</span>)  =&gt;   所有哥哥节点</span><br><span class="line">$(<span class="string">'#box'</span>).next(<span class="string">'a'</span>)  =&gt; 弟弟元素</span><br><span class="line">$(<span class="string">'#box'</span>).nextAll(<span class="string">'a'</span>)  =&gt; 弟弟元素集合</span><br><span class="line">$(<span class="string">'#box'</span>).parent()</span><br><span class="line">$(<span class="string">'#box'</span>).parents()  =&gt;  祖先元素集合</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $link = $(<span class="string">'a'</span>);  =&gt;  获取页面中的所有标签</span><br><span class="line">$link.filter(<span class="string">'.bg'</span>)  =&gt;  进行二次筛选</span><br><span class="line">$(<span class="string">'#box&gt;a'</span>)  ===  $(<span class="string">'#box'</span>).children(<span class="string">'a'</span>)  =&gt;  子代中的a</span><br><span class="line">$(<span class="string">'#box a'</span>)  ===  $(<span class="string">'#box'</span>).find(<span class="string">'a'</span>)  =&gt;  后代中的a</span><br><span class="line">$(<span class="string">'#box'</span>).prev(<span class="string">'a'</span>)  =&gt;  获取上一个哥哥节点 , 且标签名一致</span><br><span class="line">$(<span class="string">'#box'</span>).prevAll(<span class="string">'a'</span>)  =&gt;   所有哥哥节点</span><br><span class="line">$(<span class="string">'#box'</span>).next(<span class="string">'a'</span>)  =&gt; 弟弟元素</span><br><span class="line">$(<span class="string">'#box'</span>).nextAll(<span class="string">'a'</span>)  =&gt; 弟弟元素集合</span><br><span class="line">$(<span class="string">'#box'</span>).parent()</span><br><span class="line">$(<span class="string">'#box'</span>).parents()  =&gt;  祖先元素集合</span><br><span class="line">$(<span class="string">'#box'</span>).siblings()  =&gt;  兄弟节点</span><br></pre></td></tr></table></figure>
 <h2 id="jQuery中的遍历循环-gt-each"><a href="#jQuery中的遍历循环-gt-each" class="headerlink" title="jQuery中的遍历循环 =&gt; each"></a>jQuery中的遍历循环 =&gt; each</h2><blockquote>
 <p>jQuery中的each有两种:</p>
 <ol>
@@ -274,6 +479,13 @@ var _hmt = _hmt || [];
 </ol>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$.extend(<span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$.aa()</span><br><span class="line">$.fn.extend(<span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$().aa()</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h2><blockquote>
+<p>stop : 结束当前动画执行下一个动画</p>
+<p>finish : 立即执行完当前动画,从目标位置开始执行下一个动画</p>
+<p>animate([target],[duration],[effect],[callback]);</p>
+<p>effect :  linear ,  ease ,  ease-in ,  ease-out  ,  ease-in-out </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">show(<span class="number">1000</span>/fast/slow)</span><br><span class="line">hide()</span><br><span class="line">toggle()</span><br><span class="line"></span><br><span class="line">fadeIn</span><br><span class="line">fadeOut</span><br><span class="line">fadeToggle</span><br><span class="line"></span><br><span class="line">slideUp</span><br><span class="line">slideDown</span><br><span class="line">slideToggle</span><br></pre></td></tr></table></figure>
 
       
 
@@ -1570,6 +1782,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
               </li>
             
             <div class="clearfix"></div>
