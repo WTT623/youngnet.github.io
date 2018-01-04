@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="Young&#39;s Blog">
 <meta property="og:description" content="1.定时器 定时器是异步的 定时器是有返回值的,是一个数字,代表他是第几个定时器(注意:第几个跟执行顺序没有关系,你写的他是第几个就是第几个) 清除定时器参数是一个数字,表示第几个定时器(清除定时器原理是将定时器中的函数阻止了,这个定时器本身还是在的,他的序号还在) 清除定时器的时候,如果你知道这个是第几个定时器那么直接可以写一个数字,但是开发中可能好多个,就容易乱套.此时一般都是用一个变量来接收">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-10T09:18:57.221Z">
+<meta property="og:image" content="http://yoursite.com/2017/12/09/img/class.png">
+<meta property="og:updated_time" content="2018-01-03T08:16:12.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js变量提升作用域和闭包">
 <meta name="twitter:description" content="1.定时器 定时器是异步的 定时器是有返回值的,是一个数字,代表他是第几个定时器(注意:第几个跟执行顺序没有关系,你写的他是第几个就是第几个) 清除定时器参数是一个数字,表示第几个定时器(清除定时器原理是将定时器中的函数阻止了,这个定时器本身还是在的,他的序号还在) 清除定时器的时候,如果你知道这个是第几个定时器那么直接可以写一个数字,但是开发中可能好多个,就容易乱套.此时一般都是用一个变量来接收">
+<meta name="twitter:image" content="http://yoursite.com/2017/12/09/img/class.png">
   
   
     <link rel="icon" href="/title.ico">
@@ -248,6 +250,7 @@ var _hmt = _hmt || [];
 <li>给一个元素绑定事件,给谁绑的this就是谁</li>
 <li>自执行函数this是window</li>
 <li>函数当做参数的时候执行函数中的this是window</li>
+<li>构造函数不能使用箭头函数</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    number:<span class="number">4</span>,</span><br><span class="line">    fn1:(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.number*=<span class="number">2</span>;</span><br><span class="line">        number=number*<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">var</span> number=<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.number*=<span class="number">2</span>;</span><br><span class="line">            number*=<span class="number">3</span>;</span><br><span class="line">            alert(number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)()</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn1=obj.fn1;</span><br><span class="line">alert(number);</span><br><span class="line">fn1();</span><br><span class="line">obj.fn1();</span><br><span class="line">alert(<span class="built_in">window</span>.number);</span><br><span class="line">alert(obj.number);</span><br></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">box.fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;box增加一个自定义属性</span><br><span class="line">box.fn();</span><br><span class="line">box.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>==box</span><br><span class="line">    <span class="comment">//box.fn();this.fn()</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.setTimeout(box.fn,<span class="number">2000</span>);<span class="comment">//this:window</span></span><br></pre></td></tr></table></figure>
@@ -274,6 +277,11 @@ var _hmt = _hmt || [];
 <li>in:公有属性和私有属性都可以判断</li>
 <li>hasOwnProperty:判断是不是自己的私有属性</li>
 </ul>
+<h4 id="11-类的继承"><a href="#11-类的继承" class="headerlink" title="11. 类的继承"></a>11. 类的继承</h4><blockquote>
+<p><code>Object.assign()</code> 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  b.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">Object</span>.assign(A.prototype,B.prototype)</span><br><span class="line"></span><br><span class="line">ES6中的类继承</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>.a =<span class="string">'a'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  getA()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">super</span>()  <span class="comment">// A.call(this)  相当于A本身</span></span><br><span class="line">    <span class="keyword">this</span>.b = <span class="string">'b'</span></span><br><span class="line">  &#125;</span><br><span class="line">  getB()&#123;</span><br><span class="line">    <span class="built_in">console</span>(<span class="keyword">super</span>)</span><br><span class="line">    <span class="keyword">super</span>.getA();  <span class="comment">//  super相当于B的实例</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="../img/class.png" alt="ES6类继承"></p>
 
       
 
@@ -432,7 +440,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Young
+    		&copy; 2018 Young
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

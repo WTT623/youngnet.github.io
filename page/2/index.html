@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ES6新增 | Young&#39;s Blog</title>
+  <title>Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js加载的几个方法 window.onload= function(){} &amp;lt;script src=&amp;quot;&amp;quot; async&amp;gt; &amp;lt;script src=&amp;quot;&amp;quot; defer&amp;gt;  BOM history  =&amp;gt;  (浏览器的浏览记录) go()   前进或后退具体的值 forward()   前进 back()   后退   location">
-<meta name="keywords" content="javascript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ES6新增">
-<meta property="og:url" content="http://yoursite.com/2017/12/09/ES6新增/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Young&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="js加载的几个方法 window.onload= function(){} &amp;lt;script src=&amp;quot;&amp;quot; async&amp;gt; &amp;lt;script src=&amp;quot;&amp;quot; defer&amp;gt;  BOM history  =&amp;gt;  (浏览器的浏览记录) go()   前进或后退具体的值 forward()   前进 back()   后退   location">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-29T16:01:54.233Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ES6新增">
-<meta name="twitter:description" content="js加载的几个方法 window.onload= function(){} &amp;lt;script src=&amp;quot;&amp;quot; async&amp;gt; &amp;lt;script src=&amp;quot;&amp;quot; defer&amp;gt;  BOM history  =&amp;gt;  (浏览器的浏览记录) go()   前进或后退具体的值 forward()   前进 back()   后退   location">
+<meta name="twitter:title" content="Young&#39;s Blog">
   
   
     <link rel="icon" href="/title.ico">
@@ -159,14 +154,339 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ES6新增" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-jsDOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      ES6新增
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/10/jsDOM/">jsDOM</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/10/jsDOM/" class="archive-article-date">
+  	<time datetime="2017-12-10T09:12:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="js-盒子模型"><a href="#js-盒子模型" class="headerlink" title="js 盒子模型"></a>js 盒子模型</h1><h2 id="css盒子模型"><a href="#css盒子模型" class="headerlink" title="css盒子模型"></a>css盒子模型</h2><blockquote>
+<p>传统css盒子模型: width height padding border    </p>
+<p>盒子的宽度 = width+border-left+border-right + padding-right +padding-left</p>
+<p>css3的盒子模型:</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">box-sizing</span>: content-box;  <span class="comment">/* 传统的css盒模型 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* width 包含了padding 和 border */</span></span><br><span class="line"><span class="comment">/* 修改padding 和 border 盒子的大小不变,内容的大小改变 */</span></span><br></pre></td></tr></table></figure>
+<h2 id="js盒模型的属性"><a href="#js盒模型的属性" class="headerlink" title="js盒模型的属性"></a>js盒模型的属性</h2><blockquote>
+<p>提供一些属性和方法用来描述当前盒子的样式</p>
+</blockquote>
+<h4 id="clientWidth-和-clientHeight"><a href="#clientWidth-和-clientHeight" class="headerlink" title="clientWidth 和 clientHeight"></a>clientWidth 和 clientHeight</h4><blockquote>
+<p>当前盒子可视区域的宽度和高度</p>
+<p><strong>可视区域 : 内容的宽高+padding</strong></p>
+<p><strong>和内容是否溢出以及是否设置了overflow:hidden没有区别</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  获取当前页面一屏幕的宽度  (一般项目中Html和head的宽高是一致的)</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth</span><br></pre></td></tr></table></figure>
+<h5 id="将盒子在页面中居中"><a href="#将盒子在页面中居中" class="headerlink" title="将盒子在页面中居中"></a>将盒子在页面中居中</h5><ol>
+<li>使用css来实现</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">	<span class="attribute">position </span>: absolute;</span><br><span class="line">  	<span class="attribute">top</span>:<span class="number">50%</span>;</span><br><span class="line">  	<span class="attribute">left</span>:<span class="number">50%</span>;</span><br><span class="line">  	<span class="attribute">margin-left</span>:-<span class="number">50px</span>;</span><br><span class="line">  	<span class="attribute">margin-right</span>:-<span class="number">50px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">position </span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>:<span class="number">0</span>;</span><br><span class="line">  <span class="attribute">margin </span>: auto;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">background</span>:red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">使用<span class="selector-tag">css3</span>的<span class="selector-tag">flex</span>伸缩盒模型</span><br><span class="line"><span class="selector-tag">html</span>&#123;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>:flex;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">flex-flow</span>: row wrap;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">  <span class="attribute">justify-content</span>:center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>:<span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>:<span class="number">200px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>使用js解决</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.box &#123;</span><br><span class="line">  width:<span class="number">200</span>px;</span><br><span class="line">  height:<span class="number">200</span>px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> box = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="keyword">var</span> winW = <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth;</span><br><span class="line"><span class="keyword">var</span> winH = <span class="built_in">document</span>.documentElement.clientHeight || <span class="built_in">document</span>.body.clientHeight;</span><br><span class="line">box.style.top = (winW-box.clientHeight)/<span class="number">2</span>;</span><br><span class="line">box.style.left = (winW - box.clientWidth)/<span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="clientTop-和-clientLeft"><a href="#clientTop-和-clientLeft" class="headerlink" title="clientTop 和 clientLeft"></a>clientTop 和 clientLeft</h4><blockquote>
+<p>只有Top和Left<br>clientTop: 盒子上边框的高度<br>clientLeft: 盒子左边框的宽度<br>获得border-width</p>
+<p>通过js获取的border-width的值是Number类型不带单位会自动四舍五入</p>
+<p>与通过css设置的小数的值不同</p>
+</blockquote>
+<h4 id="offsetWidth-和-offsetHeight"><a href="#offsetWidth-和-offsetHeight" class="headerlink" title="offsetWidth 和 offsetHeight"></a>offsetWidth 和 offsetHeight</h4><blockquote>
+<p>在clientWidth和clientHeight的基础上加上边框</p>
+<p>width+padding+border</p>
+<p>和内容溢出没有关系</p>
+</blockquote>
+<h4 id="scrollWidth-和-scrollHeight"><a href="#scrollWidth-和-scrollHeight" class="headerlink" title="scrollWidth 和 scrollHeight"></a>scrollWidth 和 scrollHeight</h4><ul>
+<li>主要用来获得当前页面的真实高度和宽度</li>
+</ul>
+<p><code>document.documentElement.scrollWidth || document.body.scrollWidth</code></p>
+<p><code>document.documentElement.scrollHeight || document.body.scrollHeight</code></p>
+<blockquote>
+<p>没有内容溢出的时候, 获得的结果和clientWidth和clientHeight获得的结果一样</p>
+<p>在有内容溢出的情况下</p>
+<p><strong>表示真实内容的高度和高度,包含溢出的内容,再加上padding-left或者padding-top(padding-bottom和padding-right已经被覆盖了)</strong>;</p>
+<p>当有内容溢出的情况下, 我们通过scrollWidth 或者scrollHeight获得的结果是一个约等于的值</p>
+<ol>
+<li>有内容溢出,每个浏览器对于行高或者文字的渲染不一样,返回结果也不一样</li>
+<li>是否设置overflow:hidden 对最后的结果也有影响</li>
+</ol>
+</blockquote>
+<h2 id="获取元素的所有样式值"><a href="#获取元素的所有样式值" class="headerlink" title="获取元素的所有样式值"></a>获取元素的所有样式值</h2><blockquote>
+<p>通过obj.style.attr 的方式只能获取到obj的行内的样式</p>
+<p>只要元素存在就可以获得其所有样式值,包括默认的样式</p>
+<p><code>window.getComputedStyle||currentStyle</code>  :  <strong>获取元素的所有样式</strong></p>
+<p>window.getComputedStyle(obj , [当前元素的伪类]).paddingLeft    </p>
+<p>obj.currentStyle (IE6~8)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  getCss 获取元素的属性值</span></span><br><span class="line"><span class="comment">*  @parameter  </span></span><br><span class="line"><span class="comment">*  curEle 操作的元素</span></span><br><span class="line"><span class="comment">*  attr  需要获取的属性值</span></span><br><span class="line"><span class="comment">*  @return 获取的属性值</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCss</span>(<span class="params">curEle,attr</span>)</span>&#123;</span><br><span class="line">  	<span class="keyword">var</span> value = <span class="literal">null</span>;</span><br><span class="line">  	<span class="keyword">if</span>(<span class="string">'getComputedStyle'</span> <span class="keyword">in</span> <span class="built_in">window</span>)&#123;</span><br><span class="line">    	value = <span class="built_in">window</span>.getComputedStyle(curEle,<span class="literal">null</span>)[attr];</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      value = curEle.currentStyle[attr];</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="父级盒子参照物及盒子偏移量"><a href="#父级盒子参照物及盒子偏移量" class="headerlink" title="父级盒子参照物及盒子偏移量"></a>父级盒子参照物及盒子偏移量</h2><blockquote>
+<p><code>offsetParent</code>: 父级参照物(和父级元素没有直接关系)</p>
+<p>document.body.offsetParent = null</p>
+<p>默认情况下一个页面的父级参照物都是body</p>
+<p>当页面的元素脱离文档流则他里面的子元素的父级参照物会变成定位的元素</p>
+<p><code>offsetLeft   offsetTop</code></p>
+<p>当前元素的外边框 距离 父级参照物的内边框 的偏移量</p>
+</blockquote>
+<h2 id="当前浏览器信息的判断"><a href="#当前浏览器信息的判断" class="headerlink" title="当前浏览器信息的判断"></a>当前浏览器信息的判断</h2><blockquote>
+<p>/MSIE 8/i.test(navigator.useragent);</p>
+</blockquote>
+<h2 id="scrollLeft-和-scrollTop"><a href="#scrollLeft-和-scrollTop" class="headerlink" title="scrollLeft 和 scrollTop"></a>scrollLeft 和 scrollTop</h2><blockquote>
+<p>横向和竖向滚动条卷去的高度</p>
+<p><code>document.documentELement.scrollTop || document.body.scrollTop</code></p>
+<p>最小值 0;</p>
+<p>最大值 scrollHeight - clientHeight; =&gt; 整屏高度 - 窗口高度</p>
+<p><strong>前面的属性都是只读的,这个属性是可修改的</strong></p>
+<p>compatibility  =&gt;  兼容性    </p>
+</blockquote>
+<p>-webkit-linear-gradient  线性渐变</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/10/jsDOM/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js变量提升作用域和闭包" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/09/js变量提升作用域和闭包/">js变量提升作用域和闭包</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/09/js变量提升作用域和闭包/" class="archive-article-date">
+  	<time datetime="2017-12-09T12:43:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-定时器"><a href="#1-定时器" class="headerlink" title="1.定时器"></a>1.定时器</h3><ul>
+<li>定时器是异步的</li>
+<li>定时器是有返回值的,是一个数字,代表他是第几个定时器(注意:第几个跟执行顺序没有关系,你写的他是第几个就是第几个)</li>
+<li>清除定时器参数是一个数字,表示第几个定时器(清除定时器原理是将定时器中的函数阻止了,这个定时器本身还是在的,他的序号还在)</li>
+<li>清除定时器的时候,如果你知道这个是第几个定时器那么直接可以写一个数字,但是开发中可能好多个,就容易乱套.此时一般都是用一个变量来接收这个定时器的序号,清除的时候就准确了</li>
+<li>定时器容易造成累加,没有用的一定要清除掉</li>
+</ul>
+<h3 id="2-引用数据类型"><a href="#2-引用数据类型" class="headerlink" title="2.引用数据类型"></a>2.引用数据类型</h3><ul>
+<li>存储引用数据类型的过程中拿不到obj 的值,存完了才可以拿到obj的值</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    name:<span class="string">'js'</span>,</span><br><span class="line">    can:(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(obj);</span><br><span class="line">        <span class="keyword">return</span> obj.name;</span><br><span class="line">    &#125;)(),</span><br><span class="line">    <span class="keyword">do</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数可以增加自定义属性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line">fn.index=<span class="string">"哈哈"</span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数的name属性</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>构造暗函数方式创建的函数name都是 <span class="string">'anonymous'</span></span><br><span class="line"><span class="keyword">var</span> f=<span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"var a=1"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(f.name);<span class="comment">//'anonymous'</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>使用bind方法得到一个新的函数</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ff</span>(<span class="params"></span>)</span>&#123;&#125;;</span><br><span class="line"><span class="keyword">var</span> f=ff.bind();</span><br><span class="line">f.name 是 bound ff</span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数的length</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">形参没有默认值时候,函数的length就表示形参的长度</span><br><span class="line"></span><br><span class="line">有默认值时候会影响</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x,y=<span class="number">1</span>,z</span>)</span>&#123;&#125;</span><br><span class="line">fn.length ==<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-变量提声"><a href="#3-变量提声" class="headerlink" title="3.变量提声"></a>3.变量提声</h3><ul>
+<li>什么是变量提声<br><code>在作用域形参之后代码执行之前,先把所有带var和function关键字的提前的声明或者定义</code></li>
+<li>var和function区别<br><code>var 只声明不定义,function既声明又定义</code></li>
+<li>ES6中的let和const不进行变量提声</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>没有变量提声</span><br><span class="line"><span class="number">2.</span>不可以重复声明</span><br><span class="line"><span class="number">3.</span>全局下声明的变量不会给<span class="built_in">window</span>增加属性</span><br><span class="line"><span class="number">4.</span><span class="keyword">const</span>一旦声明必须赋值</span><br><span class="line"><span class="number">5.</span><span class="keyword">const</span>赋值不可以修改</span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量提声的特殊情况</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>等号右边不进行变量提声</span><br><span class="line"><span class="number">2.</span>自执行函数不进行变量提声</span><br><span class="line"><span class="number">3.</span>函数当做参数的时候不进行变量提声</span><br><span class="line"><span class="number">4.</span><span class="keyword">if</span>()&#123;&#125;不管条件是否成立都进行变量提声,但是<span class="keyword">var</span>和<span class="function"><span class="keyword">function</span>只声明不定义,当条件成立先给函数赋值</span></span><br><span class="line"><span class="function"><span class="title">console</span>.<span class="title">log</span>(<span class="params">a</span>);</span></span><br><span class="line"><span class="function"><span class="title">console</span>.<span class="title">log</span>(<span class="params">A</span>);</span></span><br><span class="line"><span class="function"><span class="title">if</span>(<span class="params"><span class="number">1</span></span>)</span>&#123;</span><br><span class="line">   <span class="built_in">console</span>.log(a);</span><br><span class="line">   <span class="built_in">console</span>.log(A);</span><br><span class="line">   <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">   <span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="number">5.</span><span class="keyword">return</span>出的内容执行但是不进行变量提声,<span class="keyword">return</span>后面的内容不执行但是需要变量提声</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">  A();</span><br><span class="line">  <span class="keyword">return</span> ++a;</span><br><span class="line">  a++;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     a++;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(fn());</span><br></pre></td></tr></table></figure>
+<h3 id="4-私有作用"><a href="#4-私有作用" class="headerlink" title="4.私有作用"></a>4.私有作用</h3><ul>
+<li>一个函数执行就会形成一个私有作用域</li>
+<li>私有变量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>形参是私有变量</span><br><span class="line"><span class="number">2.</span>私有作用域下声明的变量是私有变量</span><br></pre></td></tr></table></figure>
+<ul>
+<li>闭包</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">一个函数执行如果形成一个不销毁作用域,保护里面的私有变量或者是存储私有变量,但是闭包容易引起内存泄漏</span><br><span class="line">造成内存泄漏的情况:</span><br><span class="line"><span class="number">1</span>)全局变量</span><br><span class="line"><span class="number">2</span>)不销毁作用域</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       a++;</span><br><span class="line">   &#125;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f=fn();</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+<ul>
+<li>作用域销毁</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">全局:关闭浏览器的时候销毁</span><br><span class="line">私有:看是否返回地址并且被占用了,决定是否销毁</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;oLis.length;i++)&#123;</span><br><span class="line">   oLis[i].onclick=(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">           <span class="built_in">console</span>.log(i)</span><br><span class="line">        &#125;</span><br><span class="line">   &#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;oLis.length;i++)&#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">      oLis[i].onclick= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(i)</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>作用域链</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">是一个查找过程:在一个私有作用域下遇到变量了,先看是不是自己私有的如果不是往上一级找,没有继续找一直找到<span class="built_in">window</span>下为止,没有就报错了</span><br></pre></td></tr></table></figure>
+<ul>
+<li>上一级作用域</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">看当前这个作用域对应的地址是在哪一个作用域下定义的,那个作用域就是当前这个作用域的上一级</span><br><span class="line"><span class="keyword">var</span> a=<span class="number">10</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123; <span class="built_in">console</span>.log(a)&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> a=<span class="number">100</span>;</span><br><span class="line">   fn();</span><br><span class="line">   <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.log(a)&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> f=F();</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+<h3 id="5块级作用域"><a href="#5块级作用域" class="headerlink" title="5块级作用域"></a>5块级作用域</h3><p><code>{},if(){},for(){},while(){}</code></p>
+<ul>
+<li>var 和function 定义变量仍然是属于当前作用域<br><code>在块作用域之前获取变量,var和function声明的变量都是undefined(只声明不定义),块作用域执行的时候,先给函数赋值</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="built_in">console</span>.log(fn);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>let和const定义的变量属于一个私有作用域,变量是私有变量</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> a=<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">const</span> b=<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br></pre></td></tr></table></figure>
+<h3 id="6this问题"><a href="#6this问题" class="headerlink" title="6this问题"></a>6this问题</h3><ul>
+<li>函数执行的时候前面有点,点前面是谁this就是谁,没有点就是window</li>
+<li>注意严格模式函数执行前面没有点this就是undefined,但是定时器时候函数中的this是window</li>
+<li>给一个元素绑定事件,给谁绑的this就是谁</li>
+<li>自执行函数this是window</li>
+<li>函数当做参数的时候执行函数中的this是window</li>
+<li>构造函数不能使用箭头函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number=<span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> obj=&#123;</span><br><span class="line">    number:<span class="number">4</span>,</span><br><span class="line">    fn1:(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.number*=<span class="number">2</span>;</span><br><span class="line">        number=number*<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">var</span> number=<span class="number">3</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.number*=<span class="number">2</span>;</span><br><span class="line">            number*=<span class="number">3</span>;</span><br><span class="line">            alert(number);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)()</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> fn1=obj.fn1;</span><br><span class="line">alert(number);</span><br><span class="line">fn1();</span><br><span class="line">obj.fn1();</span><br><span class="line">alert(<span class="built_in">window</span>.number);</span><br><span class="line">alert(obj.number);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">box.fn=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;;box增加一个自定义属性</span><br><span class="line">box.fn();</span><br><span class="line">box.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>==box</span><br><span class="line">    <span class="comment">//box.fn();this.fn()</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.setTimeout(box.fn,<span class="number">2000</span>);<span class="comment">//this:window</span></span><br></pre></td></tr></table></figure>
+<h3 id="7面向对象"><a href="#7面向对象" class="headerlink" title="7面向对象"></a>7面向对象</h3><ul>
+<li>单利模式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj=(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.ff();</span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">ff</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       <span class="built_in">window</span>.setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">          <span class="keyword">this</span>.fn();</span><br><span class="line">       &#125;,<span class="number">2000</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>&#123;</span><br><span class="line">       fn:fn,</span><br><span class="line">       ff:ff</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">obj.fn().ff()</span><br><span class="line"><span class="number">1.</span>单例模式中的函数之间相互调用,采用<span class="keyword">this</span>.函数()</span><br><span class="line"><span class="number">2.</span>链式写法的原理:<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line"><span class="number">3.</span>单例模式中的函数中的箭头函数的<span class="keyword">this</span>还是当前对象(例如上面案例中的定时器中的箭头函数);</span><br><span class="line"><span class="number">4.</span>场景应用的案例</span><br></pre></td></tr></table></figure>
+<ul>
+<li>构造函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>自定义类,是一个函数通过<span class="keyword">new</span>方式执行</span><br><span class="line"><span class="number">2.</span>构造函数中的<span class="keyword">this</span>是当前实例</span><br><span class="line"><span class="number">3.</span>通过<span class="keyword">this</span>.属性=值的形式给当前实例增加私有属性,</span><br><span class="line"><span class="number">4.</span>默认返回<span class="keyword">this</span>,手动的<span class="keyword">return</span>一个基本数据类型不会影响实例<span class="keyword">this</span>,但是<span class="keyword">return</span>一个引用数据类型会影响实例<span class="keyword">this</span></span><br><span class="line"><span class="number">5.</span>实例是一个对象</span><br></pre></td></tr></table></figure>
+<ul>
+<li>字面量创建方式和构造函数创建方式的区别</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>对于基本数据类型</span><br><span class="line">字面量创建方式和构造函数创建方式不一样</span><br><span class="line">字面量创建方式得到一个值,使用<span class="keyword">instanceof</span>判断是<span class="literal">false</span></span><br><span class="line">构造函数创建方式得到一个实例对象,使用<span class="keyword">instanceof</span>判断是<span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>对于引用数据类型</span><br><span class="line">字面量创建方式和构造函数创建方式是一样的</span><br></pre></td></tr></table></figure>
+<h3 id="8-原型"><a href="#8-原型" class="headerlink" title="8.原型"></a>8.原型</h3><ul>
+<li>所有的类都是函数</li>
+<li>所有的实例都是对象</li>
+<li>只要是函数都天生自带一个prototype(原型)属性,这个原型是用来存储公有的属性和方法用的;而且prototype属性是一个对象,浏览器默认开辟一个堆内存来存储这个属性,默认开辟的这个内存中有个属性是constructor,这属性指向当前函数本身</li>
+<li>只要是对象都天生自带一个<strong>proto</strong>;(注意:prototype是对象)这个属性指向所属类的原型</li>
+</ul>
+<h3 id="9-原型链"><a href="#9-原型链" class="headerlink" title="9.原型链"></a>9.原型链</h3><p>一个对象遇到属性了先看是不是自己的私有属性,没有这个私有属性,就通过<strong>proto</strong>找到所属类的原型,没有继续找一直找到Object基类的原型上为止,还没有找到就是undefined</p>
+<h3 id="10-私有属性和公有属性"><a href="#10-私有属性和公有属性" class="headerlink" title="10.私有属性和公有属性"></a>10.私有属性和公有属性</h3><ul>
+<li>in:公有属性和私有属性都可以判断</li>
+<li>hasOwnProperty:判断是不是自己的私有属性</li>
+</ul>
+<h4 id="11-类的继承"><a href="#11-类的继承" class="headerlink" title="11. 类的继承"></a>11. 类的继承</h4><blockquote>
+<p><code>Object.assign()</code> 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  b.call(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="built_in">Object</span>.assign(A.prototype,B.prototype)</span><br><span class="line"></span><br><span class="line">ES6中的类继承</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>.a =<span class="string">'a'</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  getA()&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">super</span>()  <span class="comment">// A.call(this)  相当于A本身</span></span><br><span class="line">    <span class="keyword">this</span>.b = <span class="string">'b'</span></span><br><span class="line">  &#125;</span><br><span class="line">  getB()&#123;</span><br><span class="line">    <span class="built_in">console</span>(<span class="keyword">super</span>)</span><br><span class="line">    <span class="keyword">super</span>.getA();  <span class="comment">//  super相当于B的实例</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="../img/class.png" alt="ES6类继承"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/09/js变量提升作用域和闭包/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6新增" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/09/ES6新增/">ES6新增</a>
     </h1>
   
 
@@ -484,27 +804,6 @@ var _hmt = _hmt || [];
       
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
     </div>
     <div class="article-info article-info-index">
       
@@ -523,79 +822,16 @@ var _hmt = _hmt || [];
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/09/ES6新增/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/12/09/ES6新增/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/09/js变量提升作用域和闭包/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          js变量提升作用域和闭包
-        
-      </div>
-    </a>
-  
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -615,14 +851,12 @@ var _hmt = _hmt || [];
 
 
 
-  
-  
-  
 
   
-
   
-
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -645,8 +879,8 @@ var _hmt = _hmt || [];
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
