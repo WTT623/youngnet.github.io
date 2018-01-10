@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>callbacks | Young&#39;s Blog</title>
+  <title>ES6 class&amp;promise | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+  <meta name="description" content="class ES6中的class没有变量提升 通过var A = class{}  防止声明前调用报错  一般使用const A = class{}  1234567891011121314let classA = class A &amp;#123;    // A 可以在类里面调用代表类本身,外界获取不到    constructor() &amp;#123;        console.log(this)">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="callbacks">
-<meta property="og:url" content="http://yoursite.com/2018/01/04/callbacks/index.html">
+<meta property="og:title" content="ES6 class&amp;promise">
+<meta property="og:url" content="http://yoursite.com/2018/01/07/ES6class/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+<meta property="og:description" content="class ES6中的class没有变量提升 通过var A = class{}  防止声明前调用报错  一般使用const A = class{}  1234567891011121314let classA = class A &amp;#123;    // A 可以在类里面调用代表类本身,外界获取不到    constructor() &amp;#123;        console.log(this)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-04T04:20:26.454Z">
+<meta property="og:updated_time" content="2018-01-07T14:00:39.460Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="callbacks">
-<meta name="twitter:description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+<meta name="twitter:title" content="ES6 class&amp;promise">
+<meta name="twitter:description" content="class ES6中的class没有变量提升 通过var A = class{}  防止声明前调用报错  一般使用const A = class{}  1234567891011121314let classA = class A &amp;#123;    // A 可以在类里面调用代表类本身,外界获取不到    constructor() &amp;#123;        console.log(this)">
   
   
     <link rel="icon" href="/title.ico">
@@ -159,37 +159,54 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-callbacks" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ES6class" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      callbacks
+      ES6 class&amp;promise
     </h1>
   
 
         
-        <a href="/2018/01/04/callbacks/" class="archive-article-date">
-  	<time datetime="2018-01-04T01:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
+        <a href="/2018/01/07/ES6class/" class="archive-article-date">
+  	<time datetime="2018-01-07T04:22:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><code>$.Callbacks()</code></p>
-<ul>
-<li>add</li>
-<li>remove</li>
-<li>has   return true/false</li>
-<li>fire()    =&gt;  Callbacks集合按顺序执行</li>
-<li>empty</li>
-</ul>
+        <h2 id="class"><a href="#class" class="headerlink" title="class"></a>class</h2><blockquote>
+<p>ES6中的class没有变量提升</p>
+<p>通过<code>var A = class{}</code>  防止声明前调用报错  一般使用<code>const A = class{}</code></p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Callbacks</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn = [];</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">            arg.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!<span class="keyword">this</span>.has(item)) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.fn.push(item)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.remove = <span class="function"><span class="keyword">function</span> (<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">            arg.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.has(item)) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.fn.splice(index, <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.empty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn = [];</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.has = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.fn.includes(f);</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.fire = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.fn) &#123;</span><br><span class="line">                <span class="keyword">this</span>.fn.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                    item();</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> a = <span class="keyword">new</span> Callbacks();</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'b'</span>); &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'c'</span>); &#125;</span><br><span class="line">        a.add(b,c);</span><br><span class="line">        <span class="built_in">console</span>.log(a.has(b));</span><br><span class="line">        a.fire();</span><br><span class="line">        a.empty();</span><br><span class="line">        a.fire();</span><br><span class="line">        a.remove(b);</span><br><span class="line">        a.fire()</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> classA = <span class="class"><span class="keyword">class</span> <span class="title">A</span> </span>&#123;</span><br><span class="line">    <span class="comment">// A 可以在类里面调用代表类本身,外界获取不到</span></span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">this</span>.a = <span class="string">"a"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    getA() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(A.name);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> fn() &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> classA();</span><br><span class="line">a.getA()</span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(a.__proto__, <span class="string">"getA"</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> classB = <span class="keyword">new</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name) &#123;</span><br><span class="line">       <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;(<span class="string">"young"</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h4><blockquote>
+<p>类的继承</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span> <span class="keyword">extends</span> <span class="title">A</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">super</span>()  </span><br><span class="line">    <span class="comment">//  只要写了constructor就必须写super , 子类中没有this this来自父类的this,只有执行了super才有this</span></span><br><span class="line">  &#125;</span><br><span class="line">  getB()&#123;</span><br><span class="line">    <span class="keyword">super</span>.getA();   </span><br><span class="line">    <span class="comment">//这里super是一个对象指向父类的原型</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="promise"><a href="#promise" class="headerlink" title="promise"></a>promise</h2><p><strong>Promise </strong>对象用于一个异步操作的最终完成（或失败）及其结果值的表示。(简单点说就是处理异步请求。我们经常会做些承诺，如果我赢了你就嫁给我，如果输了我就嫁给你之类的诺言。这就是promise的中文含义：诺言，一个成功，一个失败。)</p>
+<p>本条目为Promise构造函数。想要了解promises，请首先阅读<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises" target="_blank" rel="noopener">Using promises</a>。构造函数主要是用来包装还未支持promises的函数。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>( <span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;...&#125; <span class="comment">/* executor */</span>  );</span><br></pre></td></tr></table></figure>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><ul>
+<li><p>executor</p>
+<p>executor是一个带有 <code>resolve</code> 和 <code>reject</code> 两个参数的函数 。<code>executor</code> 函数在Promise构造函数执行时同步执行，被传递 <code>resolve</code> 和 <code>reject</code> 函数（executor 函数在Promise构造函数返回新建对象前被调用）。<code>resolve</code> 和 <code>reject</code> 函数被调用时，分别将promise的状态改为<em>fulfilled（</em>完成）或rejected（失败）。executor 内部通常会执行一些异步操作，一旦完成，可以调用resolve函数来将promise状态改成<em>fulfilled</em>，或者在发生错误时将它的状态改为rejected。</p>
+<p>如果在executor函数中抛出一个错误，那么该promise 状态为rejected。executor函数的返回值被忽略。</p>
+</li>
+</ul>
+<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p><code>**Promise**</code> 对象是一个代理对象（代理一个值），被代理的值在Promise对象创建时可能是未知的。它允许你为异步操作的成功和失败分别绑定相应的处理方法（handlers）。 这让异步方法可以像同步方法那样返回值，但并不是立即返回最终执行结果，而是一个能代表未来出现的结果的promise对象</p>
+<p>一个 <code>Promise</code>有以下几种状态:</p>
+<ul>
+<li><em>pending</em>   :   初始状态，成功或失败状态。</li>
+<li><em>fulfilled</em>    :   意味着操作成功完成。</li>
+<li><em>rejected</em>   :   意味着操作失败。</li>
+</ul>
+<p>pending 状态的 Promise 对象可能触发fulfilled 状态并传递一个值给相应的状态处理方法，也可能触发失败状态（rejected）并传递失败信息。当其中任一种情况出现时，Promise 对象的 <code>then</code> 方法绑定的处理方法（handlers ）就会被调用（then方法包含两个参数：onfulfilled 和 onrejected，它们都是 Function 类型。当Promise状态为<em>fulfilled</em>时，调用 then 的 onfulfilled 方法，当Promise状态为<em>rejected</em>时，调用 then 的 onrejected 方法， 所以在异步操作的完成和绑定处理方法之间不存在竞争）。</p>
+<p>因为 <code>Promise.prototype.then</code> 和  <code>Promise.prototype.catch</code> 方法返回promise 对象， 所以它们可以被链式调用。</p>
 
       
 
@@ -280,7 +297,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/04/callbacks/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/07/ES6class/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +311,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/01/04/javascript常用的设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/09/移动端初探/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          javascript常用的设计模式
+          移动端初探
         
       </div>
     </a>
   
   
-    <a href="/2018/01/03/dom事件原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dom事件原理</div>
+    <a href="/2018/01/05/MVVM模式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVVM模式</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -332,7 +349,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#class"><span class="toc-number">1.</span> <span class="toc-text"><a href="#class" class="headerlink" title="class"></a>class</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类的继承"><span class="toc-number">1.0.1.</span> <span class="toc-text"><a href="#&#x7C7B;&#x7684;&#x7EE7;&#x627F;" class="headerlink" title="&#x7C7B;&#x7684;&#x7EE7;&#x627F;"></a>&#x7C7B;&#x7684;&#x7EE7;&#x627F;</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#promise"><span class="toc-number">2.</span> <span class="toc-text"><a href="#promise" class="headerlink" title="promise"></a>promise</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语法"><span class="toc-number">3.</span> <span class="toc-text"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数"><span class="toc-number">3.1.</span> <span class="toc-text"><a href="#&#x53C2;&#x6570;" class="headerlink" title="&#x53C2;&#x6570;"></a>&#x53C2;&#x6570;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#描述"><span class="toc-number">4.</span> <span class="toc-text"><a href="#&#x63CF;&#x8FF0;" class="headerlink" title="&#x63CF;&#x8FF0;"></a>&#x63CF;&#x8FF0;</span></a></li></ol>
                     </div>
                 </span>
             </div>

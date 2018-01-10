@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>callbacks | Young&#39;s Blog</title>
+  <title>移动端初探 | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="响应式布局开发 响应式布局 :  我们开发的页面能够适配不同的设备的屏幕,显示不同的布局  H5  现在已经成为移动端开发的标准代名词(响应式布局)   现在目前的APP开发主要分为 安卓:java  IOS: object-c  swift  这些都是原生的APP(需要两个开发团队) 本地开发,打包成安装包上传到应用商店,下载安装就会将所有的文件下载下来 native APP可以操作手机内部的软">
+<meta name="keywords" content="HTML5">
 <meta property="og:type" content="article">
-<meta property="og:title" content="callbacks">
-<meta property="og:url" content="http://yoursite.com/2018/01/04/callbacks/index.html">
+<meta property="og:title" content="移动端初探">
+<meta property="og:url" content="http://yoursite.com/2018/01/09/移动端初探/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+<meta property="og:description" content="响应式布局开发 响应式布局 :  我们开发的页面能够适配不同的设备的屏幕,显示不同的布局  H5  现在已经成为移动端开发的标准代名词(响应式布局)   现在目前的APP开发主要分为 安卓:java  IOS: object-c  swift  这些都是原生的APP(需要两个开发团队) 本地开发,打包成安装包上传到应用商店,下载安装就会将所有的文件下载下来 native APP可以操作手机内部的软">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-04T04:20:26.454Z">
+<meta property="og:updated_time" content="2018-01-09T14:32:08.246Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="callbacks">
-<meta name="twitter:description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+<meta name="twitter:title" content="移动端初探">
+<meta name="twitter:description" content="响应式布局开发 响应式布局 :  我们开发的页面能够适配不同的设备的屏幕,显示不同的布局  H5  现在已经成为移动端开发的标准代名词(响应式布局)   现在目前的APP开发主要分为 安卓:java  IOS: object-c  swift  这些都是原生的APP(需要两个开发团队) 本地开发,打包成安装包上传到应用商店,下载安装就会将所有的文件下载下来 native APP可以操作手机内部的软">
   
   
     <link rel="icon" href="/title.ico">
@@ -159,37 +159,95 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-callbacks" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-移动端初探" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      callbacks
+      移动端初探
     </h1>
   
 
         
-        <a href="/2018/01/04/callbacks/" class="archive-article-date">
-  	<time datetime="2018-01-04T01:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
+        <a href="/2018/01/09/移动端初探/" class="archive-article-date">
+  	<time datetime="2018-01-09T09:09:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><code>$.Callbacks()</code></p>
-<ul>
-<li>add</li>
-<li>remove</li>
-<li>has   return true/false</li>
-<li>fire()    =&gt;  Callbacks集合按顺序执行</li>
-<li>empty</li>
-</ul>
+        <h2 id="响应式布局开发"><a href="#响应式布局开发" class="headerlink" title="响应式布局开发"></a>响应式布局开发</h2><blockquote>
+<p>响应式布局 :  我们开发的页面能够适配不同的设备的屏幕,显示不同的布局 </p>
+<p>H5  现在已经成为移动端开发的标准代名词(响应式布局)</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Callbacks</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn = [];</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">            arg.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!<span class="keyword">this</span>.has(item)) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.fn.push(item)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.remove = <span class="function"><span class="keyword">function</span> (<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">            arg.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.has(item)) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.fn.splice(index, <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.empty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn = [];</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.has = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.fn.includes(f);</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.fire = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.fn) &#123;</span><br><span class="line">                <span class="keyword">this</span>.fn.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                    item();</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> a = <span class="keyword">new</span> Callbacks();</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'b'</span>); &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'c'</span>); &#125;</span><br><span class="line">        a.add(b,c);</span><br><span class="line">        <span class="built_in">console</span>.log(a.has(b));</span><br><span class="line">        a.fire();</span><br><span class="line">        a.empty();</span><br><span class="line">        a.fire();</span><br><span class="line">        a.remove(b);</span><br><span class="line">        a.fire()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>现在目前的APP开发主要分为 安卓:java  IOS: object-c  swift  这些都是原生的APP(需要两个开发团队)<ul>
+<li>本地开发,打包成安装包上传到应用商店,下载安装就会将所有的文件下载下来</li>
+<li>native APP可以操作手机内部的软件或者硬件</li>
+<li>做一些交互和操作,性能比较不错</li>
+<li>弊端是 =&gt; 需要用户来更新,推送有延迟性,版本不同的体验不一致</li>
+</ul>
+</li>
+<li>现在我们开发一款APP需要H5的嵌入 :  在nativeAPP中嵌入H5页面(web-app)  称之为Hybrid 混合APP开发</li>
+<li>H5页面的特点<ul>
+<li>是一个HTML页面,需要机遇浏览器运行,需要浏览器运行(或者V8内核的工具也可以)</li>
+<li>H5需要的一些权限需要将信息发送给浏览器,由浏览器来想系统发起请求获取权限,需要浏览器的支持</li>
+<li>相对于nativeAPP性能不好</li>
+<li>文件不在本地,必须要在联网的状态下使用,(可以使用manifest离线缓存但是不好用)</li>
+<li>更新比较及时 H5只需要吧服务器上的文件更新,用户每次访问看到的都是最新的版本</li>
+</ul>
+</li>
+</ul>
+<h5 id="webview-基于V8引擎渲染HTML页面的工具-类似浏览器"><a href="#webview-基于V8引擎渲染HTML页面的工具-类似浏览器" class="headerlink" title="webview : 基于V8引擎渲染HTML页面的工具 类似浏览器"></a>webview : 基于V8引擎渲染HTML页面的工具 类似浏览器</h5><blockquote>
+<p>页面是嵌入web-view中运行的</p>
+<p>项目中 1.按照需求完成响应式的HTML页面部署到服务器中  2.由nativeAPP团队研发外层框架缓存和需要的页面功能 3. 将H5页面的地址通过web-view渲染出来 4. 主体内容和需要经常更新的都通过H5开发  <strong>H5中需要手机功能的都通过调取web-view的方法</strong></p>
+<p>目前比较小型的页面会使用PC端和移动端共用一个页面</p>
+<p>大型的页面都是PC和移动端分离的设计</p>
+<p>PC端采用固定布局  移动端需要采用相应式布局   需要考虑(1. 浏览器运行 2. 微信中运行 3. 放在nativeapp中运行)</p>
+</blockquote>
+<h5 id="手机常用尺寸"><a href="#手机常用尺寸" class="headerlink" title="手机常用尺寸"></a>手机常用尺寸</h5><blockquote>
+<p>页面设计之前需要从设计处获得设计稿(PSD 或者 sketch设计稿)</p>
+<p>设计提供的移动端的设计稿 , 一般为640x960  或者640x1136  或者750x1334</p>
+</blockquote>
+<ul>
+<li>iphone <ul>
+<li>iphone5及以前  320px</li>
+<li>iphone6 375px  </li>
+<li>iphone6 plus 414px</li>
+</ul>
+</li>
+<li>android  <ul>
+<li>320 360 480 540 640 </li>
+</ul>
+</li>
+</ul>
+<p><strong>DPR</strong>设备的像素密度比</p>
+<blockquote>
+<p>手机的分辨率和实际的像素尺寸   会根据比例来渲染css会根据比例来操作当放大的时候图片就会失真了</p>
+</blockquote>
+<h4 id="移动端响应式布局"><a href="#移动端响应式布局" class="headerlink" title="移动端响应式布局"></a>移动端响应式布局</h4><ul>
+<li><p>viewport  视口设置</p>
+<ul>
+<li>让HTML的宽度和页面的宽度保持一致,禁止放大和缩小, 默认100%显示 , 不加VP页面跨度都是980</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span> = <span class="string">"width=device-width , user-scalable = no,initial-scale = 1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>REM响应式布局  (页面只做移动端的话最好的选择)  (细节会用到flex 和@media)</p>
+<ul>
+<li>和px一样是css样式单位</li>
+<li>rem 相对页面根元素的font-size大小来进行缩放相对的单位</li>
+<li>在使用REM的时候html 的font-size 一般使用 100px ,此时的作用不是将页面的字体为100像素而是将1REM变为100px方便计算</li>
+<li>使用时严格按照设计稿中提供的尺寸编写</li>
+<li>在编写样式的时候不要使用px单位,所有的单位都统一换算为REM(此时HTML font-size设为100px) , 上述完成后在750的手机上没有任何问题,在其他手机上就会被放大无法完全显示,此时需要页面中的所有样式整体缩小,此时就将HTML的font-size缩小 </li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>媒体查询响应式布局</li>
+</ul>
 
       
 
@@ -224,7 +282,7 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">HTML5</a>
         		</li>
       		
 		</ul>
@@ -280,7 +338,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/04/callbacks/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/09/移动端初探/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +352,18 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/01/04/javascript常用的设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/01/10/知识梳理/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          javascript常用的设计模式
+          知识梳理
         
       </div>
     </a>
   
   
-    <a href="/2018/01/03/dom事件原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dom事件原理</div>
+    <a href="/2018/01/07/ES6class/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES6 class&amp;promise</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -332,7 +390,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#响应式布局开发"><span class="toc-number">1.</span> <span class="toc-text"><a href="#&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;&#x5F00;&#x53D1;" class="headerlink" title="&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;&#x5F00;&#x53D1;"></a>&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;&#x5F00;&#x53D1;</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#webview-基于V8引擎渲染HTML页面的工具-类似浏览器"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"><a href="#webview-&#x57FA;&#x4E8E;V8&#x5F15;&#x64CE;&#x6E32;&#x67D3;HTML&#x9875;&#x9762;&#x7684;&#x5DE5;&#x5177;-&#x7C7B;&#x4F3C;&#x6D4F;&#x89C8;&#x5668;" class="headerlink" title="webview : &#x57FA;&#x4E8E;V8&#x5F15;&#x64CE;&#x6E32;&#x67D3;HTML&#x9875;&#x9762;&#x7684;&#x5DE5;&#x5177; &#x7C7B;&#x4F3C;&#x6D4F;&#x89C8;&#x5668;"></a>webview : &#x57FA;&#x4E8E;V8&#x5F15;&#x64CE;&#x6E32;&#x67D3;HTML&#x9875;&#x9762;&#x7684;&#x5DE5;&#x5177; &#x7C7B;&#x4F3C;&#x6D4F;&#x89C8;&#x5668;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#手机常用尺寸"><span class="toc-number">1.0.0.2.</span> <span class="toc-text"><a href="#&#x624B;&#x673A;&#x5E38;&#x7528;&#x5C3A;&#x5BF8;" class="headerlink" title="&#x624B;&#x673A;&#x5E38;&#x7528;&#x5C3A;&#x5BF8;"></a>&#x624B;&#x673A;&#x5E38;&#x7528;&#x5C3A;&#x5BF8;</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#移动端响应式布局"><span class="toc-number">1.0.1.</span> <span class="toc-text"><a href="#&#x79FB;&#x52A8;&#x7AEF;&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;" class="headerlink" title="&#x79FB;&#x52A8;&#x7AEF;&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;"></a>&#x79FB;&#x52A8;&#x7AEF;&#x54CD;&#x5E94;&#x5F0F;&#x5E03;&#x5C40;</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

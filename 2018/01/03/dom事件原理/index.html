@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>dom事件原理 | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="IE 6~8下事件对象是window.event: pageX / target   目前存在DOM0 和DOM2事件绑定以及最新的DOM3级  DOM0级事件绑定 DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖  DOM2级事件绑定的原理 addEventListener DOM2级事件绑定使用的是EventTarget上的事件,需要在">
+  <meta name="description" content="IE 6~8下事件对象是window.event: pageX / target   目前存在DOM0 和DOM2事件绑定以及最新的DOM3级  DOM0级事件绑定 DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖  DOM2级事件绑定的原理 addEventListener DOM2级事件绑定使用的是EventTarget类上的事件,需要">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="dom事件原理">
 <meta property="og:url" content="http://yoursite.com/2018/01/03/dom事件原理/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="IE 6~8下事件对象是window.event: pageX / target   目前存在DOM0 和DOM2事件绑定以及最新的DOM3级  DOM0级事件绑定 DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖  DOM2级事件绑定的原理 addEventListener DOM2级事件绑定使用的是EventTarget上的事件,需要在">
+<meta property="og:description" content="IE 6~8下事件对象是window.event: pageX / target   目前存在DOM0 和DOM2事件绑定以及最新的DOM3级  DOM0级事件绑定 DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖  DOM2级事件绑定的原理 addEventListener DOM2级事件绑定使用的是EventTarget类上的事件,需要">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-03T13:25:12.046Z">
+<meta property="og:updated_time" content="2018-01-06T02:03:21.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="dom事件原理">
-<meta name="twitter:description" content="IE 6~8下事件对象是window.event: pageX / target   目前存在DOM0 和DOM2事件绑定以及最新的DOM3级  DOM0级事件绑定 DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖  DOM2级事件绑定的原理 addEventListener DOM2级事件绑定使用的是EventTarget上的事件,需要在">
+<meta name="twitter:description" content="IE 6~8下事件对象是window.event: pageX / target   目前存在DOM0 和DOM2事件绑定以及最新的DOM3级  DOM0级事件绑定 DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖  DOM2级事件绑定的原理 addEventListener DOM2级事件绑定使用的是EventTarget类上的事件,需要">
   
   
     <link rel="icon" href="/title.ico">
@@ -189,7 +189,7 @@ var _hmt = _hmt || [];
 <p>DOM0级事件绑定采用的是给元素事件私有属性赋值的形式来使用所以只能绑定一个事件,最新的会将旧的事件覆盖</p>
 </blockquote>
 <h4 id="DOM2级事件绑定的原理-addEventListener"><a href="#DOM2级事件绑定的原理-addEventListener" class="headerlink" title="DOM2级事件绑定的原理 addEventListener"></a>DOM2级事件绑定的原理 addEventListener</h4><blockquote>
-<p>DOM2级事件绑定使用的是EventTarget上的事件,需要在原型链上进行查找,所以如果只绑定一个事件用DOM0更好</p>
+<p>DOM2级事件绑定使用的是<strong>EventTarget</strong>类上的事件,需要在原型链上进行查找,所以如果只绑定一个事件用DOM0更好</p>
 </blockquote>
 <ul>
 <li>绑定步骤<ul>
@@ -476,7 +476,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
             
             <div class="clearfix"></div>

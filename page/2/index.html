@@ -156,6 +156,845 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/20/jQuery/">jQuery</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/20/jQuery/" class="archive-article-date">
+  	<time datetime="2017-12-20T11:36:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库（<em>或JavaScript框架</em>）。jQuery设计的宗旨是“write Less，Do More”，即倡导写更少的代码，做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。  </p>
+<p>是一个常用方法的类库</p>
+</blockquote>
+<h2 id="jQuery的版本"><a href="#jQuery的版本" class="headerlink" title="jQuery的版本"></a>jQuery的版本</h2><blockquote>
+<p>jQuery的版本</p>
+<p>1.x : 兼容IE6-8,主要为PC端开发<br>2.x及以上 : 兼容IE9以上,为移动端开发(但是zepto比jQuery的支持更好)</p>
+<p>目前市场上主要使用的为: jquery-1.9.3.min.js / jquery-1.11.3.min.js / jquery.min.js</p>
+</blockquote>
+<h4 id="jQuery安装"><a href="#jQuery安装" class="headerlink" title="jQuery安装"></a>jQuery安装</h4><blockquote>
+<p>可以在github或者百度上下载 –&gt;  npm install jquery@版本</p>
+</blockquote>
+<h2 id="jQuery的使用"><a href="#jQuery的使用" class="headerlink" title="jQuery的使用"></a>jQuery的使用</h2><ul>
+<li>创建jQuery对象  =&gt; 创建了jQuery类的实例,可以使用jQuery原型上的公有方法<ul>
+<li>\$() / jQuery()</li>
+<li>\$(selector,context) =&gt;  称作jQuery选择器 , 第一个参数是操作的对象,第二个对象是获取元素的上下文(不传递默认为document中获取)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>选择器中的selector有3种格式 ,字符串通过选择器获取元素,传递元素对象=&gt; 将原生对象转换为jQuery对象,传递函数表示等DOM结构加载完成再执行对应的JS代码</p>
+</blockquote>
+<h2 id="jQuery的选择器"><a href="#jQuery的选择器" class="headerlink" title="jQuery的选择器"></a>jQuery的选择器</h2><blockquote>
+<p>一般我们把通过JQ获取的对象通过\$xxx来命名</p>
+<p>jQ创建的对象是一个类数组</p>
+<p>内部的属性: </p>
+<ol>
+<li>0 : 表示元素对象,对象集合</li>
+<li>length : 类数组长度</li>
+<li>context : document</li>
+<li>selector : 选择器的内容</li>
+<li>__prototype__  =&gt;  jQuery的原型</li>
+</ol>
+</blockquote>
+<ul>
+<li>判断jQuery对象是否存在 \$().length == 0;</li>
+<li>\$(‘#id’)  \  \$(‘.class’)  \  \$(‘tagName’) =&gt;  jQuery中的选择器和css中的样式选择器基本相同 </li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#id  child'</span>)    后代选择器</span><br><span class="line">$(<span class="string">'#id&gt;child'</span>)    直接子代 </span><br><span class="line">$(<span class="string">'#id~bro'</span>)       兄弟选择器</span><br><span class="line">$(<span class="string">'#id+bro'</span>)        下一个同类的相邻元素</span><br></pre></td></tr></table></figure>
+<h4 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'#id:hover'</span>)</span><br><span class="line">$(<span class="string">'#id:contains(xxx)'</span>)    =&gt;   包含某内容</span><br><span class="line">$(<span class="string">'.class:first'</span>)  =&gt;  第一个元素</span><br><span class="line">$(<span class="string">'.class:last'</span>) </span><br><span class="line">$(<span class="string">'.class:eq(index)'</span>)   =&gt; 索引为index的</span><br><span class="line">$(<span class="string">'.class:gt(index)'</span>)    =&gt;  索引&gt;index 的</span><br><span class="line">$(<span class="string">'.class:lt(index)'</span>)      =&gt;  索引&lt;index 的</span><br><span class="line">$(<span class="string">'.class:not()'</span>) </span><br><span class="line">$(<span class="string">'.class:not(:lt())'</span>) </span><br><span class="line">$(<span class="string">'#box:parent'</span>)  =&gt;  :parent 非空元素</span><br><span class="line">$(<span class="string">"#box:empty"</span>)  =&gt;  空元素</span><br><span class="line">$(<span class="string">'#box:hidden'</span>)  =&gt;  隐藏元素</span><br><span class="line">$(<span class="string">'#box:visible'</span>)   =&gt;  可见元素</span><br><span class="line">$(<span class="string">'#box[id]'</span>)   =&gt;  包含属性</span><br><span class="line">$(<span class="string">'#box[attr=vallue]'</span>)   =&gt;  属性值为</span><br><span class="line">$(<span class="string">'#box[class|=list]'</span>)  =&gt;  以list后者list-作为前缀</span><br><span class="line">$(<span class="string">'#box[class~=list]'</span>)  =&gt;  必须含有list</span><br><span class="line">$(<span class="string">'#box:nth-child()'</span>)</span><br><span class="line">$(<span class="string">'#box:only-child'</span>)</span><br><span class="line">$(<span class="string">'#box:even'</span>) </span><br><span class="line">$(<span class="string">'#box:odd'</span>) </span><br><span class="line">$(<span class="string">'#box:selected'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery对象和原生对象的转换"><a href="#jQuery对象和原生对象的转换" class="headerlink" title="jQuery对象和原生对象的转换"></a>jQuery对象和原生对象的转换</h2><blockquote>
+<p>jQuery对象: 通过\$() 和jQuery() 创建的实例</p>
+<p>原生对象: 通过属性选择器获取的元素对象(nodetype===1 )</p>
+</blockquote>
+<ol>
+<li>jQuery对象转原生JS对象  =&gt;  在集合中指定索引的元素</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(box)[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>原生js对象转jQuery对象</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $box = $(box);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>jQuery中有两个方法获取指定索引的元素<ul>
+<li>\$box.get(index)  =&gt;  获取的是原生js对象  =&gt;  $box[index]</li>
+<li>\$box.eq(index)  =&gt;  获取的是jQ对象</li>
+</ul>
+</li>
+</ul>
+<h2 id="jQuery-document-ready"><a href="#jQuery-document-ready" class="headerlink" title="jQuery document.ready"></a>jQuery document.ready</h2><blockquote>
+<p>\$(function)  =&gt; 等DOM结构加载完成后执行回调函数(可以在页面中执行多次)</p>
+<p>window.onload =&gt;  等DOM结构加载完成后执行回调函数并且所需要的资源也加载完成</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//  等DOM结构加载完成后执行回调函数</span></span><br><span class="line">&#125;)</span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  </span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原理利用了DOM2级事件绑定  :   DOMContentLoaded(DOM结构加载完成后执行)</p>
+<p>window.onload使用的是DOM零级事件绑定,一个页面只能执行一次(在执行会覆盖原来的代码)</p>
+</blockquote>
+<h2 id="jQuery的常用方法"><a href="#jQuery的常用方法" class="headerlink" title="jQuery的常用方法"></a>jQuery的常用方法</h2><ul>
+<li>jQuery是一个构造函数,在js中函数的身份是多重的有普通函数,构造函数和对象;</li>
+</ul>
+<blockquote>
+<p>jQuery.prototype中有很多方法,这些方法时让我们在创建jquery对象的时候使用的</p>
+<p>jQuery本身也是一个对象,自身有很多的方法 :  \$.ajax  /  isFunction  /  unique</p>
+</blockquote>
+<h4 id="jQuery原型上的方法"><a href="#jQuery原型上的方法" class="headerlink" title="jQuery原型上的方法"></a>jQuery原型上的方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).index() =&gt;  获取索引</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).data()  =&gt;  获取自定义属性或者设置  :  HTML结构上不会显示</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).removedata()  =&gt;  移除自定义属性</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).attr()  =&gt;  一般操作元素属性,显示在标签上</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).prop()  =&gt;  一般用来操作表单元素的内置或者自定义属性,类似于 . (内置才显示在HTML中)</span><br><span class="line"><span class="number">6.</span> $(<span class="string">'#box'</span>).addClass  =&gt;  添加</span><br><span class="line"><span class="number">7.</span> $(<span class="string">'#box'</span>).removeClass  =&gt;  移除</span><br><span class="line"><span class="number">8.</span> $(<span class="string">'#box'</span>).toggleClass  =&gt;  切换开关</span><br><span class="line"><span class="number">9.</span> $(<span class="string">'#box'</span>).hasClass</span><br><span class="line"></span><br><span class="line"><span class="comment">//  设置属性内容</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).html()  =&gt;  获取或者设置内容  ==  innerHTML</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).text()  =&gt; 操作文本内容</span><br><span class="line"><span class="number">3.</span> $(<span class="string">'#box'</span>).val()  =&gt;  操作表单元素的value值</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).css()  =&gt;  设置获取样式,获取的结果没有去单位</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).offset() &#123;top,left&#125;  =&gt; 获取到body的偏移</span><br><span class="line"></span><br><span class="line"><span class="comment">//  盒子模型</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).position()  =&gt;  获取到父级参照物的偏移</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).scrollTop / <span class="function"><span class="params">scrollLeft</span>  =&gt;</span>  获取或者设置scrollTop/Left</span><br><span class="line"><span class="number">2.</span> $(<span class="string">'#box'</span>).height/<span class="function"><span class="params">width</span>  =&gt;</span>  获取设置宽高</span><br><span class="line"><span class="number">4.</span> $(<span class="string">'#box'</span>).innerHeight/<span class="function"><span class="params">innerWidth</span>  =&gt;</span>  clientHeight/clientWidth  可以设置,设置时padding不变改变宽高</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).outerHeight/outerWidth(<span class="literal">true</span>)  =&gt;  offsetHeight/offsetWidth  不加<span class="literal">true</span>为offset , 加<span class="literal">true</span>包含margin</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件绑定</span></span><br><span class="line"><span class="number">1.</span> $(<span class="string">'#box'</span>).on(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;);</span><br><span class="line"><span class="number">2.</span> $(<span class="keyword">this</span>).val()  =&gt; jQuery的value</span><br><span class="line"></span><br><span class="line"><span class="comment">//  事件处理</span></span><br><span class="line"><span class="number">1.</span> parent.append(child)</span><br><span class="line"><span class="number">2.</span> child.appendTo(parent)</span><br><span class="line"><span class="number">3.</span> parent.prepend(child)</span><br><span class="line"><span class="number">4.</span> child.prependTo(parent)</span><br><span class="line"><span class="number">5.</span> $(<span class="string">'#box'</span>).empty() =&gt; 清空</span><br><span class="line"><span class="number">6.</span> $(<span class="string">'#box'</span>).remove() =&gt; 移除自身</span><br><span class="line"><span class="number">7.</span> $(<span class="string">'#box'</span>).clone(<span class="literal">true</span>/<span class="literal">false</span>)  =&gt; 深度或者浅度</span><br><span class="line"><span class="number">8.</span> $(<span class="string">'#box'</span>).insertBefore(<span class="string">"#box1"</span>)</span><br><span class="line"><span class="number">9.</span> $(<span class="string">'#box'</span>).insertAfter(<span class="string">"#box1"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="jQuery的自有属性"><a href="#jQuery的自有属性" class="headerlink" title="jQuery的自有属性"></a>jQuery的自有属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="keyword">var</span> a = $.noConflict();  =&gt;  防止$的冲突,进行多库共存,使用后只能用jQuery</span><br><span class="line"><span class="number">2.</span> <span class="keyword">var</span> a = $.noConflict(<span class="literal">true</span>);  =&gt;  深度转让,jQuery也不能使用,返回值是jQuery</span><br><span class="line"><span class="number">3.</span> $.ajax()</span><br><span class="line"><span class="number">4.</span> $.uniqueSort()  =&gt;  DOM集合去重</span><br><span class="line"><span class="number">5.</span> $.proxy(fn,<span class="keyword">this</span>)  类似bind 修改<span class="keyword">this</span>得到一个新函数,不执行 第一个参数原函数,第二个参数修改后的<span class="keyword">this</span></span><br><span class="line"><span class="number">6.</span> $.trim(str)  =&gt;  去除字符串首尾空格</span><br><span class="line"><span class="number">7.</span> $.fx.off  =&gt;  关闭动画效果  <span class="literal">true</span>/<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="jQuery常用的筛选方法"><a href="#jQuery常用的筛选方法" class="headerlink" title="jQuery常用的筛选方法"></a>jQuery常用的筛选方法</h2><blockquote>
+<p>filter :  同级过滤</p>
+<p>children  :  子集过滤</p>
+<p>find  :  后代过滤</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> $link = $(<span class="string">'a'</span>);  =&gt;  获取页面中的所有标签</span><br><span class="line">$link.filter(<span class="string">'.bg'</span>)  =&gt;  进行二次筛选</span><br><span class="line">$(<span class="string">'#box&gt;a'</span>)  ===  $(<span class="string">'#box'</span>).children(<span class="string">'a'</span>)  =&gt;  子代中的a</span><br><span class="line">$(<span class="string">'#box a'</span>)  ===  $(<span class="string">'#box'</span>).find(<span class="string">'a'</span>)  =&gt;  后代中的a</span><br><span class="line">$(<span class="string">'#box'</span>).prev(<span class="string">'a'</span>)  =&gt;  获取上一个哥哥节点 , 且标签名一致</span><br><span class="line">$(<span class="string">'#box'</span>).prevAll(<span class="string">'a'</span>)  =&gt;   所有哥哥节点</span><br><span class="line">$(<span class="string">'#box'</span>).next(<span class="string">'a'</span>)  =&gt; 弟弟元素</span><br><span class="line">$(<span class="string">'#box'</span>).nextAll(<span class="string">'a'</span>)  =&gt; 弟弟元素集合</span><br><span class="line">$(<span class="string">'#box'</span>).parent()</span><br><span class="line">$(<span class="string">'#box'</span>).parents()  =&gt;  祖先元素集合</span><br><span class="line">$(<span class="string">'#box'</span>).siblings()  =&gt;  兄弟节点</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery中的遍历循环-gt-each"><a href="#jQuery中的遍历循环-gt-each" class="headerlink" title="jQuery中的遍历循环 =&gt; each"></a>jQuery中的遍历循环 =&gt; each</h2><blockquote>
+<p>jQuery中的each有两种:</p>
+<ol>
+<li>原型中的each : 遍历对象中的每一项</li>
+<li>jQuery中的each  :  用来遍历数组类数组对象等</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> jQuery原型中的each方法</span><br><span class="line">$(<span class="string">'a'</span>).addClass(<span class="string">'bg'</span>);  =&gt;  jQuery中的大部分的获取方法都会默认调用each方法来遍历元素集合</span><br><span class="line">$(<span class="string">'a'</span>).css(attr)  =&gt;  获取的时候只处理第一个</span><br><span class="line">$(<span class="string">'a'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params">index,item</span>)</span>&#123;  </span><br><span class="line">  方法中的<span class="keyword">this</span>是item  =&gt;  是原生对象</span><br><span class="line">  传递参数的顺序和数组内置的方法相反,先索引后元素</span><br><span class="line">&#125;)</span><br><span class="line"><span class="number">2.</span> jQuery对象中的each</span><br><span class="line">$.each(obj,<span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>)</span>&#123;&#125;)  =&gt;  <span class="keyword">this</span>还是item(<span class="keyword">this</span>不可能是基础类型的值)</span><br><span class="line">$.each()  =&gt;  再遍历对象的时候也会遍历原型链上的属性 obj.hasOwnProperty(key);</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery拓展插件"><a href="#jQuery拓展插件" class="headerlink" title="jQuery拓展插件"></a>jQuery拓展插件</h2><blockquote>
+<ol>
+<li>\$.extend()  =&gt;  拓展到JQ对象上  =&gt; 完善类库</li>
+<li>\$.fn.extend()  =&gt;  扩展到JQ原型上  =&gt;  写插件(业务逻辑,操作DOM结构)</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$.extend(<span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$.aa()</span><br><span class="line">$.fn.extend(<span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">$().aa()</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery动画"><a href="#jQuery动画" class="headerlink" title="jQuery动画"></a>jQuery动画</h2><blockquote>
+<p>stop : 结束当前动画执行下一个动画</p>
+<p>finish : 立即执行完当前动画,从目标位置开始执行下一个动画</p>
+<p>animate([target],[duration],[effect],[callback]);</p>
+<p>effect :  linear ,  ease ,  ease-in ,  ease-out  ,  ease-in-out </p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">show(<span class="number">1000</span>/fast/slow)</span><br><span class="line">hide()</span><br><span class="line">toggle()</span><br><span class="line"></span><br><span class="line">fadeIn</span><br><span class="line">fadeOut</span><br><span class="line">fadeToggle</span><br><span class="line"></span><br><span class="line">slideUp</span><br><span class="line">slideDown</span><br><span class="line">slideToggle</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/20/jQuery/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js中的同步编程和异步编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/15/js中的同步编程和异步编程/">js中的同步编程和异步编程</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/15/js中的同步编程和异步编程/" class="archive-article-date">
+  	<time datetime="2017-12-15T09:39:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="js中同步编程和异步编程"><a href="#js中同步编程和异步编程" class="headerlink" title="js中同步编程和异步编程"></a>js中同步编程和异步编程</h2><blockquote>
+<p>在解释js中的同步和异步之前,我们要先说明的是js是单线程的 意味着一次只能执行一项任务,任务没有完成的时候,下面的代码是无法处理的</p>
+</blockquote>
+<h4 id="同步异步的核心原理"><a href="#同步异步的核心原理" class="headerlink" title="同步异步的核心原理"></a>同步异步的核心原理</h4><ul>
+<li>js中有两个任务队列(存放任务列表的空间就是任务队列)<ul>
+<li>主任务队列 : 同步执行任务(从上到下依次执行)</li>
+<li>等待任务队列 : 异步执行任务</li>
+</ul>
+</li>
+</ul>
+<h4 id="同步编程-sync-synchronization"><a href="#同步编程-sync-synchronization" class="headerlink" title="同步编程  sync (synchronization)"></a>同步编程  sync (synchronization)</h4><blockquote>
+<p>同步编程中,每一项任务都是按照顺序来执行的,上一个任务没有完成的时候,下面的任务是无法执行的,和js的单线程理念是一致的;</p>
+</blockquote>
+<h4 id="异步编程-async"><a href="#异步编程-async" class="headerlink" title="异步编程 async"></a>异步编程 async</h4><blockquote>
+<p>js中的异步编程很少主要有以下几种</p>
+</blockquote>
+<ol>
+<li>定时器 <ul>
+<li>在定时器创建的时候不会影响后面代码的执行,创建与执行时分开的</li>
+</ul>
+</li>
+<li>事件绑定</li>
+<li>Ajax</li>
+</ol>
+<blockquote>
+<p>我们这里通过一个图来理解一下js中异步部分是如何执行的</p>
+</blockquote>
+<p><img src="../img/async.png" alt="步骤图"></p>
+<blockquote>
+<p>接着我们来通过一个定时器的问题来再理解一下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i--);</span><br><span class="line">  &#125;,<span class="number">5</span>-i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">=&gt;  <span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在这道题目中,我们也任务分为主任务和等待任务<br>for循环是同步的,所以直接在主任务队列中执行,而在循环中每次都会创建一个定时器,定时器是异步的,将其放入等待任务队列在,等待主任务队列中的for循环结束;</p>
+<p>当for循环结束时 i = 5 主任务队列中的任务全部结束,而此时从等待队列中获取任务到主任务列表中执行,而此时我们设定的定时器的等待时间是5-i;所以5个定时器绑定的等待时间是越来越短的,会从后面的定时器开始获取到主任务列表来执行  </p>
+<p>当然我们这里没有考虑主任务列表中每次定时器绑定之间的时间差 ,如果每次绑定之间的时间差比我们减去的i更大的或就是另外的结果了,例如下面的例子</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i&lt;<span class="number">5</span>;i++)&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10000000</span>;j++)&#123;&#125;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;,<span class="number">5</span>-i);</span><br><span class="line">&#125;</span><br><span class="line">=&gt;  <span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> time = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">10000000</span>;j++)&#123;&#125;</span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Date</span>() - time;</span><br><span class="line"><span class="number">32</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我在每次绑定定时器之前先做了一个相对比较消耗时间的循环,最下面的代码是我测试的每次这个循环执行的时间,这个时间是明显大于我们两个定时器进入等待列表后的计时差的,那么我们最后在等待列表中所看到的队列完成顺讯就会变化,所以从等待队列到主任务队列的顺序是绑定时的时间差与在等待列表内的计时时间的和;</p>
+</blockquote>
+<h4 id="如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题"><a href="#如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题" class="headerlink" title="如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题"></a>如何减少在页面加载时由于主任务列表的内容太多而时间过长的问题</h4><blockquote>
+<p>在这其中我们可以只将一些必要的页面内容放到主任务列表,而后面的使用一个定时器来运行,让第一次加载时的任务量变少,从而使加载速度变快</p>
+</blockquote>
+<ul>
+<li>由定时器的异步特征可以来实现一些效果</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'1'</span>);</span><br><span class="line">&#125;,<span class="number">0</span>)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'2'</span>);</span><br><span class="line">=&gt; <span class="number">2</span>,<span class="number">1</span></span><br><span class="line"><span class="comment">//  默认将其放到最后执行</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/15/js中的同步编程和异步编程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-正则表达式" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/14/正则表达式/">正则表达式</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/14/正则表达式/" class="archive-article-date">
+  	<time datetime="2017-12-14T01:36:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript-正则表达式-regular-expression"><a href="#javascript-正则表达式-regular-expression" class="headerlink" title="javascript 正则表达式 (regular expression)"></a>javascript 正则表达式 (regular expression)</h2><blockquote>
+<p>正则表达式是用来处理字符串的,主要是用于一些复杂的难以直接使用字符串方法来获取的;</p>
+<p>正则类本身有两个方法:</p>
+</blockquote>
+<ul>
+<li>reg.test(str)  =&gt;  匹配  =&gt; 返回true 或 false</li>
+<li>reg.exec(str)  =&gt; 捕获  <ul>
+<li>捕获成功返回一个数组<ul>
+<li>arr[0] =&gt; 捕获的内容</li>
+<li>arr[1] =&gt;  index捕获内容首字符的索引</li>
+<li>arr[2] =&gt;  input判断的字符串</li>
+</ul>
+</li>
+<li>失败返回 null</li>
+</ul>
+</li>
+</ul>
+<h3 id="正则的创建"><a href="#正则的创建" class="headerlink" title="正则的创建"></a>正则的创建</h3><blockquote>
+<p>正则的创建主要有两种方法</p>
+<ol>
+<li>字面量的方式 : <code>var reg = /\d+/</code>;</li>
+<li>构造函数形式 : <code>var reg = new RegExp(&#39;\\d+&#39;)</code>   =&gt; 遇到斜杠变成\ \ (字符串可以用来拼接变量)</li>
+</ol>
+</blockquote>
+<h3 id="正则的写法-元字符和修饰符"><a href="#正则的写法-元字符和修饰符" class="headerlink" title="正则的写法 , 元字符和修饰符"></a>正则的写法 , 元字符和修饰符</h3><blockquote>
+<p>/元字符/修饰符</p>
+<ol>
+<li>内部的元字符至少有一个,修饰符根据需求添加</li>
+<li>一个元字符只能匹配一个字符,想匹配多个需要使用量词元字符</li>
+<li>量词元字符需要放在元字符后面</li>
+<li>有特殊意义的元字符进入到[]中就变成本身的意义,除了^ -    “-“放到最后也表示本身的意义</li>
+</ol>
+</blockquote>
+<h4 id="正则的优先级"><a href="#正则的优先级" class="headerlink" title="正则的优先级"></a>正则的优先级</h4><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\</td>
+<td>转义符</td>
+</tr>
+<tr>
+<td>(), (?:), (?=), []</td>
+<td>圆括号和方括号</td>
+</tr>
+<tr>
+<td>*, +, ?, {n}, {n,}, {n,m}</td>
+<td>限定符    =&gt;  量词</td>
+</tr>
+<tr>
+<td>^, $, \任何元字符、任何字符</td>
+<td>定位点和序列（即：位置和顺序）</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>替换，”或”操作字符具有高于替换运算符的优先级，使得”m\</td>
+<td>food”匹配”m”或”food”。若要匹配”mood”或”food”，请使用括号创建子表达式，从而产生”(m\</td>
+<td>f)ood”。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="正则元字符"><a href="#正则元字符" class="headerlink" title="正则元字符"></a>正则元字符</h4><table>
+<thead>
+<tr>
+<th style="text-align:left">\</th>
+<th style="text-align:left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个 向后引用、或一个八进制转义符。例如，’n’ 匹配字符 “n”。’\n’ 匹配一个换行符。序列 ‘\‘ 匹配 “\” 而 “(“ 则匹配 “(“。</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">匹配输入字符串的开始位置。如果设置了 RegExp 对象的 Multiline 属性，^ 也匹配 ‘\n’ 或 ‘\r’ 之后的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">匹配输入字符串的结束位置。如果设置了RegExp 对象的 Multiline 属性，$ 也匹配 ‘\n’ 或 ‘\r’ 之前的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">匹配前面的子表达式零次或多次。例如，zo<em> 能匹配 “z” 以及 “zoo”。</em> 等价于{0,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 或 “does” 。? 等价于 {0,1}。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n}</td>
+<td style="text-align:left">n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,}</td>
+<td style="text-align:left">n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,m}</td>
+<td style="text-align:left">m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">当该字符紧跟在任何一个其他限制符 (*, +, ?, {n}, {n,}, {n,m}) 后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串 “oooo”，’o+?’ 将匹配单个 “o”，而 ‘o+’ 将匹配所有 ‘o’。</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">匹配除 “\n” 之外的任何单个字符。要匹配包括 ‘\n’ 在内的任何字符，请使用像”**(.\</td>
+<td>\n)**”的模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(pattern)</td>
+<td style="text-align:left">匹配 pattern 并获取这一匹配。所获取的匹配可以从产生的 Matches 集合得到，在VBScript 中使用 SubMatches 集合，在JScript 中则使用 $0…$9 属性。要匹配圆括号字符，请使用 ‘(‘ 或 ‘)‘。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?:pattern)</td>
+<td style="text-align:left">匹配 pattern 但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用 “或” 字符 (\</td>
+<td>) 来组合一个模式的各个部分是很有用。例如， ‘industr(?:y\</td>
+<td>ies) 就是一个比 ‘industry\</td>
+<td>industries’ 更简略的表达式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?=pattern)</td>
+<td style="text-align:left">正向肯定预查（look ahead positive assert），在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，”Windows(?=95\</td>
+<td>98\</td>
+<td>NT\</td>
+<td>2000)”能匹配”Windows2000”中的”Windows”，但不能匹配”Windows3.1”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?!pattern)</td>
+<td style="text-align:left">正向否定预查(negative assert)，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如”Windows(?!95\</td>
+<td>98\</td>
+<td>NT\</td>
+<td>2000)”能匹配”Windows3.1”中的”Windows”，但不能匹配”Windows2000”中的”Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;=pattern)</td>
+<td style="text-align:left">反向(look behind)肯定预查，与正向肯定预查类似，只是方向相反。例如，”`(?&lt;=95</td>
+<td>98</td>
+<td>NT</td>
+<td>2000)Windows<code>&quot;能匹配&quot;</code>2000Windows<code>&quot;中的&quot;</code>Windows<code>&quot;，但不能匹配&quot;</code>3.1Windows<code>&quot;中的&quot;</code>Windows`”。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;!pattern)</td>
+<td style="text-align:left">反向否定预查，与正向否定预查类似，只是方向相反。例如”`(?&lt;!95</td>
+<td>98</td>
+<td>NT</td>
+<td>2000)Windows<code>&quot;能匹配&quot;</code>3.1Windows<code>&quot;中的&quot;</code>Windows<code>&quot;，但不能匹配&quot;</code>2000Windows<code>&quot;中的&quot;</code>Windows`”。</td>
+</tr>
+<tr>
+<td style="text-align:left">x\</td>
+<td style="text-align:left">y</td>
+<td>匹配 x 或 y。例如，’z\</td>
+<td>food’ 能匹配 “z” 或 “food”。’(z\</td>
+<td>f)ood’ 则匹配 “zood” 或 “food”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[xyz]</td>
+<td style="text-align:left">字符集合。匹配所包含的任意一个字符。例如， ‘[abc]’ 可以匹配 “plain” 中的 ‘a’。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^xyz]</td>
+<td style="text-align:left">负值字符集合。匹配未包含的任意字符。例如， ‘[^abc]’ 可以匹配 “plain” 中的’p’、’l’、’i’、’n’。</td>
+</tr>
+<tr>
+<td style="text-align:left">[a-z]</td>
+<td style="text-align:left">字符范围。匹配指定范围内的任意字符。例如，’[a-z]’ 可以匹配 ‘a’ 到 ‘z’ 范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^a-z]</td>
+<td style="text-align:left">负值字符范围。匹配任何不在指定范围内的任意字符。例如，’[^a-z]’ 可以匹配任何不在 ‘a’ 到 ‘z’ 范围内的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">匹配一个单词边界，也就是指单词和空格间的位置。例如， ‘er\b’ 可以匹配”never” 中的 ‘er’，但不能匹配 “verb” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\B</td>
+<td style="text-align:left">匹配非单词边界。’er\B’ 能匹配 “verb” 中的 ‘er’，但不能匹配 “never” 中的 ‘er’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\cx</td>
+<td style="text-align:left">匹配由 x 指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">匹配一个数字字符。等价于 [0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">匹配一个非数字字符。等价于 [^0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">匹配一个换页符。等价于 \x0c 和 \cL。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">匹配一个换行符。等价于 \x0a 和 \cJ。</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">匹配一个回车符。等价于 \x0d 和 \cM。</td>
+</tr>
+<tr>
+<td style="text-align:left">\s</td>
+<td style="text-align:left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\S</td>
+<td style="text-align:left">匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">匹配一个制表符。等价于 \x09 和 \cI。</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">匹配一个垂直制表符。等价于 \x0b 和 \cK。</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">匹配字母、数字、下划线。等价于’[A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">匹配非字母、数字、下划线。等价于 ‘[^A-Za-z0-9_]’。</td>
+</tr>
+<tr>
+<td style="text-align:left">\xn</td>
+<td style="text-align:left">匹配 n，其中 n 为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，’\x41’ 匹配 “A”。’\x041’ 则等价于 ‘\x04’ &amp; “1”。正则表达式中可以使用 ASCII 编码。</td>
+</tr>
+<tr>
+<td style="text-align:left">\num</td>
+<td style="text-align:left">匹配 num，其中 num 是一个正整数。对所获取的匹配的引用。例如，’(.)\1’ 匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果 \n 之前至少 n 个获取的子表达式，则 n 为向后引用。否则，如果 n 为八进制数字 (0-7)，则 n 为一个八进制转义值。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nm</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果 \nm 之前至少有 nm 个获得子表达式，则 nm 为向后引用。如果 \nm 之前至少有 n 个获取，则 n 为一个后跟文字 m 的向后引用。如果前面的条件都不满足，若 n 和 m 均为八进制数字 (0-7)，则 \nm 将匹配八进制转义值 nm。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nml</td>
+<td style="text-align:left">如果 n 为八进制数字 (0-3)，且 m 和 l 均为八进制数字 (0-7)，则匹配八进制转义值 nml。</td>
+</tr>
+<tr>
+<td style="text-align:left">\un</td>
+<td style="text-align:left">匹配 n，其中 n 是一个用四个十六进制数字表示的 Unicode 字符。例如， \u00A9 匹配版权符号 (?)。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="正则修饰符-g-m-i"><a href="#正则修饰符-g-m-i" class="headerlink" title="正则修饰符(g\m\i)"></a>正则修饰符(g\m\i)</h4><blockquote>
+<p>正则的捕获具有懒惰性,找到第一个符合的结果就会停止捕获,这样我们就需要添加修饰符g(global)来消除正则捕获的懒惰性 </p>
+<p>但是要注意的是exec方法每次只会捕获一个结果,想要获得全部内容需要多次使用exec方法,直到返回结果为null ,所以应该使用循环来获取所有结果</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>  arr = [];</span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> val = reg.exec(str);</span><br><span class="line">  <span class="keyword">if</span>(val)&#123;</span><br><span class="line">    arr.push(val[<span class="number">0</span>]);</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="正则捕获的贪婪性和懒惰性"><a href="#正则捕获的贪婪性和懒惰性" class="headerlink" title="正则捕获的贪婪性和懒惰性"></a>正则捕获的贪婪性和懒惰性</h4><blockquote>
+<p>贪婪性: 出现量词元字符,按照匹配的最大长度来捕获 =&gt; 在量词的后面加上?消除贪婪性按照最小长度进行捕获</p>
+<p>懒惰性: 正则捕获每次只捕获一个而且下次执行还是从头开始捕获</p>
+</blockquote>
+<h4 id="分组捕获"><a href="#分组捕获" class="headerlink" title="分组捕获"></a>分组捕获</h4><blockquote>
+<p>如果想将某个部分单独捕获出来,可以给这个部分加上(),如果不想捕获某个分组的内容在这个内容的括号里面的前面加上(?:   )</p>
+</blockquote>
+<h4 id="字符串中的正则方法"><a href="#字符串中的正则方法" class="headerlink" title="字符串中的正则方法"></a>字符串中的正则方法</h4><ul>
+<li>str.match(reg)</li>
+</ul>
+<blockquote>
+<p>match方法是用来匹配字符串中符合条件的内容,在正则没有全局修饰符g的时候,和exec的结果一直,但是当加了g的时候match只获取捕获的结果,而index和input这些属性不会获取,并且不会捕获分组的内容,只返回大正则的内容</p>
+</blockquote>
+<ul>
+<li>str.split(reg)  =&gt; 按照正则匹配的内容拆分成数组</li>
+<li>str.search(reg)  =&gt; 返回匹配内容的索引</li>
+<li>str.replace(reg,new);</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="string">"0123456789"</span>; <span class="comment">//"0[零]1[壹]2[贰]3456789"</span></span><br><span class="line"><span class="keyword">var</span> ary = [<span class="string">"零"</span>, <span class="string">"壹"</span>, <span class="string">"贰"</span>, <span class="string">"叁"</span>, <span class="string">"肆"</span>, <span class="string">"伍"</span>, <span class="string">"陆"</span>, <span class="string">"柒"</span>, <span class="string">"捌"</span>, <span class="string">"玖"</span>];</span><br><span class="line"><span class="keyword">var</span> a = str.replace(<span class="regexp">/\d/g</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> ary[<span class="built_in">arguments</span>[<span class="number">0</span>]];</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//  箭头函数</span></span><br><span class="line"><span class="comment">// var a = str.repalce(/\d/g,(...arg)=&gt;&#123;</span></span><br><span class="line"><span class="comment">// 箭头函数没有arguments,可以使用省略赋值的方式,将传入的参数全都传进arg中,使用arg</span></span><br><span class="line"><span class="comment">// &#125;)</span></span><br></pre></td></tr></table></figure>
+<h4 id="正则解除贪婪性"><a href="#正则解除贪婪性" class="headerlink" title="正则解除贪婪性"></a>正则解除贪婪性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w+?)(\d+?)/</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'zfpx2018'</span>;</span><br><span class="line">reg.exec(str)</span><br><span class="line">=&gt;  [<span class="string">"zfpx2"</span>, <span class="string">"zfpx"</span>, <span class="string">"2"</span>, <span class="attr">index</span>: <span class="number">0</span>, <span class="attr">input</span>: <span class="string">"zfpx2018"</span>]</span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(\w+?)(\d+)/</span>;</span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'zfpx2018'</span>;</span><br><span class="line">reg.exec(str)</span><br><span class="line">=&gt; [<span class="string">"zfpx2018"</span>, <span class="string">"zfpx"</span>, <span class="string">"2018"</span>, <span class="attr">index</span>: <span class="number">0</span>, <span class="attr">input</span>: <span class="string">"zfpx2018"</span>]</span><br><span class="line"><span class="comment">// 在捕获的符合条件的结果的时候解除贪婪性时</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/14/正则表达式/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-ES6新增的一些方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/11/ES6新增的一些方法/">ES6新增的一些方法</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/11/ES6新增的一些方法/" class="archive-article-date">
+  	<time datetime="2017-12-11T06:59:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h4 id="新增的方法"><a href="#新增的方法" class="headerlink" title="新增的方法"></a>新增的方法</h4><ul>
+<li>Array(n)  =&gt; 只穿一个数字的时候会创建一个length = n 的空数组<ul>
+<li>Array.of()  =&gt;  只传一个参数也是创建对应参数的数组</li>
+</ul>
+</li>
+<li>Array.from()   =&gt; 参数为数组或者类数组,返回一个新的数组</li>
+<li>copyWithin(target,start,end)<ul>
+<li>target : 从该位置开始替换数据</li>
+<li>start : 选填的,默认值为0,从该位置开始读取数据</li>
+<li>end : 默认length,到该位置前</li>
+<li>原数组的长度不变</li>
+</ul>
+</li>
+<li>find   findIndex  //  遍历当前数组,一旦返回值为true就停止查找,返回当前项,或者返回当前项对应的索引  未找到为undefined</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ary.find(<span class="function">(<span class="params">item,index,ary</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="comment">//  遍历当前数组,一旦返回值为true就停止查找,返回当前项</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>fill(value,start,end)    //  可以用来初始化数组<ul>
+<li>Array(7).fill(1)</li>
+<li>value : 填充的值</li>
+<li>start : 开始填充的值, 默认0</li>
+<li>end : 停止的位置,不包括这个索引默认为length</li>
+</ul>
+</li>
+<li>includes()  //判断数组中是否有这一项</li>
+</ul>
+<h4 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h4><blockquote>
+<p>空位不是undefined , 空位在检测的时候显示为false,是没有值的意思</p>
+<p><strong>在ES5中方法遍历时空位会自动跳过,ES6会将其当做undefined来处理</strong><br><code>map会将其显示出来显示为empty</code></p>
+</blockquote>
+<h4 id="for-of循环"><a href="#for-of循环" class="headerlink" title="for  of循环"></a>for  of循环</h4><blockquote>
+<p>for of  是for in的优化版,不存在数字属性名提前的问题</p>
+<p>会使用到Array.prototype里的方法<code>keys(),entries()</code></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> a <span class="keyword">of</span> ary)&#123;</span><br><span class="line">  <span class="built_in">console</span>(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> [key,value] <span class="keyword">of</span> ary.entries())&#123;</span><br><span class="line">  <span class="built_in">console</span>(key,value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><h4 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h4><blockquote>
+<p>可以给函数的形参设置默认值,如果没有实参传入或者传入为undefined时,则形参会使用默认值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">x,y=<span class="number">10</span></span>)</span>&#123;<span class="keyword">return</span> x+y&#125;;</span><br><span class="line">&gt; fn(<span class="number">10</span>,<span class="number">5</span>);  =&gt;  <span class="number">15</span>  <span class="comment">//传了值则默认值不会起作用</span></span><br><span class="line">&gt; fn(<span class="number">10</span>);  =&gt; <span class="number">20</span>  <span class="comment">// y没有传,此时会使用默认值</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>传递的默认值为变量的时候会在函数的上部变量中进行查找</strong></p>
+</blockquote>
+<h4 id="function里面的length属性"><a href="#function里面的length属性" class="headerlink" title="function里面的length属性"></a>function里面的length属性</h4><blockquote>
+<p>在函数没有形参时,length长度表示实参的个数;    </p>
+<p>有默认值则为有默认值的位置</p>
+</blockquote>
+<h4 id="扩展运算符-…"><a href="#扩展运算符-…" class="headerlink" title="扩展运算符 …"></a>扩展运算符 …</h4><blockquote>
+<p>可以将数组转换为非数组,或者非数组转换为数组</p>
+<p>将类数组转换为数组</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">let</span> ary = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">&gt; <span class="built_in">console</span>.log(...ary) = <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>;  和apply(<span class="keyword">this</span>,ary);</span><br><span class="line">&gt; <span class="keyword">var</span> arr = [...arguments].sort();</span><br><span class="line">&gt; <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>,arr);</span><br><span class="line">&gt; <span class="built_in">Math</span>.max(...arr);</span><br><span class="line">&gt;</span><br><span class="line">&gt; <span class="comment">// 拼接数组</span></span><br><span class="line">&gt; a1.concat(a2);</span><br><span class="line">&gt; [...a1,...a2];</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h4 id="函数name的值"><a href="#函数name的值" class="headerlink" title="函数name的值"></a>函数name的值</h4><blockquote>
+<p>我们普通情况下定义函数的name都等于函数名 或者接受函数地址的变量名,</p>
+<ol>
+<li>在绑定方法中  =&gt;  var fn1 = fn.bind(obj);  fn1.name =&gt; bound fn</li>
+<li>以new Function创建的函数的name属性 =&gt; anonymous</li>
+</ol>
+</blockquote>
+<h4 id="ES6箭头函数-gt"><a href="#ES6箭头函数-gt" class="headerlink" title="ES6箭头函数  ()=&gt;{}"></a>ES6箭头函数  ()=&gt;{}</h4><blockquote>
+<p>如果函数里只有<code>return  :   x=&gt;x;   (x) =&gt; {return x}</code></p>
+</blockquote>
+<ul>
+<li>箭头函数的this问题 <ul>
+<li>箭头函数内部没有this指向,函数中的this为上层作用域中的this</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);  <span class="comment">//  Window</span></span><br><span class="line">  (f)=&gt;&#123;<span class="built_in">console</span>.log(<span class="keyword">this</span>);&#125;;  <span class="comment">//  Window</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><blockquote>
+<p>如果对象的属性名为变量的话</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">var</span> a = <span class="string">'aa'</span>;</span><br><span class="line">&gt; <span class="keyword">let</span> obj = &#123;[a]:<span class="number">1</span> &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>Object.is(a,b)  =&gt; 判断两个值是否相等</li>
+<li>Object.assign(obj1,obj2)  =&gt; 将obj2的内容合并到obj1中,返回obj1</li>
+<li>Object.getOwnPropertyDescriptor()   =&gt;  显示属性的具体情况</li>
+<li>Object.keys();  返回值为数组  =&gt; 包括对象的所有的私有属性</li>
+<li>Object.getOwnPropertyNames()</li>
+</ul>
+<h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><blockquote>
+<ol>
+<li>使用构造函数的方法创建一个实例</li>
+<li>参数是一个数组,第一项为键key,第二项为值value</li>
+<li>key可以是任意数据类型</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&gt;  <span class="comment">//var map = new Map([[key,value],[key,value],[key,value]]);</span></span><br><span class="line">&gt;  <span class="keyword">var</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>([[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'a'</span>,<span class="string">'a'</span>],[<span class="string">'b'</span>,<span class="number">4</span>]])  </span><br><span class="line">&gt;  <span class="built_in">Map</span>&#123;</span><br><span class="line">&gt;  	size: <span class="number">3</span></span><br><span class="line">&gt;  	&lt;entries&gt;</span><br><span class="line">&gt;  		0: 1 → 2</span><br><span class="line">&gt;  		1: a → "a"</span><br><span class="line">&gt;  		2: b → 4</span><br><span class="line">&gt;  	__proto__: Object &#123; … &#125;</span><br><span class="line">&gt;  &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>get(key)  =&gt; 获取值</li>
+<li>set(key,value) =&gt; 设置值</li>
+<li>delete  =&gt;  删除这个值,返回true false</li>
+<li>has  =&gt;  判断是否存在</li>
+<li>clear  =&gt;  清空</li>
+<li>size 长度</li>
+<li>forEach()  =&gt; keys ,value,entries</li>
+</ul>
+</blockquote>
+<h2 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h2><blockquote>
+<p>使用构造函数的方式来创建</p>
+<p>将传进来的值为数组去重后得到一个set实例</p>
+</blockquote>
+<h4 id="数组使用set去重"><a href="#数组使用set去重" class="headerlink" title="数组使用set去重"></a>数组使用set去重</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [];</span><br><span class="line"><span class="built_in">Array</span>.from(<span class="keyword">new</span> <span class="built_in">Set</span>(arr));</span><br><span class="line">[...new <span class="built_in">Set</span>(arr)];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>add</li>
+<li>clear</li>
+<li>delete   返回  true或false</li>
+<li>entries</li>
+<li>forEach</li>
+<li>has</li>
+<li>keys</li>
+<li>size</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr1=[],arr2=[];</span><br><span class="line"><span class="keyword">var</span> ary = [...new <span class="built_in">Set</span>([...arr1,...arr2]);]</span><br><span class="line"><span class="keyword">var</span> arr = arr1.fliter(<span class="function">(<span class="params">item,index</span>)=&gt;</span>&#123;</span><br><span class="line"> <span class="keyword">return</span> arr2.includes(item);</span><br><span class="line">&#125;);</span><br><span class="line">ary.filter(<span class="function">(<span class="params">item</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> !arr.includes(item);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/11/ES6新增的一些方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jsDOM" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -954,7 +1793,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">设计模式</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">jQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">HTML5</a>
               </li>
             
             <div class="clearfix"></div>

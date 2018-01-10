@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>callbacks | Young&#39;s Blog</title>
+  <title>知识梳理 | Young&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+  <meta name="description" content="ES6 JS新一代的语法规范ES  ES6ES5区别 定义变量 ES5 var function ES6 let  const  class   import let const 没有变量提升  同级作用域不可重复声明  不会给window增加属性 会形成块级作用域  let 没有变量提升,但会提前查找如果有重复声明直接报错,代码不会执行 暂时性死区   在使用  typeof   检测一个没有声">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="callbacks">
-<meta property="og:url" content="http://yoursite.com/2018/01/04/callbacks/index.html">
+<meta property="og:title" content="知识梳理">
+<meta property="og:url" content="http://yoursite.com/2018/01/10/知识梳理/index.html">
 <meta property="og:site_name" content="Young&#39;s Blog">
-<meta property="og:description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+<meta property="og:description" content="ES6 JS新一代的语法规范ES  ES6ES5区别 定义变量 ES5 var function ES6 let  const  class   import let const 没有变量提升  同级作用域不可重复声明  不会给window增加属性 会形成块级作用域  let 没有变量提升,但会提前查找如果有重复声明直接报错,代码不会执行 暂时性死区   在使用  typeof   检测一个没有声">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-04T04:20:26.454Z">
+<meta property="og:updated_time" content="2018-01-10T11:14:44.248Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="callbacks">
-<meta name="twitter:description" content="$.Callbacks()  add remove has   return true/false fire()    =&amp;gt;  Callbacks集合按顺序执行 empty   123456789101112131415161718192021222324252627282930313233343536373839404142434445function Callbacks() &amp;#123">
+<meta name="twitter:title" content="知识梳理">
+<meta name="twitter:description" content="ES6 JS新一代的语法规范ES  ES6ES5区别 定义变量 ES5 var function ES6 let  const  class   import let const 没有变量提升  同级作用域不可重复声明  不会给window增加属性 会形成块级作用域  let 没有变量提升,但会提前查找如果有重复声明直接报错,代码不会执行 暂时性死区   在使用  typeof   检测一个没有声">
   
   
     <link rel="icon" href="/title.ico">
@@ -159,37 +159,152 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-callbacks" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-知识梳理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      callbacks
+      知识梳理
     </h1>
   
 
         
-        <a href="/2018/01/04/callbacks/" class="archive-article-date">
-  	<time datetime="2018-01-04T01:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-04</time>
+        <a href="/2018/01/10/知识梳理/" class="archive-article-date">
+  	<time datetime="2018-01-10T01:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p><code>$.Callbacks()</code></p>
-<ul>
-<li>add</li>
-<li>remove</li>
-<li>has   return true/false</li>
-<li>fire()    =&gt;  Callbacks集合按顺序执行</li>
-<li>empty</li>
-</ul>
+        <h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h2><blockquote>
+<p>JS新一代的语法规范ES</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Callbacks</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn = [];</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.add = <span class="function"><span class="keyword">function</span> (<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">            arg.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (!<span class="keyword">this</span>.has(item)) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.fn.push(item)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.remove = <span class="function"><span class="keyword">function</span> (<span class="params">...arg</span>) </span>&#123;</span><br><span class="line">            arg.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">this</span>.has(item)) &#123;</span><br><span class="line">                    <span class="keyword">this</span>.fn.splice(index, <span class="number">1</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.empty = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.fn = [];</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.has = <span class="function"><span class="keyword">function</span> (<span class="params">f</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.fn.includes(f);</span><br><span class="line">        &#125;</span><br><span class="line">        Callbacks.prototype.fire = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.fn) &#123;</span><br><span class="line">                <span class="keyword">this</span>.fn.forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">                    item();</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> a = <span class="keyword">new</span> Callbacks();</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'b'</span>); &#125;</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">c</span>(<span class="params"></span>) </span>&#123; <span class="built_in">console</span>.log(<span class="string">'c'</span>); &#125;</span><br><span class="line">        a.add(b,c);</span><br><span class="line">        <span class="built_in">console</span>.log(a.has(b));</span><br><span class="line">        a.fire();</span><br><span class="line">        a.empty();</span><br><span class="line">        a.fire();</span><br><span class="line">        a.remove(b);</span><br><span class="line">        a.fire()</span><br></pre></td></tr></table></figure>
+<h4 id="ES6ES5区别"><a href="#ES6ES5区别" class="headerlink" title="ES6ES5区别"></a>ES6ES5区别</h4><ul>
+<li>定义变量<ul>
+<li>ES5 var function</li>
+<li>ES6 let  const  class   import</li>
+<li>let const 没有变量提升  同级作用域不可重复声明  不会给window增加属性 会形成块级作用域 </li>
+<li>let 没有变量提升,但会提前查找如果有重复声明直接报错,代码不会执行</li>
+<li><strong>暂时性死区</strong>   在使用  typeof   检测一个没有声明过的变量时浏览器不会报错</li>
+<li>在 ECMAScript 2015 中，<strong>let</strong>绑定不受<strong>变量提升</strong>的约束，这意味着<strong>let</strong>声明不会被提升到当前执行上下文的顶部。在块中的变量初始化之前，引用它将会导致 <code>ReferenceError</code>（而使用 var 声明变量则恰恰相反，该变量的值是 undefined ）。该变量处于从块开始到初始化处理的“暂存死区”。</li>
+</ul>
+</li>
+<li>常用报错<ul>
+<li>reference Error</li>
+<li>syntax Error</li>
+<li>Type Error  类型错误   Ascychronous</li>
+<li>Range Error </li>
+<li>Error  throw new Error</li>
+</ul>
+</li>
+<li>块级作用域 <ul>
+<li>除了对象都是</li>
+</ul>
+</li>
+<li>闭包<ul>
+<li>函数执行,形成的私有作用域没有销毁,此时形成闭包</li>
+<li><code>var flag = window.getComputedStyle</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">惰性思想</span><br><span class="line"><span class="keyword">let</span> a = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line">  <span class="keyword">return</span>&#123;</span><br><span class="line">    init()&#123;</span><br><span class="line">      fn()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>柯理化函数  利用闭包预先处理事件 (闭包的保存)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.myBind = <span class="function"><span class="keyword">function</span> <span class="title">myBind</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">arguments</span>.length ===<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="built_in">arguments</span>[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> arg = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>);</span><br><span class="line">    obj.fn = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      arg = arg.concat([].slice.call(<span class="built_in">arguments</span>));</span><br><span class="line">      obj.fn.apply(obj,arg);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>事件委托</p>
+<ul>
+<li>事件委托还有一个名字叫事件代理，JavaScript高级程序设计上讲：事件委托就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。</li>
+</ul>
+</li>
+<li><p>Rest  拓展运算符  展开运算符  剩余运算符</p>
+</li>
+</ul>
+<h4 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;age,<span class="attr">name</span> : name1&#125; = &#123;<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">name</span>:<span class="string">'young'</span>&#125; </span><br><span class="line"><span class="keyword">var</span> _age$name = &#123; <span class="attr">age</span>: <span class="number">18</span>, <span class="attr">name</span>: <span class="string">'young'</span> &#125;,</span><br><span class="line">    age = _age$name.age,</span><br><span class="line">    name1 = _age$name.name;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> ary = [</span><br><span class="line">    <span class="number">0</span>,</span><br><span class="line">    <span class="string">'ok'</span>,</span><br><span class="line">    &#123;</span><br><span class="line">        id: <span class="number">1</span>,</span><br><span class="line">        name: <span class="string">'张三'</span>,</span><br><span class="line">        sex: <span class="number">0</span>,</span><br><span class="line">        friend: [</span><br><span class="line">            <span class="string">'李四'</span>,</span><br><span class="line">            <span class="string">'王五'</span>,</span><br><span class="line">            <span class="string">'尼古拉斯赵四'</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"><span class="keyword">let</span> [code,msg,&#123;id,<span class="attr">name</span>:firstName,sex,<span class="attr">friend</span>:[,,lastFriend]&#125;] = ary;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>attachEvent 绑定事件this执行window</li>
+</ul>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><ol>
+<li>全局指向window</li>
+<li>自执行函数window</li>
+<li>元素绑定事件中的this指向该元素  箭头函数和attachEvent</li>
+<li>回调函数this window</li>
+<li>函数前面有 . 一般是.前面的对象</li>
+<li>类中this指向实例</li>
+<li>箭头函数没有this 在定义环境中</li>
+</ol>
+<h4 id="箭头函数"><a href="#箭头函数" class="headerlink" title="箭头函数"></a>箭头函数</h4><blockquote>
+<p>外层函数基本不用箭头函数 , 内层函数如果需要this和定义环境中的一致可以使用箭头函数</p>
+</blockquote>
+<ul>
+<li><code>Object/Object.prototype   Array/Array.prototype   Interator/for of   Generator   class   Set/Map   async/await   Promise   symbol   Proxy   ES6toES5</code></li>
+</ul>
+<h4 id="Object-getOwnPropertyDescriptor"><a href="#Object-getOwnPropertyDescriptor" class="headerlink" title="Object.getOwnPropertyDescriptor"></a><strong>Object.getOwnPropertyDescriptor</strong></h4><blockquote>
+<p>方法返回指定对象上一个自有属性对应的属性描述符。（自有属性指的是直接赋予该对象的属性，不需要从原型链上进行查找的属性）</p>
+</blockquote>
+<h5 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.getOwnPropertyDescriptor(obj, prop)</span><br></pre></td></tr></table></figure>
+<h5 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h5><ul>
+<li><p><code>obj</code></p>
+<p>需要查找的目标对象</p>
+</li>
+<li><p><code>prop</code></p>
+<p>目标对象内属性名称（String类型）</p>
+</li>
+</ul>
+<h5 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h5><p>如果指定的属性存在于对象上，则返回其属性描述符对象（property descriptor），否则返回 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" target="_blank" rel="noopener"><code>undefined</code></a>。</p>
+<h5 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h5><p>该方法允许对一个属性的描述进行检索。在 Javascript 中， 属性 由一个字符串类型的“名字”（name）和一个“属性描述符”（property descriptor）对象构成。更多关于属性描述符类型以及他们属性的信息可以查看：<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener"><code>Object.defineProperty</code></a>.</p>
+<p>一个属性描述符是一个记录，由下面属性当中的某些组成的：</p>
+<ul>
+<li><p><strong>value</strong></p>
+<p>该属性的值(仅针对数据属性描述符有效)</p>
+</li>
+<li><p><strong>writable</strong></p>
+<p><code>当且仅当属性的值可以被改变时为true。(仅针对数据属性描述有效)</code></p>
+</li>
+<li><p><strong>get</strong></p>
+<p>获取该属性的访问器函数（getter）。如果没有访问器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)</p>
+</li>
+<li><p><strong>set</strong></p>
+<p>获取该属性的设置器函数（setter）。 如果没有设置器， 该值为undefined。(仅针对包含访问器或设置器的属性描述有效)</p>
+</li>
+<li><p><strong>configurable</strong></p>
+<p><code>当且仅当指定对象的属性描述可以被改变或者属性可被删除时，为true。</code></p>
+</li>
+<li><p><strong>enumerable</strong></p>
+<p>当且仅当指定对象的属性可以被枚举出时，为 <code>true</code>。</p>
+</li>
+</ul>
+<h4 id="异步和同步"><a href="#异步和同步" class="headerlink" title="异步和同步"></a>异步和同步</h4><blockquote>
+<p>js是单线程的,js运行在浏览器中,渲染和js执行</p>
+</blockquote>
+<ul>
+<li>同步编程<ul>
+<li>当前任务没有结束,下一个任务无法执行</li>
+</ul>
+</li>
+<li>异步执行<ul>
+<li>任务等待时,继续执行下面的任务</li>
+<li>定时器   时间0也需要等待</li>
+<li>事件绑定  </li>
+<li>ajax异步请求</li>
+<li>回调函数也可以理解为异步的 </li>
+</ul>
+</li>
+</ul>
+<h4 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h4><blockquote>
+<p>会造成回调函数显示非常混乱,难以维护</p>
+<p>Promise  有三种状态  </p>
+<ol>
+<li>pending</li>
+<li>fulfuilled</li>
+<li>rejected</li>
+</ol>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">new</span> promise时 回调函数就执行了</span><br><span class="line"><span class="keyword">let</span> prom = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,rejected</span>)=&gt;</span>&#123;</span><br><span class="line">  回调函数是同步执行的</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">  $.ajax(&#123;</span><br><span class="line">  <span class="keyword">async</span>:ture,</span><br><span class="line">  success:<span class="function"><span class="keyword">function</span>(<span class="params">response</span>)</span>&#123;</span><br><span class="line">    resolve(response);</span><br><span class="line">    将promise的状态改变为fulfilled</span><br><span class="line">  &#125;,</span><br><span class="line">  error:<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  	reject(e);</span><br><span class="line">    将promise的状态改变为rejected</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">2</span>)</span><br><span class="line">prom.then(<span class="function">(<span class="params">data</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(data)</span><br><span class="line">&#125;).catch(<span class="function">(<span class="params">err</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(err);</span><br><span class="line">  设置回调函数后返回的是一个新的<span class="built_in">Promise</span>实例</span><br><span class="line">  当reject执行或者then里面的代码报错或者执行失败都会调用<span class="keyword">catch</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
 
@@ -280,7 +395,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/04/callbacks/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/01/10/知识梳理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +409,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2018/01/04/javascript常用的设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          javascript常用的设计模式
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/03/dom事件原理/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">dom事件原理</div>
+    <a href="/2018/01/09/移动端初探/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">移动端初探</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -332,7 +438,7 @@ var _hmt = _hmt || [];
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6"><span class="toc-number">1.</span> <span class="toc-text"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ES6ES5区别"><span class="toc-number">1.0.1.</span> <span class="toc-text"><a href="#ES6ES5&#x533A;&#x522B;" class="headerlink" title="ES6ES5&#x533A;&#x522B;"></a>ES6ES5&#x533A;&#x522B;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解构赋值"><span class="toc-number">1.0.2.</span> <span class="toc-text"><a href="#&#x89E3;&#x6784;&#x8D4B;&#x503C;" class="headerlink" title="&#x89E3;&#x6784;&#x8D4B;&#x503C;"></a>&#x89E3;&#x6784;&#x8D4B;&#x503C;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#this"><span class="toc-number">1.0.3.</span> <span class="toc-text"><a href="#this" class="headerlink" title="this"></a>this</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#箭头函数"><span class="toc-number">1.0.4.</span> <span class="toc-text"><a href="#&#x7BAD;&#x5934;&#x51FD;&#x6570;" class="headerlink" title="&#x7BAD;&#x5934;&#x51FD;&#x6570;"></a>&#x7BAD;&#x5934;&#x51FD;&#x6570;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-getOwnPropertyDescriptor"><span class="toc-number">1.0.5.</span> <span class="toc-text"><a href="#Object-getOwnPropertyDescriptor" class="headerlink" title="Object.getOwnPropertyDescriptor"></a><strong>Object.getOwnPropertyDescriptor</strong></span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#语法"><span class="toc-number">1.0.5.1.</span> <span class="toc-text"><a href="#&#x8BED;&#x6CD5;" class="headerlink" title="&#x8BED;&#x6CD5;"></a>&#x8BED;&#x6CD5;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#参数"><span class="toc-number">1.0.5.2.</span> <span class="toc-text"><a href="#&#x53C2;&#x6570;" class="headerlink" title="&#x53C2;&#x6570;"></a>&#x53C2;&#x6570;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#返回值"><span class="toc-number">1.0.5.3.</span> <span class="toc-text"><a href="#&#x8FD4;&#x56DE;&#x503C;" class="headerlink" title="&#x8FD4;&#x56DE;&#x503C;"></a>&#x8FD4;&#x56DE;&#x503C;</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#描述"><span class="toc-number">1.0.5.4.</span> <span class="toc-text"><a href="#&#x63CF;&#x8FF0;" class="headerlink" title="&#x63CF;&#x8FF0;"></a>&#x63CF;&#x8FF0;</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#异步和同步"><span class="toc-number">1.0.6.</span> <span class="toc-text"><a href="#&#x5F02;&#x6B65;&#x548C;&#x540C;&#x6B65;" class="headerlink" title="&#x5F02;&#x6B65;&#x548C;&#x540C;&#x6B65;"></a>&#x5F02;&#x6B65;&#x548C;&#x540C;&#x6B65;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Promise"><span class="toc-number">1.0.7.</span> <span class="toc-text"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
