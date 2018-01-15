@@ -156,6 +156,243 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-iterator" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/12/iterator/">iterator</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/12/iterator/" class="archive-article-date">
+  	<time datetime="2018-01-12T14:51:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javascript1</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/12/iterator/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Zepto&amp;Swiper" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/11/Zepto&Swiper/">Zepto</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/11/Zepto&Swiper/" class="archive-article-date">
+  	<time datetime="2018-01-11T12:02:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Zepto"><a href="#Zepto" class="headerlink" title="Zepto"></a>Zepto</h2><blockquote>
+<p>Zepto是一个小型的,专门针对移动端开发的JS类库,他的开发原理以及使用和jQuery很接近,体积比jQuery小很多</p>
+<p>Zepto不支持IE6~8 有一些方法高版本IE也不支持,专门针对移动端设计</p>
+<p>Zepto只实现了一部分jQuery的方法 对于jQuery中关于动画的基本都不支持 , 只支持animate <strong>Zepto提供了移动端专用的事件操作方法,jQuery中没有</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> tap : 点击</span><br><span class="line"><span class="number">2.</span> singleTap : 单击</span><br><span class="line"><span class="number">3.</span> doubleTap : 双击</span><br><span class="line"><span class="number">4.</span> longTap : 长按</span><br><span class="line"><span class="number">5.</span> swipe : 滑动</span><br><span class="line"><span class="number">6.</span> swipeUp/Down/Left/Right  : 四个方向滑动</span><br><span class="line"><span class="number">7.</span> pinchIn/Out : 放大缩小</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'seclector'</span>).tap(<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">  e : 事件对象</span><br><span class="line">  <span class="keyword">this</span> : 当前操作对象</span><br><span class="line">&#125;)</span><br><span class="line">animate中支持transform变形  Zepto默认结束上一个动画,没有stop()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>zepto是按照模块分区的 默认只带了 ajax / form / event / zepto</p>
+</blockquote>
+<h2 id="使用Prefixfree来解决CSS3兼容"><a href="#使用Prefixfree来解决CSS3兼容" class="headerlink" title="使用Prefixfree来解决CSS3兼容"></a>使用Prefixfree来解决CSS3兼容</h2><blockquote>
+<p>在代码里面引入<code>&lt;script src=&quot;prefixfree.min.js&quot;&gt;&lt;/script&gt;</code>就会自动检测css中需要添加前缀的帮你自动添加</p>
+</blockquote>
+<h4 id="文本二维码生成-将地址生成为二维码"><a href="#文本二维码生成-将地址生成为二维码" class="headerlink" title="文本二维码生成 将地址生成为二维码"></a>文本二维码生成 将地址生成为二维码</h4><h2 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h2><blockquote>
+<p>目前很多页面的图标都是使用的<strong>字体图标</strong>完成的 (主要的格式有 )</p>
+</blockquote>
+<ul>
+<li><p>优势</p>
+<ul>
+<li>矢量化 : 字体是矢量化的所以可以轻松的适配各种设备</li>
+<li>灵活性 : 文字效果可以轻松的应用到图标上 , 颜色 阴影 翻转等</li>
+<li>兼容性 : 网页字体支持所有的现代浏览器,包括IE低版本</li>
+</ul>
+</li>
+<li><p>弊端</p>
+<ul>
+<li>字体只能渲染成单色或者css3渐变</li>
+<li>很多字体都是有版权的</li>
+<li>创作自己的字体图标很浪费时间,重构维护成本高</li>
+</ul>
+</li>
+<li><p>常用的字体图标网站</p>
+<ul>
+<li><p><a href="http://iconfont.cn" target="_blank" rel="noopener">阿里字体图标库 </a></p>
+<ul>
+<li><p>下载的都是svg矢量图  =&gt; 直接当做背景图片来使用 <strong>svg图片不能再css里面更改颜色,需要在源码里面修改</strong></p>
+</li>
+<li><p>下载代码使用方法  font-class : 引入font-class</p>
+</li>
+<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span>&#123;</span><br><span class="line">  <span class="attribute">font-family</span>:<span class="string">'iconfont'</span>;</span><br><span class="line">  <span class="attribute">src</span>:<span class="built_in">url</span>(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>​</p>
+</li>
+</ul>
+</li>
+<li><p><a href="http://fontawesome.dashgame.com" target="_blank" rel="noopener">Font Awesome</a></p>
+</li>
+<li><p><a href="http://icomoon.io/app/" target="_blank" rel="noopener">icomoon</a></p>
+</li>
+<li><p><a href="http://fontello.com" target="_blank" rel="noopener">fontello</a></p>
+</li>
+</ul>
+</li>
+<li><p>字体图标制作工具</p>
+<ul>
+<li>fontcreator</li>
+</ul>
+</li>
+</ul>
+<h2 id="网站的SEO和SEM初步了解"><a href="#网站的SEO和SEM初步了解" class="headerlink" title="网站的SEO和SEM初步了解"></a>网站的SEO和SEM初步了解</h2><ul>
+<li>SEO和SEM两种常用的网站推广模式<ul>
+<li>SEO网络推广</li>
+<li>SEM百度竞价</li>
+<li>珠峰培训前端技术资料</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>搜索引擎 : 百度 谷歌 360 搜狗 bing</p>
+<p>当在搜索的时候能够在搜索的排名中靠前就是 SEO 的作用</p>
+<ol>
+<li>搜索引擎会通过爬虫去各个网站中检索内容,把一些内容和关键词收录到自己的搜索引擎库中</li>
+<li>当用户搜索关键词的时候呈现给用户</li>
+<li>通过site:域名domain 来获取当前域名被百度收录到的次数</li>
+<li>通过<code>爱站工具</code> 优化SEO</li>
+<li>title不要乱写 </li>
+<li><code>&lt;meta type=&quot;keywords&quot; content=&quot;&quot;&gt;</code></li>
+<li><code>&lt;meta type=&quot;description&quot; content=&quot;&quot;&gt;</code></li>
+<li><code>&lt;meta type=&quot;author&quot; content=&quot;&quot;&gt;</code></li>
+<li><code>&lt;meta type=&quot;revisit&quot; content=&quot;10 days&quot;&gt;</code>  设置网站被搜索引擎抓取的时间间隔</li>
+<li>一个页面H1只能使用一次</li>
+<li>img都要加alt属性</li>
+<li>HTML层次不能太深</li>
+<li>需要推广的关键词放在H标签中  font-size设为0</li>
+<li>通过JS添加进页面的内容 爬虫无法获取(<strong>抓取的是网站源代码 view:source</strong>)</li>
+</ol>
+</blockquote>
+<h2 id="Swiper-Swiper4-x使用方法"><a href="#Swiper-Swiper4-x使用方法" class="headerlink" title="Swiper  (Swiper4.x使用方法)"></a>Swiper  (Swiper4.x使用方法)</h2><h4 id="1-首先加载插件"><a href="#1-首先加载插件" class="headerlink" title="1.首先加载插件"></a>1.首先加载插件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">需要用到的文件有swiper.min.js和swiper.min.css文件。可下载Swiper文件或使用CDN。</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    ...</span><br><span class="line">    &lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"path/to/swiper.min.css"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">    ...</span></span><br><span class="line"><span class="regexp">    &lt;script src="path/</span>to/swiper.min.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-HTML内容"><a href="#2-HTML内容" class="headerlink" title="2.HTML内容"></a>2.HTML内容</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-container"</span>&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-wrapper"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-slide"</span>&gt;Slide <span class="number">1</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div class="swiper-slide"&gt;Slide 2&lt;/</span>div&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-slide"</span>&gt;Slide <span class="number">3</span>&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;!-- 如果需要分页器 --&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-pagination"</span>&gt;&lt;/div&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;!-- 如果需要导航按钮 --&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-button-prev"</span>&gt;&lt;/div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-button-next"</span>&gt;&lt;/div&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;!-- 如果需要滚动条 --&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"swiper-scrollbar"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">导航等组件可以放在container之外</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-给Swiper定义一个大小"><a href="#3-给Swiper定义一个大小" class="headerlink" title="3.给Swiper定义一个大小"></a>3.给Swiper定义一个大小</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.swiper-container &#123;</span><br><span class="line">    width: <span class="number">600</span>px;</span><br><span class="line">    height: <span class="number">300</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-初始化Swiper"><a href="#4-初始化Swiper" class="headerlink" title="4.初始化Swiper"></a>4.初始化Swiper</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">最好是挨着&lt;<span class="regexp">/body&gt;标签</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;        </span></span><br><span class="line"><span class="regexp">  var mySwiper = new Swiper ('.swiper-container', &#123;</span></span><br><span class="line"><span class="regexp">    direction: 'vertical',</span></span><br><span class="line"><span class="regexp">    loop: true,</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 如果需要分页器</span></span><br><span class="line"><span class="regexp">    pagination: &#123;</span></span><br><span class="line"><span class="regexp">      el: '.swiper-pagination',</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 如果需要前进后退按钮</span></span><br><span class="line"><span class="regexp">    navigation: &#123;</span></span><br><span class="line"><span class="regexp">      nextEl: '.swiper-button-next',</span></span><br><span class="line"><span class="regexp">      prevEl: '.swiper-button-prev',</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 如果需要滚动条</span></span><br><span class="line"><span class="regexp">    scrollbar: &#123;</span></span><br><span class="line"><span class="regexp">      el: '.swiper-scrollbar',</span></span><br><span class="line"><span class="regexp">    &#125;,</span></span><br><span class="line"><span class="regexp">  &#125;)        </span></span><br><span class="line"><span class="regexp">  &lt;/</span>script&gt;</span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">如果不能写在HTML内容的后面，则需要在页面加载完成后再初始化。</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script type="text/</span>javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">window.onload = function() &#123;</span></span><br><span class="line"><span class="string">  ...</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">或者这样（Jquery和Zepto）</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">$(document).ready(function () &#123;</span></span><br><span class="line"><span class="string"> ...</span></span><br><span class="line"><span class="string">&#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/11/Zepto&Swiper/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-知识梳理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -375,7 +612,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="响应式布局开发"><a href="#响应式布局开发" class="headerlink" title="响应式布局开发"></a>响应式布局开发</h2><blockquote>
+        <p>[TOC]</p>
+<h2 id="响应式布局开发"><a href="#响应式布局开发" class="headerlink" title="响应式布局开发"></a>响应式布局开发</h2><blockquote>
 <p>响应式布局 :  我们开发的页面能够适配不同的设备的屏幕,显示不同的布局 </p>
 <p>H5  现在已经成为移动端开发的标准代名词(响应式布局)</p>
 </blockquote>
@@ -397,16 +635,18 @@ var _hmt = _hmt || [];
 </ul>
 </li>
 </ul>
-<h5 id="webview-基于V8引擎渲染HTML页面的工具-类似浏览器"><a href="#webview-基于V8引擎渲染HTML页面的工具-类似浏览器" class="headerlink" title="webview : 基于V8引擎渲染HTML页面的工具 类似浏览器"></a>webview : 基于V8引擎渲染HTML页面的工具 类似浏览器</h5><blockquote>
+<h4 id="webview-基于V8引擎渲染HTML页面的工具-类似浏览器"><a href="#webview-基于V8引擎渲染HTML页面的工具-类似浏览器" class="headerlink" title="webview : 基于V8引擎渲染HTML页面的工具 类似浏览器"></a>webview : 基于V8引擎渲染HTML页面的工具 类似浏览器</h4><blockquote>
 <p>页面是嵌入web-view中运行的</p>
 <p>项目中 1.按照需求完成响应式的HTML页面部署到服务器中  2.由nativeAPP团队研发外层框架缓存和需要的页面功能 3. 将H5页面的地址通过web-view渲染出来 4. 主体内容和需要经常更新的都通过H5开发  <strong>H5中需要手机功能的都通过调取web-view的方法</strong></p>
 <p>目前比较小型的页面会使用PC端和移动端共用一个页面</p>
 <p>大型的页面都是PC和移动端分离的设计</p>
 <p>PC端采用固定布局  移动端需要采用相应式布局   需要考虑(1. 浏览器运行 2. 微信中运行 3. 放在nativeapp中运行)</p>
 </blockquote>
-<h5 id="手机常用尺寸"><a href="#手机常用尺寸" class="headerlink" title="手机常用尺寸"></a>手机常用尺寸</h5><blockquote>
-<p>页面设计之前需要从设计处获得设计稿(PSD 或者 sketch设计稿)</p>
-<p>设计提供的移动端的设计稿 , 一般为640x960  或者640x1136  或者750x1334</p>
+<h4 id="手机常用尺寸"><a href="#手机常用尺寸" class="headerlink" title="手机常用尺寸"></a>手机常用尺寸</h4><blockquote>
+<p>页面设计之前需要从设计处获得设计稿(PSD 或者 sketch设计稿)<br>设计提供的移动端的设计稿 , 一般为640x960  或者640x1136  或者750x1334</p>
+<p>我们设置页面的时候默认以设计稿的宽高作为初始值,设置html的font-size=100px;  然后根据屏幕实际像素与设计稿的比值来修改font-size来保持不同设备间的浏览一致性     </p>
+<p><code>font-size = device-width / design-width * defaultFontSize</code> </p>
+<p><strong>由于PC端可以改变浏览器窗口的大小所以只要浏览器的窗口大小发生改变的时候就进行计算并修改html的font-size属性值   window.onresize , 而移动端只需要在第一次加载页面的时候计算设备的像素与设计稿的像素比</strong>  </p>
 </blockquote>
 <ul>
 <li>iphone <ul>
@@ -444,6 +684,172 @@ var _hmt = _hmt || [];
 <ul>
 <li>媒体查询响应式布局</li>
 </ul>
+<h2 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h2><h4 id="HTML5新增加的语义化标签"><a href="#HTML5新增加的语义化标签" class="headerlink" title="HTML5新增加的语义化标签"></a>HTML5新增加的语义化标签</h4><ul>
+<li>header / footer / article / figure / section / nav / main</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;details&gt;</span><br><span class="line">  &lt;summary&gt;Some details&lt;<span class="regexp">/summary&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt;More info about the details.&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/details&gt;</span></span><br><span class="line"><span class="regexp">&lt;details open&gt;</span></span><br><span class="line"><span class="regexp">  &lt;summary&gt;Even more details&lt;/</span>summary&gt;</span><br><span class="line">  &lt;p&gt;Here are even more details about the details.&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>details&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>以上标签不兼容IE6~8使用html5.min.js</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></span><br><span class="line"><span class="comment">	&lt;script src="html5.min.js"&gt;</span></span><br><span class="line"><span class="comment">&lt;![endif]--&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>修改和删除了一些标签 : strong(重点强调)  small(附属细则)  hr (区域分割)    <strong>font center标签不建议使用</strong><ul>
+<li>新增一些标记标签 mark time progress</li>
+</ul>
+</li>
+<li>传统表单元素 : form  label  textarea  select  input<ul>
+<li>input  <ul>
+<li>text</li>
+<li>password</li>
+<li>radio</li>
+<li>checkbox</li>
+<li>file</li>
+<li>submit</li>
+<li>reset</li>
+<li>button</li>
+</ul>
+</li>
+<li>HTML5新增加input的类型<ul>
+<li>search</li>
+<li>email</li>
+<li>url</li>
+<li>range</li>
+<li>color</li>
+<li>date</li>
+<li>number</li>
+<li>tel</li>
+</ul>
+</li>
+<li>表单元素新增属性<ul>
+<li>form属性<ul>
+<li>autocomplete</li>
+<li>novalidate</li>
+</ul>
+</li>
+<li>input属性<ul>
+<li>placeholder  给表单元素设置提示属性   IE6~8 使用span根据value判断</li>
+<li>pattern (regexp)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>给input设置新的类型作用<ul>
+<li>当用户输入的时候,可以根据设置的类型,调取处最符合用户输入的键盘(数字键盘/密码键盘)</li>
+<li>提供了css和js新的验证方式</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#userEmail</span><span class="selector-pseudo">:valid</span>&#123;&#125;</span><br><span class="line"><span class="selector-id">#userEmail</span><span class="selector-pseudo">:invalid</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userEmail = <span class="built_in">document</span>.getElementById(<span class="string">'userEmail'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * 移动端事件中一般都没有：keydown/keyup（移动端是虚拟键盘），我们使用input事件代替即可</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * userEmail.oninput=function...</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">//=&gt;自己编写正则验证(项目中最常用)</span></span><br><span class="line">userEmail.onkeydown = userEmail.onkeyup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> reg = <span class="regexp">/^\w+((-\w+)|(\.\w+))*@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/</span>;</span><br><span class="line">    <span class="keyword">let</span> val = <span class="keyword">this</span>.value;</span><br><span class="line">    <span class="keyword">if</span> (val.length === <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">'white'</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!reg.test(val)) &#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">'lightpink'</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">'white'</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//=&gt;内置JS验证</span></span><br><span class="line">userEmail.onkeydown = userEmail.onkeyup = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//=&gt;this.checkValidity()：根据浏览器内置的验证机制，获取成功还是失败(TRUE/FALSE)</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">this</span>.checkValidity()) &#123;</span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">'lightpink'</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">'white'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>datalist属性  可以在输入框里搜索选项</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"browsers"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Chrome"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Firefox"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Opera"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Safari"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Microsoft Edge"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>select的length = 里面option的数量</p>
+</li>
+</ul>
+<h4 id="新增媒体解决方案"><a href="#新增媒体解决方案" class="headerlink" title="新增媒体解决方案"></a>新增媒体解决方案</h4><blockquote>
+<p>audio  video  canvas</p>
+</blockquote>
+<ul>
+<li>Echarts  统计图插件   基于canvas</li>
+</ul>
+<h4 id="新增一些API"><a href="#新增一些API" class="headerlink" title="新增一些API"></a>新增一些API</h4><ul>
+<li>webstorage :  localStorage  sessionStorage</li>
+<li>webSocket :  通讯方案</li>
+</ul>
+<h2 id="CSS3属性"><a href="#CSS3属性" class="headerlink" title="CSS3属性"></a>CSS3属性</h2><ul>
+<li>新增选择器<ul>
+<li>nth-child</li>
+<li>nth-of-type</li>
+</ul>
+</li>
+<li>@font-face : 实现字体图标</li>
+<li>样式属性<ul>
+<li>border-radius</li>
+<li>box-shadow</li>
+<li>text-shadow</li>
+<li>-webkit-filter  :  滤镜</li>
+</ul>
+</li>
+<li>背景样式<ul>
+<li>background-size</li>
+<li>background-origin</li>
+<li>background-clip</li>
+</ul>
+</li>
+<li>transform<ul>
+<li>translate</li>
+<li>rotate</li>
+<li>scale</li>
+<li>skew</li>
+<li>matrix</li>
+</ul>
+</li>
+<li>transform 3D<ul>
+<li>translate3d</li>
+<li>transform-style : preserve-3d</li>
+<li>transform-origin  :  变形原点</li>
+<li>prespective  视距</li>
+</ul>
+</li>
+<li>transition 过渡<ul>
+<li>property</li>
+<li>duration</li>
+<li>timing-function</li>
+<li>delay</li>
+</ul>
+</li>
+<li>animation<ul>
+<li>name</li>
+<li>duration</li>
+<li>timing-function</li>
+<li>delay </li>
+<li>count  infinite</li>
+<li>fill-mode  forwards backwards  both</li>
+<li>@keyframes name</li>
+</ul>
+</li>
+<li>css3盒模型<ul>
+<li>box-sizing : content-box  border-box  </li>
+<li>flex</li>
+<li>columns</li>
+</ul>
+</li>
+<li>css3媒体查询<ul>
+<li>@media</li>
+</ul>
+</li>
+</ul>
+<h2 id="LESS"><a href="#LESS" class="headerlink" title="LESS"></a>LESS</h2><blockquote>
+<p>css预编译语言,把无编程思想的css转换为面向对象编程的语言,可以吧一些公用的样式提取封装,提高效率方便维护,在LESS中存在作用域和变量的概念,可以有效的管理一些公用的值</p>
+<p>less转换为css  导入<code>&lt;script src=&quot;less.min.js&quot;&gt;&lt;/script&gt;</code>  <code>&lt;link rel=&quot;stylesheet/less&quot; href=&quot;css/less.less&quot;&gt;</code></p>
+<p>引入js插件放在head中,结构渲染之前就将less编译成css</p>
+</blockquote>
+<ul>
+<li>lessc xxx.less xxx/xxx.css -x  编译并压缩</li>
+<li>unit(@w,px)   =&gt;  原来有单位去单位,没有单位加单位</li>
+<li>运算中的细节  变量名可以包含 -   <code>@a-1:10</code>  ;  <code>(@a-1)</code>实行时要包起来</li>
+</ul>
+<h4 id="LESS中的函数"><a href="#LESS中的函数" class="headerlink" title="LESS中的函数"></a>LESS中的函数</h4><blockquote>
+<p><code>.box{}</code>  也相当于一个函数  或者<code>.box()</code> 不加括号会进行编译也表示类  </p>
+<p><code>.link{.box;}</code>   =&gt;  相当于将box里面的内容复制一份到link中</p>
+</blockquote>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@initBg :</span> <span class="number">#fff</span>;</span><br><span class="line"><span class="selector-class">.transitonFn</span>(<span class="variable">@a</span>:<span class="number">1</span>,<span class="variable">@b</span>:<span class="number">2</span>)&#123;</span><br><span class="line">  <span class="attribute">-webkit-transition </span>: <span class="variable">@arguments</span>;</span><br><span class="line">  <span class="attribute">transition</span>:<span class="variable">@arguments</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>移动端开发的时候,很多css3属性在编写的时候为了兼容所有手机,需要5套</p>
+<p>先写加前缀的后写普通的   <code>-wekit-xxx  xxx</code></p>
+</blockquote>
+<h3 id="css预处理"><a href="#css预处理" class="headerlink" title="css预处理"></a>css预处理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">css是标记语言，不是编程语言，所以不具备编程语言的特点（编程语言的特点：变量存储、判断和循环的逻辑操作、函数的封装继承和多态...），如果具备以上编程语言的特点，开发css的时候将会非常的方便</span><br><span class="line"></span><br><span class="line">css预处理编译语言的宗旨就是把css变为编程语言来开发，提高开发效率，实现组件化的封装</span><br><span class="line"></span><br><span class="line">less</span><br><span class="line">sass</span><br><span class="line">stylus</span><br><span class="line">…</span><br><span class="line">之所以叫做预编译语言是因为：我们使用上述语言编写完成的样式代码，浏览器不能识别，我们需要把代码编译成为正常能识别的css代码才可以，所以叫做预编译</span><br></pre></td></tr></table></figure>
+<h3 id="less的使用"><a href="#less的使用" class="headerlink" title="less的使用"></a>less的使用</h3><p>Less 是一门 CSS 预处理语言，它扩充了 CSS 语言，增加了诸如变量、混合（mixin）、函数等功能，让 CSS 更易维护、方便制作主题、扩充。</p>
+<p>Less 可以运行在 Node、浏览器和 Rhino 平台上。网上有很多第三方工具帮助你编译 Less 源码。</p>
+<h4 id="安装less"><a href="#安装less" class="headerlink" title="安装less"></a>安装less</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g less</span><br></pre></td></tr></table></figure>
+<h4 id="Less-语法"><a href="#Less-语法" class="headerlink" title="Less 语法"></a>Less 语法</h4><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">lessc</span> <span class="selector-tag">styles</span><span class="selector-class">.less</span> &gt; <span class="selector-tag">styles</span><span class="selector-class">.css</span></span><br><span class="line">若要输出压缩过的 <span class="selector-tag">CSS</span>，只需添加 <span class="selector-tag">-x</span> 选项</span><br><span class="line"><span class="selector-tag">lessc</span> <span class="selector-tag">styles</span><span class="selector-class">.less</span> &gt; <span class="selector-tag">styles</span><span class="selector-class">.min</span><span class="selector-class">.css</span> <span class="selector-tag">-x</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//less也是来写样式的跟css一样都是实现样式的写法，只不过语法不同，它涵盖了一些JS的思想</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//变量</span></span><br><span class="line"><span class="comment">//在JS中var color="#ff6700";</span></span><br><span class="line"><span class="comment">//在less中变量前面加上@</span></span><br><span class="line"><span class="variable">@color:</span><span class="number">#ff6700</span>;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@color</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//还可以 以变量的名定义定义为变量</span></span><br><span class="line"><span class="variable">@word:</span><span class="string">"I love you"</span>;</span><br><span class="line"><span class="variable">@c:</span><span class="number">#ff5700</span>;</span><br><span class="line"><span class="variable">@var:</span><span class="string">"word"</span>;<span class="comment">//定义了一个变量var赋值为一个变量名word</span></span><br><span class="line"><span class="variable">@col:</span><span class="string">"c"</span>;<span class="comment">//定义了一个变量var赋值为一个变量名c</span></span><br><span class="line"><span class="selector-id">#p1</span><span class="selector-pseudo">:after</span>&#123;</span><br><span class="line">    <span class="comment">//content: @word;</span></span><br><span class="line">    <span class="attribute">content</span>: <span class="variable">@@var</span>;<span class="comment">//@(@var)-&gt;@word-&gt;"I love you"</span></span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@@col</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//混合类</span></span><br><span class="line"><span class="selector-class">.class1</span>&#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="selector-class">.class1</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#0000FF</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//带参数混合</span></span><br><span class="line"><span class="comment">//在less中可以像JS函数一样定义一个带参数的属性集合</span></span><br><span class="line"></span><br><span class="line"><span class="selector-class">.radius</span>(<span class="variable">@rad</span>)&#123;</span><br><span class="line">    <span class="attribute">-webkit-border-radius</span>: <span class="variable">@rad</span>;</span><br><span class="line">    <span class="attribute">-moz-border-radius</span>: <span class="variable">@rad</span>;</span><br><span class="line">    <span class="attribute">-ms-border-radius</span>: <span class="variable">@rad</span>;</span><br><span class="line">    <span class="attribute">-o-border-radius</span>: <span class="variable">@rad</span>;</span><br><span class="line">      <span class="attribute">border-radius</span>: <span class="variable">@rad</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="selector-class">.radius</span>(<span class="number">10px</span>);<span class="comment">//@rad=10px;</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#0000FF</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//给参数赋默认值</span></span><br><span class="line"><span class="selector-class">.font</span>(<span class="variable">@size</span>:<span class="number">18px</span>)&#123;</span><br><span class="line">    <span class="attribute">font-size</span>:<span class="variable">@size</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.menu</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="selector-class">.font</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//@arguments:包含了所有传进来的参数</span></span><br><span class="line"><span class="selector-class">.bor</span>(<span class="variable">@x</span>,<span class="variable">@y</span>,<span class="variable">@z</span>)&#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="variable">@arguments</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.wh</span>(<span class="variable">@w</span>:<span class="number">100px</span>,<span class="variable">@h</span>:<span class="number">30px</span>)&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@w</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="variable">@h</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.menu</span> <span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="selector-class">.wh</span>(<span class="number">200px</span>);</span><br><span class="line">    <span class="selector-class">.bor</span>(<span class="number">3px</span> ,solid ,green);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box-shadow</span>(<span class="variable">@x</span>:<span class="number">0</span>,<span class="variable">@y</span>:<span class="number">0</span>,<span class="variable">@blur</span>:<span class="number">4px</span>,<span class="variable">@color</span>:<span class="number">#ccc</span>)&#123;</span><br><span class="line">    <span class="attribute">box-shadow</span>: <span class="variable">@arguments</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@color</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="variable">@blur</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="selector-class">.box-shadow</span>(<span class="number">5px</span>,<span class="number">5px</span>);</span><br><span class="line">    <span class="selector-class">.wh</span>(<span class="number">150px</span>,<span class="number">45px</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//匹配模式和引导表达式</span></span><br><span class="line"><span class="selector-class">.min</span>(drak,<span class="variable">@color</span>)&#123;</span><br><span class="line">    <span class="attribute">color</span>: darken(<span class="variable">@color</span>,<span class="number">20%</span>);</span><br><span class="line">    <span class="comment">//将颜色加深20%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.min</span>(light,<span class="variable">@color</span>)&#123;</span><br><span class="line">    <span class="attribute">color</span>: lighten(<span class="variable">@color</span>,<span class="number">20%</span>);</span><br><span class="line">    <span class="comment">//将颜色变浅20%</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.min</span>(<span class="variable">@_</span>,<span class="variable">@color</span>)&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="variable">@switch1:</span>drak;</span><br><span class="line"><span class="variable">@switch2:</span>light;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="comment">//.min(@switch1,#ddd);</span></span><br><span class="line">    <span class="comment">//.min(drak,#ddd);@color:#ddd</span></span><br><span class="line">    <span class="comment">//.min(@switch2,#ddd);</span></span><br><span class="line">    <span class="comment">//@_,接受任意值，你传什么值他都会执行；</span></span><br><span class="line">    <span class="selector-class">.min</span>(<span class="variable">@word</span>,<span class="number">#ccc</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//注释</span></span><br><span class="line"> 注释</span><br><span class="line"> 	<span class="selector-tag">color</span>函数</span><br><span class="line"> 	<span class="selector-tag">1</span>. <span class="selector-tag">lighten</span>(<span class="variable">@color</span>,<span class="number">10%</span>):</span><br><span class="line"> 	意思：<span class="selector-tag">return</span> <span class="selector-tag">a</span> <span class="selector-tag">color</span> <span class="selector-tag">which</span> <span class="selector-tag">is</span> <span class="selector-tag">10%</span> <span class="selector-tag">lighter</span> <span class="selector-tag">than</span> @<span class="selector-tag">color</span></span><br><span class="line"> 	<span class="selector-tag">2</span>. <span class="selector-tag">darken</span>(<span class="variable">@color</span>,<span class="number">10%</span>);</span><br><span class="line"> 	意思：<span class="selector-tag">return</span> <span class="selector-tag">a</span> <span class="selector-tag">color</span> <span class="selector-tag">which</span> <span class="selector-tag">is</span> <span class="selector-tag">10%</span> <span class="selector-tag">draker</span> <span class="selector-tag">than</span> @<span class="selector-tag">color</span></span><br><span class="line"> 	<span class="selector-tag">3</span>. <span class="selector-tag">statuate</span>(<span class="variable">@color</span>,<span class="number">10%</span>);<span class="comment">//增加饱和度</span></span><br><span class="line"> 	意思：<span class="selector-tag">return</span> <span class="selector-tag">a</span> <span class="selector-tag">color</span> <span class="selector-tag">which</span> <span class="selector-tag">is</span> <span class="selector-tag">10%</span> <span class="selector-tag">statuated</span> <span class="selector-tag">than</span> @<span class="selector-tag">color</span></span><br><span class="line"> 	<span class="selector-tag">4</span>. <span class="selector-tag">destatuste</span>(<span class="variable">@color</span>,<span class="number">10%</span>);<span class="comment">//减少饱和度，褪色</span></span><br><span class="line"> 	<span class="selector-tag">5</span>. <span class="selector-tag">fadein</span>(<span class="variable">@color</span>,<span class="number">10%</span>)</span><br><span class="line"> 	<span class="selector-tag">6</span>. <span class="selector-tag">fadeout</span>(<span class="variable">@color</span>,<span class="number">10%</span>)</span><br><span class="line"> 	<span class="selector-tag">7</span>. <span class="selector-tag">fade</span>(<span class="variable">@color</span>,<span class="number">50%</span>)</span><br><span class="line"> 	<span class="selector-tag">8</span>. <span class="selector-tag">spin</span>(<span class="variable">@color</span>,<span class="number">10</span>)</span><br><span class="line"> 	<span class="selector-tag">9</span>. <span class="selector-tag">spin</span>(<span class="variable">@color</span>,-<span class="number">10</span>)</span><br><span class="line"> 	<span class="selector-tag">10</span>. <span class="selector-tag">mix</span>(<span class="variable">@color1</span>,<span class="variable">@color2</span>);混合 	</span><br><span class="line"> 	提取颜色信息</span><br><span class="line"> 	<span class="selector-tag">hue</span>(<span class="variable">@color</span>):返回当前颜色的色调</span><br><span class="line"> 	<span class="selector-tag">staturation</span>(<span class="variable">@color</span>):返回当前颜色的饱和度</span><br><span class="line"> 	<span class="selector-tag">lightness</span>(<span class="variable">@color</span>):返回当前颜色的亮度(浅的度数)</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.wh</span>(<span class="variable">@w</span>:<span class="number">100px</span>,<span class="variable">@h</span>:<span class="number">50px</span>)&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@w</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="variable">@h</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//when</span></span><br><span class="line"><span class="selector-class">.mixin</span>(<span class="variable">@a</span>) <span class="keyword">when</span>(lightness(<span class="variable">@a</span>)&gt;=<span class="number">50%</span>)&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: black;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.mixin</span>(<span class="variable">@a</span>) <span class="keyword">when</span>(lightness(<span class="variable">@a</span>)&lt;<span class="number">50%</span>)&#123;</span><br><span class="line">    <span class="attribute">background-color</span>: whitesmoke;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="selector-class">.wh</span>();</span><br><span class="line">    <span class="selector-class">.mixin</span>(<span class="number">#ddd</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.mn</span>(<span class="variable">@w</span>,<span class="variable">@h</span>) <span class="keyword">when</span>(<span class="variable">@w</span>&gt;<span class="variable">@h</span>)&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@w</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="variable">@h</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.mn</span>(<span class="variable">@w</span>,<span class="variable">@h</span>) <span class="keyword">when</span>(<span class="variable">@w</span>&lt;=<span class="variable">@h</span>)&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@h</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="variable">@w</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box1</span>&#123;</span><br><span class="line">    <span class="comment">//.mn(100px,200px);</span></span><br><span class="line">    <span class="selector-class">.mn</span>(<span class="number">200px</span>,<span class="number">50px</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.m</span>(<span class="variable">@x</span>) <span class="keyword">when</span>(<span class="variable">@x</span>=red)&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@x</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.m</span>(<span class="variable">@x</span>) <span class="keyword">when</span>(<span class="variable">@x</span>=green)&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@x</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">    <span class="comment">//.m(green)</span></span><br><span class="line">    <span class="selector-class">.m</span>(whitesmoke);<span class="comment">//没有满足条件的根本不会执行</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 注意：</span><br><span class="line"> 	在less中比较运算：  &gt;  &lt;  &gt;=  &lt;=  =	 </span><br><span class="line"> 	基于值类型的判断进行匹配，可以使用<span class="selector-tag">JS</span>函数判断</span><br><span class="line"> 	<span class="selector-tag">isnumber</span></span><br><span class="line"> 	<span class="selector-tag">iscolor</span></span><br><span class="line"> 	<span class="selector-tag">isstring</span></span><br><span class="line"> 	<span class="selector-tag">isurl</span></span><br><span class="line"> 	<span class="selector-tag">iskeyword</span></span><br><span class="line"> 	判断单位</span><br><span class="line"> 	<span class="selector-tag">ispixel</span>  <span class="selector-tag">px</span></span><br><span class="line"> 	<span class="selector-tag">ispercentage</span>  <span class="selector-tag">pt</span></span><br><span class="line"> 	<span class="selector-tag">isem</span>   <span class="selector-tag">em</span></span><br><span class="line"><span class="selector-class">.n</span>(<span class="variable">@a</span>) <span class="keyword">when</span>(iscolor(<span class="variable">@a</span>))&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">@a</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.n1</span>(<span class="variable">@b</span>) <span class="keyword">when</span>(isstring(<span class="variable">@b</span>))&#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="variable">@b</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.n2</span>(<span class="variable">@c</span>) <span class="keyword">when</span>(ispixel(<span class="variable">@c</span>))&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@c</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box2</span> <span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="selector-class">.n</span>(red);</span><br><span class="line">    &#125;</span><br><span class="line"><span class="selector-class">.box2</span><span class="selector-pseudo">:before</span>&#123;</span><br><span class="line">    <span class="comment">//.n1(red)</span></span><br><span class="line">    <span class="selector-class">.n1</span>(<span class="string">"哈哈哈哈哈"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.box2</span>&#123;</span><br><span class="line">    <span class="selector-class">.n2</span>(<span class="number">100px</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//嵌套规则</span></span><br><span class="line"><span class="comment">//1.直接嵌套表示的是后代关系</span></span><br><span class="line"><span class="comment">//2.如果想表达都是当前选择器加一个&amp;来表示(一般都是伪元素伪类用的比较多)</span></span><br><span class="line"><span class="selector-class">.wh</span>(<span class="variable">@w</span>:<span class="number">100px</span>,<span class="variable">@h</span>:<span class="number">100px</span>)&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">@w</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="variable">@h</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="selector-class">.wh</span>();</span><br><span class="line">    <span class="selector-tag">p</span>&#123;</span><br><span class="line">       <span class="selector-class">.wh</span>(<span class="number">100px</span>,<span class="number">20px</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="selector-class">.wh</span>();</span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">        <span class="attribute">background-color</span>: wheat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">span</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="selector-class">.wh</span>(<span class="number">50px</span>,<span class="number">20px</span>);</span><br><span class="line">    <span class="selector-tag">&amp;</span><span class="selector-id">#span1</span>&#123;</span><br><span class="line">        <span class="selector-class">.wh</span>();</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#87CEEB</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//计算功能：任何颜色，变量都可以参与运算</span></span><br><span class="line"><span class="variable">@base:</span><span class="number">5%</span>;</span><br><span class="line"><span class="variable">@filter:</span><span class="variable">@base</span>*<span class="number">2</span>;<span class="comment">//10%</span></span><br><span class="line"><span class="variable">@other:</span><span class="variable">@base</span>*<span class="number">4</span>+<span class="variable">@filter</span>;<span class="comment">//30%</span></span><br><span class="line"><span class="selector-class">.box</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#FFFF00</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="variable">@filter</span>+<span class="number">#111</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>/<span class="number">2</span>+<span class="variable">@other</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">@var:</span><span class="number">10px</span> + <span class="number">5</span>;</span><br><span class="line"><span class="selector-id">#box1</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: (<span class="variable">@var</span> + <span class="number">20</span>)*<span class="number">2</span>;</span><br><span class="line">    <span class="attribute">height</span>: (<span class="variable">@var</span> - <span class="number">5</span>)*<span class="number">3</span>;</span><br><span class="line">    <span class="selector-tag">p</span>&#123;</span><br><span class="line">        <span class="attribute">height</span>: (<span class="variable">@var</span> + <span class="number">5</span>)/<span class="number">2</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#101010</span>+<span class="number">#000111</span>;</span><br><span class="line">        <span class="attribute">border</span>: <span class="variable">@var</span> - <span class="number">5</span> solid <span class="number">#0000ff</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//less也支持部分Math函数</span></span><br><span class="line">	<span class="selector-tag">round</span>(<span class="number">1.67</span>)<span class="selector-tag">-</span>&gt;<span class="selector-tag">2</span></span><br><span class="line">	<span class="selector-tag">ceil</span>(<span class="number">2.1</span>)<span class="selector-tag">-</span>&gt;<span class="selector-tag">3</span></span><br><span class="line">	<span class="selector-tag">floor</span>(<span class="number">2.9</span>)<span class="selector-tag">-</span>&gt;<span class="selector-tag">2</span></span><br><span class="line">	<span class="selector-tag">peercentage</span>(<span class="number">0.5</span>)<span class="selector-tag">-</span>&gt;<span class="selector-tag">50%</span>转为百分数的函数</span><br><span class="line"><span class="selector-id">#s</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: percentage(<span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//命名空间</span></span><br><span class="line"><span class="selector-id">#box1</span>&#123;</span><br><span class="line">    <span class="selector-class">.p1</span>&#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">30px</span>;</span><br><span class="line">        <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line">        <span class="selector-tag">&amp;</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">            <span class="attribute">color</span>: <span class="number">#FF0000</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.p2</span>&#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ccc</span>;</span><br><span class="line">    <span class="selector-id">#box1</span>&gt;<span class="selector-class">.p1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -1199,244 +1605,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-jquery-animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/28/jquery-animation/">jquery animation</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/28/jquery-animation/" class="archive-article-date">
-  	<time datetime="2017-12-28T04:30:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/28/jquery-animation/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-babel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/27/babel/">Babel和ES6</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/27/babel/" class="archive-article-date">
-  	<time datetime="2017-12-27T11:27:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="babel的安装使用"><a href="#babel的安装使用" class="headerlink" title="babel的安装使用"></a>babel的安装使用</h2><blockquote>
-<p>babel是用来将用ES6新的语法标准书写的代码转换为更为兼容的ES5的语法标准的代码</p>
-<p>babel需要在node环境下运行</p>
-</blockquote>
-<ul>
-<li>安装babel  <ul>
-<li><code>npm install --save-dev babel-cli babel-preset-env</code></li>
-</ul>
-</li>
-<li>在项目目录中添加 .babelrc文件</li>
-</ul>
-<ul>
-<li>翻译环境包<ul>
-<li><code>npm install babel-preset-latest   npm install babel-preset-stage-2</code></li>
-</ul>
-</li>
-<li>常用的babel命令<ul>
-<li><code>babel -h</code>  查看帮助</li>
-<li><code>babel -V</code> 查看版本</li>
-<li><code>babel --out-file  -o</code>  单个文件进行编译</li>
-<li><code>babel --out-dir  -d</code>  整个文件夹进行编译</li>
-<li><code>babel --watch  -w</code>  监听文件中代码的改变,改变后自动进行编译</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p> 注意使用babel进行编译的时候默认编译成严格模式</p>
-<p><strong>非严格模式有形参和arguments的映射机制,但是严格模式下arguments和形参的映射就不存在了</strong></p>
-<p>所以在使用ES6的时候尽量使用严格模式来进行编写</p>
-</blockquote>
-<h2 id="ES6块级作用域"><a href="#ES6块级作用域" class="headerlink" title="ES6块级作用域"></a>ES6块级作用域</h2><ul>
-<li>let</li>
-</ul>
-<blockquote>
-<p>会形成暂时性死区,没有变量提升,不能重复声明</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)  =&gt; ES6没有变量提升但是会提前找到<span class="keyword">let</span>的声明,所以会报错</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>()&#123;&#125;</span><br><span class="line"><span class="keyword">for</span>()&#123;&#125;  =&gt; 形成块级作用域 =&gt; 类似闭包</span><br><span class="line"><span class="keyword">try</span>&#123;&#125;<span class="keyword">catch</span>()&#123;&#125;  =&gt;  每个大括号都是块级作用域</span><br></pre></td></tr></table></figure>
-<ul>
-<li>const</li>
-</ul>
-<blockquote>
-<p>会形成暂时性死区,没有变量提升,不能重复声明  =&gt;  与let的区别在于创建的值无法修改</p>
-<p><strong>但是在js中引用类型的值代表的是空间地址,地址无法修改但是里面的内容可以被修改</strong></p>
-</blockquote>
-<h2 id="ES6中创建变量的几种方法"><a href="#ES6中创建变量的几种方法" class="headerlink" title="ES6中创建变量的几种方法"></a>ES6中创建变量的几种方法</h2><ol>
-<li><p><code>var</code>    (变量提升,重复声明)</p>
-</li>
-<li><p><code>function</code>   (变量提升,重复声明)</p>
-</li>
-<li><p><code>let</code>    ES6变量  (无变量提升,块级作用域)</p>
-</li>
-<li><p><code>const</code>   ES6常量 (不可重复声明)</p>
-</li>
-<li><p><code>class</code>  ES6创建类的方式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>.x  =&gt; 私有方法</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.fn  =&gt;  公有方法</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  <span class="comment">//类自有的方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>import</code>  ES6模块导入的方式</p>
-</li>
-</ol>
-<h2 id="ES6解构赋值"><a href="#ES6解构赋值" class="headerlink" title="ES6解构赋值"></a>ES6解构赋值</h2><blockquote>
-<p>按照原有值的结构,把原来值中的某些部分内容快速获取到</p>
-</blockquote>
-<h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><blockquote>
-<p>严格模式下window的属性一定要加window.   <strong>[a,b,c] = [1,2,3]  =&gt; 在严格模式不行</strong></p>
-</blockquote>
-<ul>
-<li>多维数组的解构赋值只要按照结构来也可以获得变量<ul>
-<li><code>let [,[,a],b] = [1,[2,3],4]  =&gt;  a=3 b=4</code></li>
-</ul>
-</li>
-<li>解构赋值也可以为变量设置默认值,如果没有在解构中匹配到值就会使用默认值</li>
-<li>…拓展运算符  可以将多项传给一个变量形成一个数组  <strong>Rest运算符必须是在末尾</strong></li>
-</ul>
-<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><blockquote>
-<p>对象中的结构赋值,前面的内容一定要填写,后面的可以不写</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;a,b&#125; = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;   =&gt;  a=<span class="number">1</span>,b=<span class="number">2</span> 属性名不存在的时候就是<span class="literal">undefined</span></span><br><span class="line"><span class="keyword">let</span> &#123;...arg&#125; = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;  =&gt; &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;;  =&gt; 克隆,是一个新的对象</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">a</span>:x,<span class="attr">a</span>:y&#125; = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;  =&gt; x=<span class="number">1</span>,y=<span class="number">2</span></span><br><span class="line"></span><br><span class="line">对象数组可以一起使用</span><br><span class="line"><span class="keyword">var</span> data = [&#123;</span><br><span class="line">  name:<span class="number">1</span>,<span class="attr">age</span>:<span class="number">2</span>,<span class="attr">score</span>:&#123;<span class="attr">math</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="attr">english</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;</span><br><span class="line">&#125;]</span><br><span class="line"><span class="keyword">let</span> [&#123;name,age,<span class="attr">score</span>:&#123;<span class="attr">math</span>:[,,x]&#125;&#125;] = data;  =&gt;  name=<span class="number">1</span>,age=<span class="number">2</span>,x=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="ES6箭头函数"><a href="#ES6箭头函数" class="headerlink" title="ES6箭头函数"></a>ES6箭头函数</h2><blockquote>
-<p>本身没有this,没有arguments,可以用拓展运算符获取</p>
-<p>根据自己创建作用域中的this,在我们项目中需要this的指向在使用</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fn = <span class="function">(<span class="params">i</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">n</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n+i;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(i)=&gt;<span class="function">(<span class="params">n</span>)=&gt;</span>n+i;</span><br></pre></td></tr></table></figure>
-<h2 id="ES6中创建类"><a href="#ES6中创建类" class="headerlink" title="ES6中创建类"></a>ES6中创建类</h2><blockquote>
-<p>es5中创建类防止用户将其当做普通函数执行 <code>new target</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">new</span>.target === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">&gt; 	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">SyntaxError</span>(<span class="string">'error message'</span>);</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>&gt;</p>
-<blockquote>
-<p><strong>通过class创建的类当做普通函数执行,或抛出错误</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;    <span class="keyword">constructor</span> =&gt; 就是Person</span><br><span class="line">    this.x = name;实例私有属性</span><br><span class="line">  &#125;</span><br><span class="line">  fn()&#123;&#125;;实例公有属性</span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  类私有属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="ES6类的继承"><a href="#ES6类的继承" class="headerlink" title="ES6类的继承"></a>ES6类的继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;    <span class="keyword">constructor</span> =&gt; 就是Person</span><br><span class="line">    this.x = name;实例私有属性</span><br><span class="line">  &#125;</span><br><span class="line">  fn()&#123;&#125;;实例公有属性</span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  类私有属性</span><br><span class="line">&#125;</span><br><span class="line">如果想要设置自己的私有属性需要填在<span class="keyword">super</span>()  将People的原型的prototype =&gt; __proto__</span><br><span class="line">默认不写<span class="keyword">constructor</span>会默认吧父类的私有属性继承过来</span><br><span class="line">...  拓展运算符 展开运算符  剩余运算符</span><br><span class="line">class People extends Person&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(...arg)&#123;</span><br><span class="line">    <span class="keyword">super</span>(...arg)   吧arg展开每一项传递给父类</span><br><span class="line">    <span class="keyword">let</span> [x,y]=arg;</span><br><span class="line">    <span class="keyword">this</span>.x =x;</span><br><span class="line">    <span class="keyword">this</span>.y =y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/27/babel/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1535,6 +1703,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javascript1</a>
               </li>
              
               <li class="article-tag-list-item">

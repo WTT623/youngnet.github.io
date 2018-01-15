@@ -156,6 +156,244 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jquery-animation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/28/jquery-animation/">jquery animation</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/28/jquery-animation/" class="archive-article-date">
+  	<time datetime="2017-12-28T04:30:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">jQuery</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/28/jquery-animation/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-babel" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/27/babel/">Babel和ES6</a>
+    </h1>
+  
+
+        
+        <a href="/2017/12/27/babel/" class="archive-article-date">
+  	<time datetime="2017-12-27T11:27:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="babel的安装使用"><a href="#babel的安装使用" class="headerlink" title="babel的安装使用"></a>babel的安装使用</h2><blockquote>
+<p>babel是用来将用ES6新的语法标准书写的代码转换为更为兼容的ES5的语法标准的代码</p>
+<p>babel需要在node环境下运行</p>
+</blockquote>
+<ul>
+<li>安装babel  <ul>
+<li><code>npm install --save-dev babel-cli babel-preset-env</code></li>
+</ul>
+</li>
+<li>在项目目录中添加 .babelrc文件</li>
+</ul>
+<ul>
+<li>翻译环境包<ul>
+<li><code>npm install babel-preset-latest   npm install babel-preset-stage-2</code></li>
+</ul>
+</li>
+<li>常用的babel命令<ul>
+<li><code>babel -h</code>  查看帮助</li>
+<li><code>babel -V</code> 查看版本</li>
+<li><code>babel --out-file  -o</code>  单个文件进行编译</li>
+<li><code>babel --out-dir  -d</code>  整个文件夹进行编译</li>
+<li><code>babel --watch  -w</code>  监听文件中代码的改变,改变后自动进行编译</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p> 注意使用babel进行编译的时候默认编译成严格模式</p>
+<p><strong>非严格模式有形参和arguments的映射机制,但是严格模式下arguments和形参的映射就不存在了</strong></p>
+<p>所以在使用ES6的时候尽量使用严格模式来进行编写</p>
+</blockquote>
+<h2 id="ES6块级作用域"><a href="#ES6块级作用域" class="headerlink" title="ES6块级作用域"></a>ES6块级作用域</h2><ul>
+<li>let</li>
+</ul>
+<blockquote>
+<p>会形成暂时性死区,没有变量提升,不能重复声明</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i)  =&gt; ES6没有变量提升但是会提前找到<span class="keyword">let</span>的声明,所以会报错</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> i =<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span>()&#123;&#125;</span><br><span class="line"><span class="keyword">for</span>()&#123;&#125;  =&gt; 形成块级作用域 =&gt; 类似闭包</span><br><span class="line"><span class="keyword">try</span>&#123;&#125;<span class="keyword">catch</span>()&#123;&#125;  =&gt;  每个大括号都是块级作用域</span><br></pre></td></tr></table></figure>
+<ul>
+<li>const</li>
+</ul>
+<blockquote>
+<p>会形成暂时性死区,没有变量提升,不能重复声明  =&gt;  与let的区别在于创建的值无法修改</p>
+<p><strong>但是在js中引用类型的值代表的是空间地址,地址无法修改但是里面的内容可以被修改</strong></p>
+</blockquote>
+<h2 id="ES6中创建变量的几种方法"><a href="#ES6中创建变量的几种方法" class="headerlink" title="ES6中创建变量的几种方法"></a>ES6中创建变量的几种方法</h2><ol>
+<li><p><code>var</code>    (变量提升,重复声明)</p>
+</li>
+<li><p><code>function</code>   (变量提升,重复声明)</p>
+</li>
+<li><p><code>let</code>    ES6变量  (无变量提升,块级作用域)</p>
+</li>
+<li><p><code>const</code>   ES6常量 (不可重复声明)</p>
+</li>
+<li><p><code>class</code>  ES6创建类的方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>.x  =&gt; 私有方法</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">this</span>.fn  =&gt;  公有方法</span><br><span class="line"></span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  <span class="comment">//类自有的方法</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>import</code>  ES6模块导入的方式</p>
+</li>
+</ol>
+<h2 id="ES6解构赋值"><a href="#ES6解构赋值" class="headerlink" title="ES6解构赋值"></a>ES6解构赋值</h2><blockquote>
+<p>按照原有值的结构,把原来值中的某些部分内容快速获取到</p>
+</blockquote>
+<h4 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h4><blockquote>
+<p>严格模式下window的属性一定要加window.   <strong>[a,b,c] = [1,2,3]  =&gt; 在严格模式不行</strong></p>
+</blockquote>
+<ul>
+<li>多维数组的解构赋值只要按照结构来也可以获得变量<ul>
+<li><code>let [,[,a],b] = [1,[2,3],4]  =&gt;  a=3 b=4</code></li>
+</ul>
+</li>
+<li>解构赋值也可以为变量设置默认值,如果没有在解构中匹配到值就会使用默认值</li>
+<li>…拓展运算符  可以将多项传给一个变量形成一个数组  <strong>Rest运算符必须是在末尾</strong></li>
+</ul>
+<h4 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h4><blockquote>
+<p>对象中的结构赋值,前面的内容一定要填写,后面的可以不写</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> &#123;a,b&#125; = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;   =&gt;  a=<span class="number">1</span>,b=<span class="number">2</span> 属性名不存在的时候就是<span class="literal">undefined</span></span><br><span class="line"><span class="keyword">let</span> &#123;...arg&#125; = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;  =&gt; &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;;  =&gt; 克隆,是一个新的对象</span><br><span class="line"><span class="keyword">let</span> &#123;<span class="attr">a</span>:x,<span class="attr">a</span>:y&#125; = &#123;<span class="attr">a</span>:<span class="number">1</span>,<span class="attr">b</span>:<span class="number">2</span>&#125;  =&gt; x=<span class="number">1</span>,y=<span class="number">2</span></span><br><span class="line"></span><br><span class="line">对象数组可以一起使用</span><br><span class="line"><span class="keyword">var</span> data = [&#123;</span><br><span class="line">  name:<span class="number">1</span>,<span class="attr">age</span>:<span class="number">2</span>,<span class="attr">score</span>:&#123;<span class="attr">math</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="attr">english</span>:[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]&#125;</span><br><span class="line">&#125;]</span><br><span class="line"><span class="keyword">let</span> [&#123;name,age,<span class="attr">score</span>:&#123;<span class="attr">math</span>:[,,x]&#125;&#125;] = data;  =&gt;  name=<span class="number">1</span>,age=<span class="number">2</span>,x=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="ES6箭头函数"><a href="#ES6箭头函数" class="headerlink" title="ES6箭头函数"></a>ES6箭头函数</h2><blockquote>
+<p>本身没有this,没有arguments,可以用拓展运算符获取</p>
+<p>根据自己创建作用域中的this,在我们项目中需要this的指向在使用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fn = <span class="function">(<span class="params">i</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function">(<span class="params">n</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> n+i;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(i)=&gt;<span class="function">(<span class="params">n</span>)=&gt;</span>n+i;</span><br></pre></td></tr></table></figure>
+<h2 id="ES6中创建类"><a href="#ES6中创建类" class="headerlink" title="ES6中创建类"></a>ES6中创建类</h2><blockquote>
+<p>es5中创建类防止用户将其当做普通函数执行 <code>new target</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="keyword">new</span>.target === <span class="string">'undefined'</span>)&#123;</span><br><span class="line">&gt; 	<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">SyntaxError</span>(<span class="string">'error message'</span>);</span><br><span class="line">&gt; &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p><strong>通过class创建的类当做普通函数执行,或抛出错误</strong></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;    <span class="keyword">constructor</span> =&gt; 就是Person</span><br><span class="line">    this.x = name;实例私有属性</span><br><span class="line">  &#125;</span><br><span class="line">  fn()&#123;&#125;;实例公有属性</span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  类私有属性</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ES6类的继承"><a href="#ES6类的继承" class="headerlink" title="ES6类的继承"></a>ES6类的继承</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(name)&#123;    <span class="keyword">constructor</span> =&gt; 就是Person</span><br><span class="line">    this.x = name;实例私有属性</span><br><span class="line">  &#125;</span><br><span class="line">  fn()&#123;&#125;;实例公有属性</span><br><span class="line">  <span class="keyword">static</span> fn()&#123;&#125;  类私有属性</span><br><span class="line">&#125;</span><br><span class="line">如果想要设置自己的私有属性需要填在<span class="keyword">super</span>()  将People的原型的prototype =&gt; __proto__</span><br><span class="line">默认不写<span class="keyword">constructor</span>会默认吧父类的私有属性继承过来</span><br><span class="line">...  拓展运算符 展开运算符  剩余运算符</span><br><span class="line">class People extends Person&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(...arg)&#123;</span><br><span class="line">    <span class="keyword">super</span>(...arg)   吧arg展开每一项传递给父类</span><br><span class="line">    <span class="keyword">let</span> [x,y]=arg;</span><br><span class="line">    <span class="keyword">this</span>.x =x;</span><br><span class="line">    <span class="keyword">this</span>.y =y;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/27/babel/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jQuery" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1790,6 +2028,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javascript1</a>
               </li>
              
               <li class="article-tag-list-item">
